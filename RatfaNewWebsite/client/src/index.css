@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Monomaniac+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --primary: #2DB42D;
+    --primary-hover: #249A24;
+    --bg-top: #e4e3e8;
+    --bg-bottom: #FFFFFF;
+    --text-dark: #000000;
+    --text-landing: #272727;
+    --text-light: #696969;
+    --border-light: #E0E0E0;
+    --font-header: 'Monomaniac One', sans-serif;
+    --font-body: 'Cairo', sans-serif;
+    --font-alt: 'Inter', sans-serif;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-header);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 50vh);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+    transition: all 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
