@@ -6,7 +6,7 @@ const Button = () => {
         <StyledWrapper>
             <div className="btn-container">
                 <div className="btn-drawer transition-top">only 100 made...</div>
-                <div className="btn-drawer transition-bottom">...98 left</div>
+                <div className="btn-drawer transition-bottom">...91 left</div>
                 <button className="btn">
                     <span className="btn-text">BUY NOW</span>
                 </button>
