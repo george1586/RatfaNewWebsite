@@ -5,7 +5,6 @@ function Hero() {
     return (
         <section>
 
-            {/* HERO */}
             <div
                 style={{ backgroundImage: `url(${heroImg})` }}
                 className="

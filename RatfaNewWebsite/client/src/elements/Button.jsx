@@ -5,12 +5,12 @@ const Button = () => {
     return (
         <StyledWrapper>
             <div className="btn-container">
-                <div className="btn-drawer transition-top">expires in...</div>
-                <div className="btn-drawer transition-bottom">...8 hours</div>
+                <div className="btn-drawer transition-top">only 100 made...</div>
+                <div className="btn-drawer transition-bottom">...98 left</div>
                 <button className="btn">
-                    <span className="btn-text">Get Offer</span>
+                    <span className="btn-text">BUY NOW</span>
                 </button>
-                <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
+                {/* <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
                     <path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z" />
                 </svg>
                 <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
@@ -21,7 +21,7 @@ const Button = () => {
                 </svg>
                 <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
                     <path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z" />
-                </svg>
+                </svg> */}
             </div>
         </StyledWrapper>
     );
@@ -44,20 +44,14 @@ const StyledWrapper = styled.div`
 
   .btn {
     position: relative;
-    min-width: 160px;
+    min-width: 220px;
     min-height: calc(var(--corner-dist) * 2);
-    border-radius: 16px;
+    border-radius: 26px;
     border: none;
     padding: 0.25em 1em;
 
-    background: linear-gradient(#fff2, #0001), var(--btn-color);
-    box-shadow:
-      1px 1px 2px -1px #fff inset,
-      0 2px 1px #00000010,
-      0 4px 2px #00000010,
-      0 8px 4px #00000010,
-      0 16px 8px #00000010,
-      0 32px 16px #00000010;
+    background: var(--btn-color);
+    
 
     transition:
       transform var(--duration) var(--timing-function),
@@ -116,8 +110,8 @@ const StyledWrapper = styled.div`
     display: inline-block;
 
     font-size: 1.25em;
-    font-family: "Syne", "Poppins", "Inter", sans-serif;
-    font-weight: 600;
+    font-family:"Inter", sans-serif;
+    font-weight: 800;
     color: #ffff;
 
     background-image: linear-gradient(#fff, #ddd);
