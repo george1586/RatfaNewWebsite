@@ -55,7 +55,6 @@ function Hero() {
     return (
         <section className="min-h-screen flex flex-col items-center px-5">
 
-            {/* TOP TEXT */}
             <div className="text-center mt-[120px] sm:mt-[140px]">
                 <h1 className="text-5xl sm:text-6xl font-bold [font-family:var(--font-alt)] text-[var(--text-landing)]">
                     STEELGATE
@@ -66,7 +65,6 @@ function Hero() {
                 </h2>
             </div>
 
-            {/* DEVICE IMAGE */}
             <div className="flex-1 flex items-center justify-center overflow-hidden">
                 <img
                     src={heroImg}
@@ -75,7 +73,7 @@ function Hero() {
             max-w-[750px]
             object-contain
             object-[center_-5vh]
-            scale-[2.5]
+            scale-[2.7]
             sm:max-w-[750px]
             sm:scale-[2]
             sm:object-[center_-10vh]
@@ -83,9 +81,8 @@ function Hero() {
                 />
             </div>
 
-            {/* BOTTOM CONTENT */}
             <div className="text-center max-w-[800px] mb-10">
-                <p className="sm:text-xl text-base [font-family:var(--font-body)]">
+                <p className="sm:text-xl mt-0 text-sm [font-family:var(--font-body)]">
                     Steelgate is a portable easy to use tool for families and SME owners. It loves shielding from cyber threats, blocking ads, protecting your personal data and managing what your family or even your employees see on the network, allowing you to monitor their activity and block content such as pornography, social media, etc..
                 </p>
 
