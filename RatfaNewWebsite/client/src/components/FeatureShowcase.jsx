@@ -1,15 +1,20 @@
-import firewallImg from "../assets/images/ratfa.png";
-import parentalImg from "../assets/images/productimage.png";
+import firewallImg from "../assets/images/aishit.png";
+import parentalImg from "../assets/images/aishit.png";
+import aiShit from "../assets/images/aishit.png"
 import { useState, useEffect, useRef } from "react";
+
+//trebuiesc puse poze diferite pt mobile si desktop
+//La mobile sa pui cu telefonul si la desktop doar cu dashboard-ul/grafica
+//media query pt tel la imagini height
 
 const features = [
     { title: "Firewall", img: firewallImg },
     { title: "Parental Control", img: parentalImg },
-    { title: "VPN Server & Client" },
+    { title: "VPN Server & Client", img: aiShit },
     { title: "Ad Block" },
     { title: "Intrusion Prevention" },
     { title: "Network Segment" },
-    { title: "Bandwidth Usage" },
+    { title: "Bandwidth Usage"},
 ];
 
 
@@ -22,7 +27,6 @@ function FeaturesShowcase() {
 
     const sectionRef = useRef(null);
 
-    // 👁️ Detect when section enters viewport
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -38,7 +42,6 @@ function FeaturesShowcase() {
         return () => observer.disconnect();
     }, []);
 
-    // 🔄 Auto scroll logic
     useEffect(() => {
         if (!inView || userInteracted) return;
 
@@ -49,7 +52,6 @@ function FeaturesShowcase() {
         return () => clearInterval(interval);
     }, [inView, userInteracted]);
 
-    // 🎬 Fade animation
     useEffect(() => {
         if (active !== displayed) {
             setVisible(false);
@@ -70,26 +72,24 @@ function FeaturesShowcase() {
         >
             <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-12">
 
-                {/* IMAGE */}
                 <div className="w-full md:w-1/2 flex justify-center">
                     <img
                         src={features[displayed].img}
                         className={`
-                            w-full max-w-[350px] object-contain
+                            w-full max-w-[350px] object-contain lg:min-h-[800px]
                             transition-all duration-300
                             ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}
                         `}
                     />
                 </div>
 
-                {/* FEATURES */}
                 <div className="w-full md:w-1/2 flex flex-col gap-6">
                     {features.map((feature, index) => (
                         <div
                             key={index}
                             onClick={() => {
                                 setActive(index);
-                                setUserInteracted(true); // 🛑 stop autoplay
+                                setUserInteracted(true);
                             }}
                             className={`
                                 flex items-center gap-4 cursor-pointer
@@ -104,7 +104,7 @@ function FeaturesShowcase() {
                                     w-[4px] h-10 rounded
                                     transition-all duration-300
                                     ${active === index
-                                        ? "bg-purple-500"
+                                        ? "bg-[#0A1128]"
                                         : "bg-transparent"}
                                 `}
                             />
