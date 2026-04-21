@@ -1,4 +1,3 @@
-import videoSrc from '../assets/videos/randomDawg.mp4';
 import signature from '../assets/images/Signature.png'
 function Video() {
     return (
@@ -12,7 +11,7 @@ function Video() {
                 p-6 sm:p-10
                 flex flex-col gap-4
             ">
-                <div className='flex gap-4 flex-col sm:flex-row'>
+                <div className='flex gap-4 flex-col lg:flex-row'>
                     <div className="
                             w-full lg:w-[500px]
                             aspect-video
@@ -28,12 +27,12 @@ function Video() {
                         />
                     </div>
                     
-                    <div className='bg-gray-100 w-[100%] max-w-[100%] sm:px-4 px-2 pt-2 text-sm sm:text-lg'>
+                    <div className='bg-gray-100 w-[100%] max-w-[100%] sm:px-4 px-2 pt-2 text-base sm:text-lg '>
                         <div>
-                            <p>"Are you sick of not being able to quit certain platforms?</p>
+                            <p>"Are you sick of your family/employees spending too much time on certain platforms?</p>
                             <p>Are you sick of ads on every website, on every device?</p>
                             <p>Are you worried about your security and privacy?</p>
-                            <p className='[font-family:var(--font-body)] pt-4'>Steelgate is our solution for digital self-dense of your privacy. We believe everyone should have control, security and privacy over their own network." </p>
+                            <p className='[font-family:var(--font-body)] pt-4'>Steelgate is our solution for digital self-defense of your privacy. We believe everyone should have control, security and privacy over their own network." </p>
                             <p className='[font-family:var(--font-body)] pt-4'>Ichim-Andronache George, Steelgate Co-Founder</p>
                         </div>
                     </div>

@@ -53,10 +53,10 @@ import Button from '../elements/Button';
 // }
 function Hero() {
     return (
-        <section className="min-h-screen flex flex-col items-center px-5">
+        <section className="min-h-screen  flex flex-col items-center px-5">
 
             <div className="text-center mt-[120px] sm:mt-[140px]">
-                <h1 className="text-5xl sm:text-6xl font-bold [font-family:var(--font-alt)] text-[var(--text-landing)]">
+                <h1 className="text-5xl sm:text-7xl font-bold [font-family:var(--font-alt)] text-[var(--text-landing)]">
                     STEELGATE
                 </h1>
 
