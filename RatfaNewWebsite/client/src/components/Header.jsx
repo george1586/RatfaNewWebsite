@@ -5,7 +5,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0 w-screen h-[64px] bg-white/85 backdrop-blur-[12px] z-[100] border-b border-[var(--border-light)]">
+        <header className="fixed top-0 left-0 right-0 w-screen h-[64px] bg-[var(--bg-top)] backdrop-blur-[12px] z-[100] border-b border-[var(--border-light)]">
 
             <div className=" mx-auto px-[24px] h-full flex items-center justify-between">
 

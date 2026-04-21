@@ -2,27 +2,27 @@ import deviceImg from '../assets/images/productimage.png';
 
 function ProductInfo() {
     return (
-        <section className="w-full bg-[var(--bg-top)] px-6 overflow-hidden md:px-24 py-20 min-h-screen md:h-screen">
+        <section className="w-full bg-[var(--bg-bottom)] px-6 overflow-hidden md:px-24 py-20 min-h-screen md:h-screen">
             <h1 className="
                 text-5xl sm:text-6xl lg:text-8xl
                 font-bold
                 text-center
                 mb-16
-                lg:mb-0
+                lg:mb-20
                 [font-family:var(--font-alt)] 
             ">
                 What is Steelgate?
             </h1>
 
             <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="w-full xl:pl-[20%] md:w-1/2 flex flex-col gap-10 text-lg sm:text-xl [font-family:var(--font-alt)]">
+                <div className="w-full xl:pl-[20%] md:w-1/2 flex flex-col gap-12 text-lg sm:text-xl [font-family:var(--font-alt)]">
 
                     <div className=''>
-                        <h2 className="text-2xl sm:text-4xl font-bold lg:mb-8 mb-4 [font-family:var(--font-alt)]">
+                        <h2 className="text-2xl sm:text-3xl font-bold lg:mb-8 mb-4 [font-family:var(--font-alt)]">
                             Your cyber buddy
                         </h2>
 
-                        <p className="leading-relaxed">
+                        <p className=" leading-relaxed">
                             Steelgate is a compact and powerful network device designed
                             to give you full control over all your digital devices.
                             It interacts with your network in real time, protecting,

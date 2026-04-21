@@ -1,7 +1,7 @@
 import signature from '../assets/images/Signature.png'
 function Video() {
     return (
-        <section className="w-full bg-gray-100 py-16 px-5 flex justify-center">
+        <section className="w-full bg-[#f0f0f0] py-16 px-5 flex justify-center">
 
             <div className="
                 w-full max-w-[1100px]
