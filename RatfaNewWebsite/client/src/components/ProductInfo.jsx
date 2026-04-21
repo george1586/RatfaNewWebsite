@@ -15,7 +15,7 @@ function ProductInfo() {
             </h1>
 
             <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="w-full xl:pl-[20%] md:w-1/2 flex flex-col gap-12 text-lg sm:text-xl [font-family:var(--font-alt)]">
+                <div className="w-full xl:pl-[20%] md:w-1/2 flex flex-col gap-12 text-base sm:text-xl [font-family:var(--font-alt)]">
 
                     <div className=''>
                         <h2 className="text-2xl sm:text-3xl font-bold lg:mb-8 mb-4 [font-family:var(--font-alt)]">

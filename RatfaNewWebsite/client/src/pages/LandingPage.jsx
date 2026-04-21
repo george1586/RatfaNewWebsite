@@ -1,4 +1,5 @@
 import Features from "../components/Features"
+import FeaturesShowcase from "../components/FeatureShowcase"
 import Header from "../components/Header"
 import Hero from "../components/Hero"
 import ProductInfo from "../components/ProductInfo"
@@ -10,9 +11,8 @@ function LandingPage() {
             <Hero></Hero>
             <Video></Video>
             <ProductInfo></ProductInfo>
+            <FeaturesShowcase></FeaturesShowcase>
             <Features></Features>
-            <Hero />
-
         </>
     )
 }
