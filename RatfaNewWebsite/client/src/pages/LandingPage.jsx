@@ -13,6 +13,7 @@ function LandingPage() {
             <ProductInfo></ProductInfo>
             <FeaturesShowcase></FeaturesShowcase>
             <Features></Features>
+            <Hero></Hero>
         </>
     )
 }

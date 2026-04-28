@@ -2,18 +2,18 @@ import { useEffect, useRef, useState } from "react";
 
 function Features() {
     return (
-        <section className="flex flex-col lg:flex-row pl-6 lg:px-12 py-24">
+        <section className="flex flex-col lg:flex-row px-6 lg:px-12 py-24">
 
             <div className="w-full lg:w-1/2">
 
                 <div className="lg:sticky lg:top-24">
-                    <div className="max-w-[500px]">
+                    <div className="max-w-[500px] ml-auto">
                         <h1 className="text-4xl sm:text-5xl font-bold text-[var(--text-landing)]">
                             Strengthen Your Digital Defense
                         </h1>
 
                         <p className="mt-6 text-[var(--text-light)]">
-                            Stay ahead of cyber threats with hands-on training.
+                            Stay ahead of cyber threats, ads, trackers and make the most out of your network without any technical knowledge
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-4">
@@ -22,6 +22,9 @@ function Features() {
                             </span>
                             <span className="px-4 py-2 border border-[var(--border-light)] rounded">
                                 1M+ Data Secured
+                            </span>
+                            <span className="px-4 py-2 border border-[var(--border-light)] rounded">
+                                3M+ Ads Blocked Stopped
                             </span>
                         </div>
                     </div>
@@ -38,23 +41,26 @@ function Features() {
                 w-full lg:w-1/2
                 lg: max-h-1/2
                 flex flex-col
-                gap-24
+                gap-12
+                lg:gap-24
                 mt-16 lg:mt-0
             ">
 
-                <Feature title="Risk Awareness Training" />
-                <Feature title="Phishing Attack Defense" />
-                <Feature title="Incident Response Drills" />
-                <Feature title="Penetration Testing Basics" />
-                <Feature title="Data Protection Strategies" />
-                <Feature title="Threat Intelligence Services" />
+                <Feature title="Real Time Protection" desc="A locally run AI processes websites to let you know if they are safe or not" />
+                <Feature title="Ad And Tracker Blocker" desc="Permanent list of known ads and trackers is continuosly blocked before even loading on your screen" />
+                <Feature title="Phishing Attack Defense" desc="Permanent list of known phishing websites and malware is continuosly blocked before even loading on your screen" />
+                <Feature title="Parental Control" desc="Control what your child/elders can see online, or if they can even browse online" />
+                <Feature title="Easy To Set Up" desc="Plug it up, make sure you connect the included ethernet cable into Steelgate and forget about it" />
+                <Feature title="Easy To Use And Manage" desc="Really intuitive local website will be enabled once the device boots up, also there is a build for mobile app" />
+                <Feature title="Real Data Protection" desc="With a own DNS, not even your ISP will be able to see what you are browsing for online" />
+                <Feature title="No Information Leaves Your Home" desc="We don't see your data and make sure it is private so no information leaves your home" />
 
             </div>
 
         </section>
     );
 }
-function Feature({ title }) {
+function Feature({ title, desc }) {
     const ref = useRef(null);
     const [visible, setVisible] = useState(false);
 
@@ -96,7 +102,7 @@ function Feature({ title }) {
                 </h3>
 
                 <p className="mt-2 max-w-sm text-[var(--text-light)]">
-                    Learn to detect threats and respond effectively.
+                    {desc}
                 </p>
             </div>
         </div>
