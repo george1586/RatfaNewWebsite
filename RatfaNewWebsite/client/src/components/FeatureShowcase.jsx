@@ -10,10 +10,10 @@ import { useState, useEffect, useRef } from "react";
 const features = [
     { title: "Firewall", img: firewallImg },
     { title: "Parental Control", img: parentalImg },
-    { title: "VPN Server & Client", img: aiShit },
+    { title: "Safe search", img: parentalImg },
     { title: "Ad Block" },
     { title: "Intrusion Prevention" },
-    { title: "Network Segment" },
+    { title: "Dopamine Free" },
     { title: "Bandwidth Usage"},
 ];
 
@@ -68,7 +68,7 @@ function FeaturesShowcase() {
     return (
         <section
             ref={sectionRef}
-            className="w-full bg-[var(--bg-top)] px-6 md:px-16 py-20"
+            className="w-full bg-[var(--bg-top)] px-6 md:px-16 py-20 min-h-screen"
         >
             <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-12">
 
@@ -76,7 +76,7 @@ function FeaturesShowcase() {
                     <img
                         src={features[displayed].img}
                         className={`
-                            w-full max-w-[350px] object-contain lg:min-h-[800px]
+                            w-full max-w-[350px] object-contain lg:min-h-[400px]
                             transition-all duration-300
                             ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}
                         `}

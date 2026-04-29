@@ -47,7 +47,9 @@ function Features() {
             ">
 
                 <Feature title="Real Time Protection" desc="A locally run AI processes websites to let you know if they are safe or not" />
+                <Feature title="Dopamine Detox" desc="Now you can disable reels and videos while keeping the messaging functionality of platforms" />
                 <Feature title="Ad And Tracker Blocker" desc="Permanent list of known ads and trackers is continuosly blocked before even loading on your screen" />
+                <Feature title="Improved internet speed" desc="Ads and trackers consist of 1/3 of the total traffic. Blocking them allows you to use more bandwith for the things that actually matter." />
                 <Feature title="Phishing Attack Defense" desc="Permanent list of known phishing websites and malware is continuosly blocked before even loading on your screen" />
                 <Feature title="Parental Control" desc="Control what your child/elders can see online, or if they can even browse online" />
                 <Feature title="Easy To Set Up" desc="Plug it up, make sure you connect the included ethernet cable into Steelgate and forget about it" />
