@@ -33,7 +33,7 @@ function ProductShowcase() {
 
                 <div className="w-full flex justify-center">
                     <img
-                        src="/product.png" // replace with your image
+                        src="" // replace with your image
                         className="w-full max-w-[500px] object-contain"
                     />
                 </div>
