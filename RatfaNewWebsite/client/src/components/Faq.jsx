@@ -26,8 +26,8 @@ const faqData = [
         answer: "Steelgate is designed to be as close to plug-and-play as possible. In most setups, you just connect it to your network and it starts working automatically. Advanced users can fine-tune behavior, but the default experience is built for people who don’t want to deal with router configs or complex networking setups."
     },
     {
-        question: "Can Steelgate be used in a business environment?",
-        answer: "Yes. Steelgate can give business owners visibility into network usage without requiring constant supervision. You can see patterns like which services are being accessed, detect risky behavior, and enforce basic policies — all at the network level. It’s not about micromanaging employees, but about maintaining a secure and productive environment without adding friction."
+        question: "Can Steelgate be used to monitor employee activity at work?",
+        answer: "Yes, Steelgate gives business owners visibility into how the network is being used during work hours. You can see which types of websites and services are being accessed, identify distractions or risky behavior, and enforce basic usage policies — all without needing to constantly supervise employees. It’s designed to help maintain productivity and security, not to invade privacy, by focusing on network-level activity rather than personal data."
     },
     {
         question: "What happens if something breaks or a site stops working?",

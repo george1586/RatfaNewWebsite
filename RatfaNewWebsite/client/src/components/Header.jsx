@@ -18,7 +18,7 @@ const Header = () => {
 
                 <nav className="hidden md:flex gap-24 mr-[120px]">
                     <a
-                        href="#products"
+                        href="/products"
                         className="font-medium text-[1.25rem] text-[var(--text-light)] hover:text-[var(--text-dark)] transition-colors duration-100"
                     >
                         Products
