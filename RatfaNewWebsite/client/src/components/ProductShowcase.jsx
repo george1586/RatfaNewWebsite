@@ -71,10 +71,10 @@ export default function ProductShowcase() {
     const [openFeature, setOpenFeature] = useState(null);
 
     return (
-        <div className="w-full">
+        <div className="w-full overflow-x-hidden">
 
             {/* ── 1. Product hero ── */}
-            <section className="w-full px-6 bg-[var(--bg)]" style={{ paddingTop: 'calc(var(--header-h) + 48px)', paddingBottom: 'var(--section-y)' }}>
+            <section className="w-full px-4 sm:px-6 bg-[var(--bg)]" style={{ paddingTop: 'calc(var(--header-h) + 48px)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                     {/* Gallery */}
@@ -82,10 +82,10 @@ export default function ProductShowcase() {
                         <div className="w-full aspect-square rounded-2xl bg-[var(--bg-alt)] border border-[var(--border)] flex items-center justify-center overflow-hidden">
                             <img src={thumbnails[activeImg]} alt="Steelgate" className="w-4/5 h-4/5 object-contain" />
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex flex-wrap gap-2">
                             {thumbnails.map((img, i) => (
                                 <button key={i} onClick={() => setActiveImg(i)}
-                                    className={`w-16 h-16 rounded-lg border-2 bg-[var(--bg-alt)] flex items-center justify-center overflow-hidden transition-all duration-150 ${activeImg === i ? 'border-[var(--ink)]' : 'border-[var(--border)] hover:border-[var(--ink-muted)]'}`}>
+                                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-lg border-2 bg-[var(--bg-alt)] flex items-center justify-center overflow-hidden transition-all duration-150 ${activeImg === i ? 'border-[var(--ink)]' : 'border-[var(--border)] hover:border-[var(--ink-muted)]'}`}>
                                     <img src={img} className="w-full h-full object-contain p-1.5" />
                                 </button>
                             ))}
@@ -102,7 +102,7 @@ export default function ProductShowcase() {
             </section>
 
             {/* ── 2. How It Works ── */}
-            <section className="w-full px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
+            <section className="w-full px-4 sm:px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto">
                     <div className="mb-12">
                         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Setup</p>
@@ -121,7 +121,7 @@ export default function ProductShowcase() {
             </section>
 
             {/* ── 3. Stats ── */}
-            <section className="w-full px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
+            <section className="w-full px-4 sm:px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto text-center">
                     <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">The numbers</p>
                     <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em] mb-4">
@@ -153,7 +153,7 @@ export default function ProductShowcase() {
             </section>
 
             {/* ── 4. App Features ── */}
-            <section className="w-full px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
+            <section className="w-full px-4 sm:px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto">
                     <div className="mb-12 text-center">
                         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">The app</p>
@@ -195,8 +195,8 @@ export default function ProductShowcase() {
             </section>
 
             {/* ── 5. Comparison ── */}
-            <section className="w-full px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
-                <div className="max-w-[680px] mx-auto">
+            <section className="w-full px-4 sm:px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
+                <div className="max-w-[680px] mx-auto w-full">
                     <div className="mb-12 text-center">
                         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">vs the alternatives</p>
                         <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em]">
@@ -204,32 +204,34 @@ export default function ProductShowcase() {
                         </h2>
                     </div>
                     <div className="border border-[var(--border)] rounded-2xl overflow-hidden">
-                        <table className="w-full border-collapse bg-[var(--bg)]">
-                            <thead>
-                                <tr className="border-b border-[var(--border)]">
-                                    <th className="text-left py-4 px-5 w-[52%]" />
-                                    <th className="py-4 px-4 text-center">
-                                        <p className="text-[11px] font-bold text-[var(--primary)] tracking-widest uppercase">Steelgate</p>
-                                    </th>
-                                    <th className="py-4 px-4 text-center">
-                                        <p className="text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">Phone Controls</p>
-                                    </th>
-                                    <th className="py-4 px-4 text-center">
-                                        <p className="text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">DNS Tool</p>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-[var(--border)]">
-                                {comparisonRows.map(({ label, sg, phone, dns }, i) => (
-                                    <tr key={i} className={i % 2 === 1 ? 'bg-[var(--bg-alt)]/50' : ''}>
-                                        <td className="py-3.5 px-5 text-[14px] text-[var(--ink)]">{label}</td>
-                                        <td className="py-3.5 px-4 text-center"><Tick value={sg} /></td>
-                                        <td className="py-3.5 px-4 text-center"><Tick value={phone} /></td>
-                                        <td className="py-3.5 px-4 text-center"><Tick value={dns} /></td>
+                        <div className="overflow-x-auto">
+                            <table className="w-full min-w-[480px] border-collapse bg-[var(--bg)]">
+                                <thead>
+                                    <tr className="border-b border-[var(--border)]">
+                                        <th className="text-left py-4 px-4 sm:px-5 w-[48%]" />
+                                        <th className="py-4 px-3 sm:px-4 text-center">
+                                            <p className="text-[10px] sm:text-[11px] font-bold text-[var(--primary)] tracking-widest uppercase">Steelgate</p>
+                                        </th>
+                                        <th className="py-4 px-3 sm:px-4 text-center">
+                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">Phone Controls</p>
+                                        </th>
+                                        <th className="py-4 px-3 sm:px-4 text-center">
+                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">DNS Tool</p>
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className="divide-y divide-[var(--border)]">
+                                    {comparisonRows.map(({ label, sg, phone, dns }, i) => (
+                                        <tr key={i} className={i % 2 === 1 ? 'bg-[var(--bg-alt)]/50' : ''}>
+                                            <td className="py-3 px-4 sm:px-5 text-[13px] sm:text-[14px] text-[var(--ink)]">{label}</td>
+                                            <td className="py-3 px-3 sm:px-4 text-center"><Tick value={sg} /></td>
+                                            <td className="py-3 px-3 sm:px-4 text-center"><Tick value={phone} /></td>
+                                            <td className="py-3 px-3 sm:px-4 text-center"><Tick value={dns} /></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>

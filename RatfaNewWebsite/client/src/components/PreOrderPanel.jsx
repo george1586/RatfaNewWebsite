@@ -71,7 +71,7 @@ export default function PreOrderPanel() {
             <hr className="border-[var(--border)]" />
 
             {/* Trust row */}
-            <div className="grid grid-cols-3 gap-3 text-center">
+            <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-3 text-center">
                 {["Deposit refundable", "Founding price for life", "Ships Q1 2027"].map(t => (
                     <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
                 ))}
