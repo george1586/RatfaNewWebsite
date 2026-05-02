@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { ShieldCheck, Truck, ChevronDown, Check, X, Gift, Briefcase, Users } from "lucide-react";
-import { useCart } from "../context/CartContext";
-import { createCheckoutSession } from "../lib/api";
+import { ShieldCheck, ChevronDown, Check, X } from "lucide-react";
+import PreOrderPanel from "./PreOrderPanel";
 import productImg from "../assets/images/productimage.png";
 import steelgateImg from "../assets/images/steelgate.png";
 import heroImg from "../assets/images/newImgHero.png";
@@ -10,10 +9,10 @@ import ratfaImg from "../assets/images/ratfa.png";
 const thumbnails = [productImg, steelgateImg, heroImg, ratfaImg];
 
 const howItWorksSteps = [
-    { title: "Connect to your router", desc: "Plug Steelgate into your existing router. No rewiring, no technical knowledge needed — it works with any ISP setup in under a minute." },
-    { title: "Download the Steelgate app", desc: "Get the app on iOS or Android. Your device is detected automatically within seconds of plugging in." },
-    { title: "Configure your rules", desc: "Choose what to block, who can access what, and when. Set schedules, filter content, and manage every device on the network." },
-    { title: "Take back control with intention", desc: "When you need full access, unlock it intentionally. Steelgate keeps you aware of everything happening on your network." },
+    { title: "Plug it into your router", desc: "Connect Steelgate to your existing router with the included ethernet cable. No rewiring, no IT knowledge — takes under a minute." },
+    { title: "Download the app", desc: "Get the Steelgate app on iOS or Android. Your device is detected automatically within seconds of plugging in." },
+    { title: "Set your rules", desc: "Choose which apps and sites to block, for which devices, and on what schedule. TikTok off after 9pm, Reddit off during homework hours — you decide." },
+    { title: "Forget about it", desc: "Your schedule runs automatically. You're in control without having to think about it every day." },
 ];
 
 const appFeatures = [
@@ -26,12 +25,12 @@ const appFeatures = [
 ];
 
 const comparisonRows = [
-    { label: "Network-wide protection", steelgate: true, router: false, vpn: false },
-    { label: "No ongoing subscription", steelgate: true, router: false, vpn: false },
-    { label: "Content & app filtering", steelgate: true, router: false, vpn: false },
-    { label: "Family profiles & controls", steelgate: true, router: false, vpn: false },
-    { label: "Easy plug-and-play setup", steelgate: true, router: false, vpn: true },
+    { label: "Works on every device automatically", steelgate: true, router: false, vpn: false },
+    { label: "Can't be bypassed or uninstalled by kids", steelgate: true, router: false, vpn: false },
+    { label: "Schedule-based blocking", steelgate: true, router: false, vpn: false },
+    { label: "App & site-specific filtering", steelgate: true, router: false, vpn: false },
     { label: "Ad & tracker blocking", steelgate: true, router: false, vpn: true },
+    { label: "No technical setup required", steelgate: true, router: false, vpn: true },
 ];
 
 function StepAccordion({ steps }) {
@@ -63,63 +62,11 @@ function StepAccordion({ steps }) {
     );
 }
 
-function RadioCard({ selected, onClick, children }) {
-    return (
-        <div
-            onClick={onClick}
-            className={`rounded-2xl border-2 cursor-pointer transition-all ${selected
-                    ? "border-[var(--primary)] bg-white"
-                    : "border-transparent bg-gray-100 hover:bg-gray-200"
-                }`}
-        >
-            {children}
-        </div>
-    );
-}
-
-function RadioDot({ selected }) {
-    return (
-        <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${selected ? "border-[var(--primary)]" : "border-gray-400"
-            }`}>
-            {selected && <div className="w-2.5 h-2.5 rounded-full bg-[var(--primary)]" />}
-        </div>
-    );
-}
 
 function ProductShowcase() {
-    const singlePrice = 229;
-    const multiOriginal = singlePrice * 2;
-    const multiDiscounted = Math.round(multiOriginal * 0.9);
-
-    const { addItem } = useCart();
     const [activeImg, setActiveImg] = useState(0);
-    const [bundle, setBundle] = useState("single");
     const [activeTab, setActiveTab] = useState("blocked");
     const [openFeature, setOpenFeature] = useState(null);
-    const [buyLoading, setBuyLoading] = useState(false);
-    const [buyError, setBuyError] = useState(null);
-
-    const displayPrice = bundle === "single" ? singlePrice : multiDiscounted;
-
-    const selectedProduct = bundle === "single"
-        ? { id: "steelgate-single", name: "Steelgate Device", price: singlePrice, quantity: 1 }
-        : { id: "steelgate-multi", name: "Steelgate Device (2-Pack)", price: multiDiscounted, quantity: 1 };
-
-    const handleBuyNow = async () => {
-        setBuyLoading(true);
-        setBuyError(null);
-        try {
-            const { url } = await createCheckoutSession([selectedProduct]);
-            window.location.href = url;
-        } catch {
-            setBuyError("Could not start checkout. Please try again.");
-            setBuyLoading(false);
-        }
-    };
-
-    const handleAddToCart = () => {
-        addItem(selectedProduct);
-    };
 
     return (
         <div className="w-full">
@@ -153,170 +100,8 @@ function ProductShowcase() {
                         </div>
                     </div>
 
-                    <div className="lg:sticky lg:top-[88px] space-y-5">
-
-                        <div>
-                            <h1 className="text-xl sm:text-5xl font-black text-[var(--text-dark)] [font-family:var(--font-alt)] leading-none">
-                                Steelgate
-                            </h1>
-                            <p className="text-2xl font-bold text-[var(--text-dark)] [font-family:var(--font-alt)] mt-3">
-                                €{displayPrice}
-                            </p>
-                            <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] mt-1">
-                                VAT Included
-                            </p>
-                        </div>
-
-                        <hr className="border-[var(--border-light)]" />
-
-                        <div className="space-y-3">
-
-                            <RadioCard selected={bundle === "single"} onClick={() => setBundle("single")}>
-                                <div className="flex items-center justify-between px-4 py-4">
-                                    <div className="flex items-center gap-3">
-                                        <RadioDot selected={bundle === "single"} />
-                                        <span className="text-lg font-semibold text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                            1 Steelgate
-                                        </span>
-                                    </div>
-                                    <span className="font-semibold text-[var(--text-dark)] [font-family:var(--font-alt)]">
-                                        €{singlePrice}
-                                    </span>
-                                </div>
-                            </RadioCard>
-
-                            <RadioCard selected={bundle === "multi"} onClick={() => setBundle("multi")}>
-                                <div className="px-4 pt-4 pb-3">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className="flex items-center gap-3">
-                                            <RadioDot selected={bundle === "multi"} />
-                                            <div>
-                                                <p className="text-xs font-bold text-[var(--primary)] [font-family:var(--font-body)] uppercase tracking-widest mb-0.5">
-                                                    Best Value
-                                                </p>
-                                                <p className="text-lg font-semibold text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                                    2+ Steelgates
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="text-right">
-                                            <span className="bg-[var(--primary)] text-white text-xs font-bold px-2.5 py-1 rounded-full [font-family:var(--font-body)]">
-                                                10% OFF
-                                            </span>
-                                            <p className="mt-1.5 text-sm font-semibold text-[var(--text-dark)] [font-family:var(--font-alt)]">
-                                                €{multiDiscounted}{" "}
-                                                <span className="line-through text-[var(--text-dark)] opacity-40 font-normal">
-                                                    €{multiOriginal}
-                                                </span>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[var(--border-light)]">
-                                        <div className="flex flex-col items-center text-center gap-1.5">
-                                            <Gift size={20} className="text-[var(--text-dark)]" />
-                                            <span className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)] leading-tight">
-                                                The perfect gift
-                                            </span>
-                                        </div>
-                                        <div className="flex flex-col items-center text-center gap-1.5">
-                                            <Briefcase size={20} className="text-[var(--text-dark)]" />
-                                            <span className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)] leading-tight">
-                                                One for work and home
-                                            </span>
-                                        </div>
-                                        <div className="flex flex-col items-center text-center gap-1.5">
-                                            <Users size={20} className="text-[var(--text-dark)]" />
-                                            <span className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)] leading-tight">
-                                                One for the whole family
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </RadioCard>
-                        </div>
-
-                        {buyError && (
-                            <p className="text-sm text-red-500 [font-family:var(--font-body)]">{buyError}</p>
-                        )}
-                        <button
-                            onClick={handleBuyNow}
-                            disabled={buyLoading}
-                            className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white rounded-2xl font-bold text-lg [font-family:var(--font-alt)] transition-colors duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
-                        >
-                            {buyLoading ? "Redirecting to payment…" : "Buy Now"}
-                        </button>
-                        <button
-                            onClick={handleAddToCart}
-                            className="w-full py-3.5 border-2 border-[var(--text-dark)] text-[var(--text-dark)] hover:bg-black hover:text-white rounded-2xl font-bold text-base [font-family:var(--font-alt)] transition-colors duration-150"
-                        >
-                            Add to Cart
-                        </button>
-
-                        {/* Delivery info
-                        <div className="text-center space-y-1.5">
-                            <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                Estimated delivery: 5–10 business days
-                            </p>
-                            <div className="flex items-center justify-center gap-2">
-                                <Truck size={14} className="text-[var(--text-dark)]" />
-                                <span className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                    Deliver to{" "}
-                                    <span className="text-[var(--primary)] underline cursor-pointer">
-                                        your location
-                                    </span>
-                                </span>
-                            </div>
-                        </div> */}
-
-                        <hr className="border-[var(--border-light)]" />
-
-                        {/* Trust badges — text only, 3 columns */}
-                        <div className="grid grid-cols-3 gap-4 text-center">
-                            <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                30-day money back guarantee
-                            </p>
-                            <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                Available on iOS and Android
-                            </p>
-                            <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                Free Shipping on 2+ Units
-                            </p>
-                        </div>
-
-                        <hr className="border-[var(--border-light)]" />
-
-                        {/* Product info sections */}
-                        <div className="space-y-5">
-                            <div>
-                                <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5">
-                                    Effortless Setup
-                                </h3>
-                                <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                                    Steelgate is plug-and-play. Get lifetime access to our app on{" "}
-                                    <span className="underline cursor-pointer">App Store</span> or{" "}
-                                    <span className="underline cursor-pointer">Google Play Store</span>{" "}
-                                    to block threats, set custom rules, and monitor your entire network.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5">
-                                    Thoughtfully Designed
-                                </h3>
-                                <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                                    Compact and durable, designed to sit quietly beside your router and protect your network 24/7 without any maintenance.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5 flex items-center gap-1.5">
-                                    See How It Works <span>→</span>
-                                </h3>
-                                <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                                    Take back control of your network. Block threats, filter content, and protect every device — all from one simple app.
-                                </p>
-                            </div>
-                        </div>
-
+                    <div className="lg:sticky lg:top-[88px]">
+                        <PreOrderPanel />
                     </div>
                 </div>
             </section>
@@ -325,7 +110,7 @@ function ProductShowcase() {
             <section className="w-full px-6 py-20 border-t border-[var(--border-light)]">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl sm:text-4xl font-bold text-center text-[var(--text-dark)] [font-family:var(--font-alt)] mb-12">
-                        Steelgate keeps your network under control
+                        Up and running in under a minute
                     </h2>
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="w-full aspect-[4/3] rounded-2xl bg-gray-200 border-2 border-dashed border-gray-400 flex items-center justify-center order-last lg:order-first">
@@ -340,16 +125,16 @@ function ProductShowcase() {
             <section className="w-full bg-[var(--bg-top)] px-6 py-20">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-dark)] [font-family:var(--font-alt)] mb-2">
-                        Real results for your network
+                        The numbers behind household screen time
                     </h2>
                     <p className="text-[var(--text-dark)] [font-family:var(--font-body)] mb-12 text-sm">
-                        Here is how our users feel when using Steelgate
+                        Why families are choosing a hardware-level solution
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
                         {[
-                            { stat: "95%+", label: "Threats Blocked", sub: "Compared to unprotected networks" },
-                            { stat: "93%+", label: "Less Ads Seen", sub: "Across all devices on the network" },
-                            { stat: "99%+", label: "Network Uptime", sub: "Steelgate stays on so you stay safe" },
+                            { stat: "4.8h", label: "Average daily screen time", sub: "Per person in a household — adults included" },
+                            { stat: "67%", label: "Kids bypass app limits", sub: "Most software controls are easy to get around" },
+                            { stat: "1 device", label: "Controls your whole home", sub: "Every phone, tablet, laptop, and smart TV" },
                         ].map(({ stat, label, sub }) => (
                             <div key={label} className="border border-[var(--border-light)] rounded-2xl bg-white px-6 py-8 text-center">
                                 <p className="text-4xl font-bold text-[var(--text-dark)] [font-family:var(--font-alt)]">{stat}</p>
@@ -358,9 +143,9 @@ function ProductShowcase() {
                             </div>
                         ))}
                     </div>
-                    <button className="px-8 py-4 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white rounded-xl font-bold text-base [font-family:var(--font-alt)] transition-colors duration-150">
-                        Start Protecting Your Network
-                    </button>
+                    <a href="/products" className="inline-block px-8 py-4 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white rounded-xl font-bold text-base [font-family:var(--font-alt)] transition-colors duration-150">
+                        Pre-Order — €10 Deposit
+                    </a>
                 </div>
             </section>
 
@@ -439,10 +224,10 @@ function ProductShowcase() {
                                         </div>
                                     </th>
                                     <th className="py-4 px-4 text-center text-xs font-semibold text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                        Traditional<br />Router
+                                        Phone<br />Controls
                                     </th>
                                     <th className="py-4 px-4 text-center text-xs font-semibold text-[var(--text-dark)] [font-family:var(--font-body)]">
-                                        VPN<br />Service
+                                        DNS<br />Tool
                                     </th>
                                 </tr>
                             </thead>
