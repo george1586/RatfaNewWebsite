@@ -76,7 +76,7 @@ const StyledWrapper = styled.div`
     padding: 0.25em 1em;
     font-size: 0.8em;
     font-weight: 600;
-    font-family: "Poppins", monospace;
+    font-family: "Inter", sans-serif;
     color: #0009;
 
     background: linear-gradient(#fff2, #0001), var(--btn-color);
@@ -111,8 +111,8 @@ const StyledWrapper = styled.div`
   .btn-text {
     display: inline-block;
 
-    font-size: 1.25em;
-    font-family:"Inter", sans-serif;
+    font-size: 1.1em;
+    font-family: "Inter", sans-serif;
     font-weight: 800;
     color: #ffff;
 

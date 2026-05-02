@@ -1,42 +1,38 @@
 import heroImg from '../assets/images/newImgHero.png';
 import Button from '../elements/Button';
 
-function Hero() {
+export default function Hero() {
     return (
-        <section className="min-h-screen  flex flex-col items-center px-5">
+        <section className="min-h-screen flex flex-col items-center px-6 bg-[var(--bg)]"
+            style={{ paddingTop: 'calc(var(--header-h) + 56px)' }}>
 
-            <div className="text-center mt-[120px] sm:mt-[140px]">
-                <h1 className="text-5xl sm:text-7xl font-bold [font-family:var(--font-alt)] text-[var(--text-landing)]">
-                    STEELGATE
-                </h1>
-
-                <h2 className="text-2xl sm:text-5xl mt-4 font-medium [font-family:var(--font-body)] text-[var(--text-landing)]">
+            {/* Text block */}
+            <div className="text-center w-full max-w-[var(--content-w)]">
+                <p className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-5">
+                    Steelgate
+                </p>
+                <h1 className="font-display text-[clamp(2.4rem,7vw,5rem)] text-[var(--ink)] leading-[1.05] tracking-[-0.02em] max-w-[16ch] mx-auto">
                     The hardware your household plugs in to take its attention back.
-                </h2>
+                </h1>
             </div>
 
-            <div className="flex-1 flex items-center justify-center overflow-hidden">
+            {/* Product image — fills the visual middle of the viewport */}
+            <div className="flex-1 flex items-center justify-center w-full overflow-hidden py-8">
                 <img
                     src={heroImg}
-                    className="
-            w-full
-            max-w-[750px]
-            object-contain
-            object-[center_vh]
-            scale-[1.5]
-            sm:max-w-[750px]
-            sm:scale-[1.2]
-            sm:object-[center_1vh]
-        "
+                    alt="Steelgate device"
+                    className="w-full max-w-[420px] sm:max-w-[620px] object-contain drop-shadow-sm"
                 />
             </div>
 
-            <div className="text-center max-w-[800px] mb-10">
-                <p className="sm:text-xl mt-0 text-sm [font-family:var(--font-body)]">
-                    Block distracting apps and sites across every device in your home — TikTok, Instagram, Reddit, news, adult content — on schedules you set. One device, every screen in the house.
+            {/* Body + CTA */}
+            <div className="text-center max-w-prose mx-auto pb-16 space-y-8">
+                <p className="text-[17px] sm:text-[18px] text-[var(--ink-muted)] leading-[1.65]">
+                    Block distracting apps and sites across every device in your home —
+                    TikTok, Instagram, Reddit, news, adult content — on schedules you set.
+                    One device, every screen in the house.
                 </p>
-
-                <div className="mt-8 flex justify-center">
+                <div className="flex justify-center">
                     <Button />
                 </div>
             </div>
@@ -44,4 +40,3 @@ function Hero() {
         </section>
     );
 }
-export default Hero;
