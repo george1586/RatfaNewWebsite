@@ -1,126 +1,89 @@
 import firewallImg from "../assets/images/aishit.png";
 import parentalImg from "../assets/images/aishit.png";
-import aiShit from "../assets/images/aishit.png"
 import { useState, useEffect, useRef } from "react";
 
-//trebuiesc puse poze diferite pt mobile si desktop
-//La mobile sa pui cu telefonul si la desktop doar cu dashboard-ul/grafica
-//media query pt tel la imagini height
-
 const features = [
-    { title: "App & Site Blocking", img: firewallImg },
-    { title: "Custom Schedules", img: parentalImg },
-    { title: "Household-Wide Coverage", img: parentalImg },
-    { title: "Ad & Tracker Blocking" },
-    { title: "Adult Content Filtering" },
-    { title: "Privacy Protection" },
-    { title: "Firewall" },
+    { title: "App & Site Blocking",      img: firewallImg },
+    { title: "Custom Schedules",         img: parentalImg },
+    { title: "Household-Wide Coverage",  img: parentalImg },
+    { title: "Ad & Tracker Blocking",    img: firewallImg },
+    { title: "Adult Content Filtering",  img: parentalImg },
+    { title: "Privacy Protection",       img: firewallImg },
+    { title: "Firewall",                 img: parentalImg },
 ];
 
-
-function FeaturesShowcase() {
+export default function FeaturesShowcase() {
     const [active, setActive] = useState(0);
     const [displayed, setDisplayed] = useState(0);
     const [visible, setVisible] = useState(true);
     const [inView, setInView] = useState(false);
     const [userInteracted, setUserInteracted] = useState(false);
-
     const sectionRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                setInView(entry.isIntersecting);
-            },
-            { threshold: 0.5 }
+            ([entry]) => setInView(entry.isIntersecting),
+            { threshold: 0.4 }
         );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => observer.disconnect();
     }, []);
 
     useEffect(() => {
         if (!inView || userInteracted) return;
-
-        const interval = setInterval(() => {
-            setActive((prev) => (prev + 1) % features.length);
-        }, 2000);
-
-        return () => clearInterval(interval);
+        const id = setInterval(() => setActive(p => (p + 1) % features.length), 2200);
+        return () => clearInterval(id);
     }, [inView, userInteracted]);
 
     useEffect(() => {
-        if (active !== displayed) {
-            setVisible(false);
-
-            const timeout = setTimeout(() => {
-                setDisplayed(active);
-                setVisible(true);
-            }, 200);
-
-            return () => clearTimeout(timeout);
-        }
+        if (active === displayed) return;
+        setVisible(false);
+        const id = setTimeout(() => { setDisplayed(active); setVisible(true); }, 180);
+        return () => clearTimeout(id);
     }, [active, displayed]);
 
     return (
-        <section
-            ref={sectionRef}
-            className="w-full bg-[var(--bg-top)] px-6 md:px-16 py-20 min-h-screen"
-        >
-            <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-12">
+        <section ref={sectionRef} className="w-full bg-[var(--bg-alt)] px-6 py-[var(--section-y)]">
+            <div className="max-w-[var(--content-w)] mx-auto">
 
-                <div className="w-full md:w-1/2 flex justify-center">
-                    <img
-                        src={features[displayed].img}
-                        className={`
-                            w-full max-w-[350px] object-contain lg:min-h-[400px]
-                            transition-all duration-300
-                            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}
-                        `}
-                    />
-                </div>
+                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4 text-center">
+                    What it does
+                </p>
+                <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em] text-center mb-14">
+                    Everything, network-wide.
+                </h2>
 
-                <div className="w-full md:w-1/2 flex flex-col gap-6">
-                    {features.map((feature, index) => (
-                        <div
-                            key={index}
-                            onClick={() => {
-                                setActive(index);
-                                setUserInteracted(true);
-                            }}
-                            className={`
-                                flex items-center gap-4 cursor-pointer
-                                transition-all duration-300
-                                ${active === index
-                                    ? "text-black"
-                                    : "text-gray-400"}
-                            `}
-                        >
-                            <div
-                                className={`
-                                    w-[4px] h-10 rounded
-                                    transition-all duration-300
-                                    ${active === index
-                                        ? "bg-[#0A1128]"
-                                        : "bg-transparent"}
-                                `}
+                <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+
+                    {/* Image */}
+                    <div className="w-full md:w-1/2 flex justify-center">
+                        <div className="w-full max-w-[340px] aspect-square rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center overflow-hidden">
+                            <img
+                                src={features[displayed].img}
+                                alt={features[displayed].title}
+                                className={`w-4/5 object-contain transition-all duration-200 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
                             />
-
-                            <div className="text-xl opacity-80">●</div>
-
-                            <span className="text-lg sm:text-xl font-medium">
-                                {feature.title}
-                            </span>
                         </div>
-                    ))}
-                </div>
+                    </div>
 
+                    {/* Feature list */}
+                    <div className="w-full md:w-1/2 flex flex-col gap-1">
+                        {features.map((f, i) => (
+                            <button
+                                key={i}
+                                onClick={() => { setActive(i); setUserInteracted(true); }}
+                                className={`flex items-center gap-4 px-4 py-4 rounded-xl text-left transition-all duration-200 ${active === i ? 'bg-[var(--bg)] shadow-sm' : 'hover:bg-[var(--bg)]/60'}`}
+                            >
+                                <div className={`w-1.5 h-6 rounded-full flex-shrink-0 transition-all duration-200 ${active === i ? 'bg-[var(--ink)]' : 'bg-[var(--border)] scale-y-75'}`} />
+                                <span className={`text-[17px] font-medium transition-colors duration-200 ${active === i ? 'text-[var(--ink)]' : 'text-[var(--ink-muted)]'}`}>
+                                    {f.title}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+
+                </div>
             </div>
         </section>
     );
 }
-
-export default FeaturesShowcase;
