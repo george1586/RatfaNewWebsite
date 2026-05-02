@@ -18,112 +18,79 @@ export default function PreOrderPanel() {
     };
 
     return (
-        <div className="space-y-5">
+        <div data-preorder className="space-y-6 bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-6 sm:p-7">
 
+            {/* Title */}
             <div>
-                <h1 className="text-xl sm:text-5xl font-black text-[var(--text-dark)] [font-family:var(--font-alt)] leading-none">
-                    Steelgate
-                </h1>
-                <p className="text-sm font-semibold text-[var(--primary)] [font-family:var(--font-body)] mt-2 uppercase tracking-widest">
+                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--primary)] mb-2">
                     Founding Pre-Order
                 </p>
+                <h1 className="font-display text-[clamp(1.6rem,4vw,2.2rem)] text-[var(--ink)] leading-tight">
+                    Steelgate
+                </h1>
             </div>
 
-            <hr className="border-[var(--border-light)]" />
+            <hr className="border-[var(--border)]" />
 
             {/* Pricing */}
-            <div className="space-y-1">
-                <div className="flex items-baseline gap-3">
-                    <span className="text-3xl font-bold text-[var(--text-dark)] [font-family:var(--font-alt)]">
-                        €10 deposit
-                    </span>
-                    <span className="text-sm text-[var(--text-dark)] opacity-60 [font-family:var(--font-body)]">
-                        now
-                    </span>
+            <div className="space-y-1.5">
+                <div className="flex items-baseline gap-2.5">
+                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€10</span>
+                    <span className="text-[15px] text-[var(--ink-muted)]">deposit now</span>
                 </div>
-                <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)]">
+                <p className="text-[15px] text-[var(--ink)]">
                     then <strong>€49/year</strong> for life — vs €89/year regular price
                 </p>
-                <p className="text-xs text-[var(--text-dark)] opacity-60 [font-family:var(--font-body)]">
-                    VAT included · Deposit fully refundable before ship date
+                <p className="text-[13px] text-[var(--ink-muted)]">
+                    VAT included · Fully refundable before ship date
                 </p>
             </div>
 
-            <hr className="border-[var(--border-light)]" />
-
-            {/* Founding spot counter */}
-            <div className="rounded-2xl border border-[var(--border-light)] bg-white px-4 py-4 space-y-2">
+            {/* Founding spot bar */}
+            <div className="space-y-2.5">
                 <div className="flex justify-between items-center">
-                    <span className="text-sm font-semibold text-[var(--text-dark)] [font-family:var(--font-body)]">
-                        Founding spots remaining
-                    </span>
-                    <span className="text-sm font-bold text-[var(--primary)] [font-family:var(--font-alt)]">
-                        87 / 100
-                    </span>
+                    <span className="text-[13px] font-medium text-[var(--ink)]">Founding spots</span>
+                    <span className="text-[13px] font-semibold text-[var(--ink)]">87 / 100</span>
                 </div>
-                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-[var(--primary)] rounded-full" style={{ width: "13%" }} />
+                <div className="w-full h-1.5 bg-[var(--bg-alt)] rounded-full overflow-hidden">
+                    <div className="h-full bg-[var(--primary)] rounded-full" style={{ width: '13%' }} />
                 </div>
-                <p className="text-xs text-[var(--text-dark)] opacity-60 [font-family:var(--font-body)]">
-                    13 spots claimed — founding pricing ends at 100
-                </p>
+                <p className="text-[12px] text-[var(--ink-muted)]">13 spots claimed — founding pricing ends at 100</p>
             </div>
 
-            {error && (
-                <p className="text-sm text-red-500 [font-family:var(--font-body)]">{error}</p>
-            )}
-
+            {/* CTA */}
+            {error && <p className="text-[14px] text-red-600">{error}</p>}
             <button
                 onClick={handlePreorder}
                 disabled={loading}
-                className="w-full py-4 bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white rounded-2xl font-bold text-lg [font-family:var(--font-alt)] transition-colors duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-                {loading ? "Redirecting to payment…" : "Pre-Order — €10 Deposit"}
+                {loading ? "Redirecting…" : "Pre-Order — €10 Deposit"}
             </button>
 
-            <hr className="border-[var(--border-light)]" />
+            <hr className="border-[var(--border)]" />
 
-            {/* Trust badges */}
-            <div className="grid grid-cols-3 gap-4 text-center">
-                <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                    Deposit fully refundable
-                </p>
-                <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                    Founding price locked for life
-                </p>
-                <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                    Ships Q1 2027
-                </p>
+            {/* Trust row */}
+            <div className="grid grid-cols-3 gap-3 text-center">
+                {["Deposit refundable", "Founding price for life", "Ships Q1 2027"].map(t => (
+                    <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
+                ))}
             </div>
 
-            <hr className="border-[var(--border-light)]" />
+            <hr className="border-[var(--border)]" />
 
             {/* Info sections */}
             <div className="space-y-5">
-                <div>
-                    <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5">
-                        What you're pre-ordering
-                    </h3>
-                    <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                        A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually.
-                    </p>
-                </div>
-                <div>
-                    <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5">
-                        Why pre-order now?
-                    </h3>
-                    <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                        Founding customers get Steelgate at €49/year — permanently. After launch, regular pricing will be €89/year. Your €10 deposit reserves your founding spot and is fully refundable if you change your mind before we ship.
-                    </p>
-                </div>
-                <div>
-                    <h3 className="font-bold text-base text-[var(--text-dark)] [font-family:var(--font-body)] mb-1.5">
-                        Timeline
-                    </h3>
-                    <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                        We're targeting Q3 2027 for shipment. You'll receive progress updates along the way. Founding customers ship first.
-                    </p>
-                </div>
+                {[
+                    { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
+                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €49/year — permanently. After launch, regular pricing will be €89/year. Your €10 deposit reserves your founding spot and is fully refundable if you change your mind before we ship." },
+                    { title: "Timeline", body: "We're targeting Q3 2027 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
+                ].map(({ title, body }) => (
+                    <div key={title}>
+                        <p className="text-[14px] font-semibold text-[var(--ink)] mb-1.5">{title}</p>
+                        <p className="text-[14px] text-[var(--ink-muted)] leading-[1.65]">{body}</p>
+                    </div>
+                ))}
             </div>
 
         </div>
