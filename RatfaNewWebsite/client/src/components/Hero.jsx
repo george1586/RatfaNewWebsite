@@ -11,7 +11,7 @@ export default function Hero() {
                 <p className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-5">
                     Steelgate
                 </p>
-                <h1 className="font-display text-[clamp(2.4rem,7vw,5rem)] text-[var(--ink)] leading-[1.05] tracking-[-0.02em] max-w-[16ch] mx-auto">
+                <h1 className="font-display text-[clamp(2.0rem,5vw,4rem)] text-[var(--ink)] leading-[1.05] tracking-[-0.02em] max-w-[16ch] mx-auto">
                     The hardware your household plugs in to take its attention back.
                 </h1>
             </div>

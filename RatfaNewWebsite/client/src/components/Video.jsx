@@ -26,13 +26,13 @@ function Video() {
                             allowFullScreen
                         />
                     </div>
-                    
+
                     <div className='bg-gray-100 w-[100%] max-w-[100%] sm:px-4 px-2 pt-2 text-base sm:text-lg '>
-                        <div>
-                            <p>"Are you sick of your family/employees spending too much time on certain platforms?</p>
-                            <p>Are you sick of ads on every website, on every device?</p>
-                            <p>Are you worried about your security and privacy?</p>
-                            <p className='[font-family:var(--font-body)] pt-4'>Steelgate is our solution for digital self-defense of your privacy. We believe everyone should have control, security and privacy over their own network." </p>
+                        <div >
+                            <p className='font-semibold'>"Screen time isn't going away on its own.</p>
+                            <p className='font-semibold'>Your kids already know how to get around app timers. Your own habits are just as hard to break.</p>
+                            <p className='font-semibold'>Are you sick of ads on every website, on every device?</p>
+                            <p className='[font-family:var(--font-body)] pt-4'>Steelgate is our solution for digital self-defense of your privacy. We believe everyone should have control and privacy over their own network." </p>
                             <p className='[font-family:var(--font-body)] pt-4'>Ichim-Andronache George, Steelgate Co-Founder</p>
                         </div>
                     </div>
