@@ -42,21 +42,21 @@ export default function WaitlistForm() {
             <p className="text-[13px] text-[var(--ink-muted)]">
                 Join the waitlist and we'll notify you when Steelgate launches.
             </p>
-            <form onSubmit={handleSubmit} className="flex gap-2">
+            <form onSubmit={handleSubmit} className="flex flex-col xs:flex-row gap-2">
                 <input
                     type="email"
                     required
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="flex-1 px-4 py-2.5 border border-[var(--border)] rounded-full text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
+                    className="flex-1 min-w-0 px-4 py-2.5 border border-[var(--border)] rounded-full text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
                 />
                 <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="px-5 py-2.5 bg-[var(--ink)] hover:bg-black text-white rounded-full text-[14px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                    className="w-full xs:w-auto px-5 py-2.5 bg-[var(--ink)] hover:bg-black text-white rounded-full text-[14px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                 >
-                    {status === "loading" ? "…" : "Join"}
+                    {status === "loading" ? "…" : "Join waitlist"}
                 </button>
             </form>
             {error && <p className="text-[13px] text-red-600">{error}</p>}

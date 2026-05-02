@@ -136,10 +136,10 @@ export default function ProductShowcase() {
                             { stat: "67%",      label: "Kids bypass app limits",       sub: "Most software controls are easy to get around" },
                             { stat: "1 device", label: "Controls your whole home",     sub: "Every phone, tablet, laptop, and smart TV" },
                         ].map(({ stat, label, sub }) => (
-                            <div key={label} className="bg-[var(--bg)] px-8 py-10 text-center">
-                                <p className="text-[clamp(2rem,5vw,3rem)] font-bold text-[var(--ink)] tracking-[-0.04em] leading-none mb-3">{stat}</p>
-                                <p className="text-[15px] font-semibold text-[var(--ink)] mb-1">{label}</p>
-                                <p className="text-[13px] text-[var(--ink-muted)] leading-snug">{sub}</p>
+                            <div key={label} className="bg-[var(--bg)] px-5 xs:px-8 py-8 xs:py-10 text-center">
+                                <p className="text-[clamp(1.75rem,8vw,3rem)] font-bold text-[var(--ink)] tracking-[-0.04em] leading-none mb-3">{stat}</p>
+                                <p className="text-[14px] xs:text-[15px] font-semibold text-[var(--ink)] mb-1">{label}</p>
+                                <p className="text-[12px] xs:text-[13px] text-[var(--ink-muted)] leading-snug">{sub}</p>
                             </div>
                         ))}
                     </div>

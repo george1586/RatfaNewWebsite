@@ -18,7 +18,7 @@ export default function PreOrderPanel() {
     };
 
     return (
-        <div data-preorder className="space-y-6 bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-6 sm:p-7">
+        <div data-preorder className="space-y-6 bg-[var(--bg)] border border-[var(--border)] rounded-2xl p-4 xs:p-6 sm:p-7">
 
             {/* Title */}
             <div>
