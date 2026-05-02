@@ -68,7 +68,7 @@ export default async function handler(req, res) {
                         <p style="color:#444;margin-bottom:24px;">Your Steelgate founding spot is confirmed. Here's what to expect:</p>
                         <ul style="color:#222;padding-left:20px;line-height:2;">
                             <li>Your €10 deposit is confirmed</li>
-                            <li>Your annual rate is locked at €59/year for life</li>
+                            <li>Your annual rate is locked at €49/year for life</li>
                             <li>We'll send updates as we build toward Q3 2027</li>
                             <li>Founding customers ship first</li>
                         </ul>

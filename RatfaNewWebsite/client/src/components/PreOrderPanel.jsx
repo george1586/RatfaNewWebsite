@@ -42,7 +42,7 @@ export default function PreOrderPanel() {
                     </span>
                 </div>
                 <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)]">
-                    then <strong>€59/year</strong> for life — vs €89/year regular price
+                    then <strong>€49/year</strong> for life — vs €89/year regular price
                 </p>
                 <p className="text-xs text-[var(--text-dark)] opacity-60 [font-family:var(--font-body)]">
                     VAT included · Deposit fully refundable before ship date
@@ -92,7 +92,7 @@ export default function PreOrderPanel() {
                     Founding price locked for life
                 </p>
                 <p className="text-xs text-[var(--text-dark)] [font-family:var(--font-body)]">
-                    Ships Q3 2027
+                    Ships Q1 2027
                 </p>
             </div>
 
@@ -113,7 +113,7 @@ export default function PreOrderPanel() {
                         Why pre-order now?
                     </h3>
                     <p className="text-sm text-[var(--text-dark)] [font-family:var(--font-body)] leading-relaxed">
-                        Founding customers get Steelgate at €59/year — permanently. After launch, regular pricing will be €89/year. Your €10 deposit reserves your founding spot and is fully refundable if you change your mind before we ship.
+                        Founding customers get Steelgate at €49/year — permanently. After launch, regular pricing will be €89/year. Your €10 deposit reserves your founding spot and is fully refundable if you change your mind before we ship.
                     </p>
                 </div>
                 <div>

@@ -20,7 +20,7 @@ export default async function handler(req, res) {
                         unit_amount: 1000,
                         product_data: {
                             name: "Steelgate — Founding Pre-Order Deposit",
-                            description: "Refundable €10 deposit. Locks in €59/year founding price for life (vs €89/year regular).",
+                            description: "Refundable €10 deposit. Locks in €49/year founding price for life (vs €89/year regular).",
                         },
                     },
                     quantity: 1,
