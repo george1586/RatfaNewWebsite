@@ -1,37 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Monomaniac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Monomaniac+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
+    /* Brand */
     --primary: #2DB42D;
     --primary-hover: #249A24;
-    --bg-top: #e4e3e8;
-    --bg-bottom: #FFFFFF;
-    --text-dark: #000000;
-    --text-landing: #272727;
-    --text-light: #696969;
-    --border-light: #E0E0E0;
-    --font-header: 'Monomaniac One', sans-serif;
-    --font-body: 'Cairo', sans-serif;
-    --font-alt: 'Inter', sans-serif;
-    --max-width: 1200px;
+
+    /* Backgrounds */
+    --bg:     #F8F7F5;
+    --bg-alt: #EFEEEB;
+
+    /* Text */
+    --ink:        #1A1A1A;
+    --ink-muted:  rgba(26, 26, 26, 0.52);
+
+    /* Border */
+    --border: rgba(0, 0, 0, 0.08);
+
+    /* Typography */
+    --font-display: 'Monomaniac One', sans-serif;
+    --font-sans:    'Inter', sans-serif;
+
+    /* Layout */
+    --content-w:  1100px;
+    --prose-w:    660px;
+    --section-y:  120px;
+    --header-h:   64px;
+
+    /* ── Legacy aliases so untouched components keep working ── */
+    --text-dark:    var(--ink);
+    --text-landing: var(--ink);
+    --text-light:   var(--ink-muted);
+    --border-light: var(--border);
+    --bg-top:       var(--bg-alt);
+    --bg-bottom:    var(--bg);
+    --font-header:  var(--font-display);
+    --font-body:    var(--font-sans);
+    --font-alt:     var(--font-sans);
+    --max-width:    var(--content-w);
 }
 
-* {
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: var(--font-header);    
-    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 50vh);
-    background-attachment: fixed;
-    color: var(--text-dark);
-    line-height: 1.5;
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
 }
 
@@ -45,23 +72,40 @@ button {
     font-family: inherit;
     border: none;
     background: none;
-    transition: all 0.2s ease;
+    transition: color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 800;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--text-dark);
+    color: var(--ink);
 }
 
+/* Consistent focus ring matching design language */
+:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* Utility: constrain content width */
+.content-w {
+    max-width: var(--content-w);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Utility: constrain prose width */
+.prose-w {
+    max-width: var(--prose-w);
+}
+
+/* Legacy container alias */
 .container {
-    max-width: var(--max-width);
+    max-width: var(--content-w);
     margin: 0 auto;
     padding: 0 24px;
 }
