@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ShieldCheck, ChevronDown, Check, X } from "lucide-react";
 import PreOrderPanel from "./PreOrderPanel";
+import WaitlistForm from "./WaitlistForm";
 import productImg from "../assets/images/productimage.png";
 import steelgateImg from "../assets/images/steelgate.png";
 import heroImg from "../assets/images/newImgHero.png";
@@ -100,8 +101,9 @@ function ProductShowcase() {
                         </div>
                     </div>
 
-                    <div className="lg:sticky lg:top-[88px]">
+                    <div className="lg:sticky lg:top-[88px] space-y-4">
                         <PreOrderPanel />
+                        <WaitlistForm />
                     </div>
                 </div>
             </section>
