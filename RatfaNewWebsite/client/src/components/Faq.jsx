@@ -2,44 +2,44 @@ import { useState } from "react";
 
 const faqData = [
     {
-        question: "How is Steelgate different from something like Pi-hole or browser ad blockers?",
-        answer: "Most tools like Pi-hole or browser extensions only block ads at the DNS or browser level, which means they miss a lot of traffic — especially inside mobile apps or smart TVs. Steelgate works at the network level and analyzes traffic across all devices, regardless of platform. It goes beyond simple domain blocking by applying real-time filtering and detection logic, giving you actual control over what reaches your network."
+        question: "When will Steelgate ship?",
+        answer: "We’re targeting Q3 2027. Pre-ordering now locks in your founding price and reserves your spot. We’ll keep you updated as production progresses — you’ll hear from us before anyone else."
     },
     {
-        question: "Does Steelgate protect against phishing or malicious websites?",
-        answer: "Yes. Steelgate is designed to stop threats in real time, including phishing attempts, malicious domains, and suspicious traffic patterns. Instead of relying only on static blocklists, it can identify risky behavior and block connections before a device even loads the page. This is especially important for the most vulnerable users — like family members or employees — who may not recognize a phishing attempt before it's too late."
+        question: "What if I change my mind? Can I cancel my pre-order?",
+        answer: "Yes. Your €10 deposit is fully refundable before we ship. Just email us and we’ll process the refund within a few days. No questions asked."
     },
     {
-        question: "How does the real-time protection actually work?",
-        answer: "Steelgate sits inside your network and monitors outgoing requests as they happen. When a device tries to connect to a domain or service, the system evaluates it using a combination of known threat intelligence, behavior patterns, and filtering rules. If something looks suspicious — like a known phishing endpoint or a domain behaving like one — the request is blocked instantly. This happens locally, without sending your data to external servers."
+        question: "Why should I pre-order instead of waiting for the full launch?",
+        answer: "Founding customers get Steelgate at €59/year — for life. After launch, the regular price will be €89/year. Pre-ordering is the only way to lock in the founding rate permanently."
     },
     {
-        question: "Will this slow down my internet or affect streaming/gaming?",
-        answer: "In normal use, you shouldn’t notice any slowdown. Steelgate processes traffic locally and is optimized to handle requests efficiently, so it avoids the latency of cloud-based filtering. In some cases, things may actually feel faster because ads, trackers, and unnecessary requests are removed before they load. If a service behaves unexpectedly, you can always whitelist it instantly."
+        question: "Why is the founding price lower? What’s the catch?",
+        answer: "There’s no catch. We’re offering a lower lifetime price to the people who believe in Steelgate early — before we’ve shipped a single unit. That trust helps us validate demand and fund production. In return, you get a permanently lower rate and priority shipping."
+    },
+    {
+        question: "What happens if you don’t reach 100 pre-orders?",
+        answer: "If we don’t hit the minimum needed to move to production, every pre-order will be fully refunded. You won’t lose anything."
+    },
+    {
+        question: "How is Steelgate different from a parental control app or Pi-hole?",
+        answer: "Parental control apps only work on the device they’re installed on — and your kids can delete them. Pi-hole blocks ads at the DNS level but requires technical setup and doesn’t handle scheduling or app-specific blocking. Steelgate sits between your router and your devices, which means it works on every screen in the house automatically — including phones, tablets, laptops, and smart TVs — with no app to install on each device."
+    },
+    {
+        question: "Will this slow down my internet or affect streaming and gaming?",
+        answer: "No. Steelgate processes traffic locally and is built to add minimal latency. In practice, pages often load faster because ads and tracking scripts are removed before they reach your devices. If something gets blocked that shouldn’t be, you can whitelist it instantly."
     },
     {
         question: "How does Steelgate protect my privacy? Do you see my traffic?",
-        answer: "Steelgate runs locally in your network, which means your traffic stays inside your environment. Filtering decisions are made on-device, not in the cloud. We don’t collect or store browsing data. The goal is to give you control and visibility without introducing another party into your data flow."
+        answer: "Steelgate runs entirely on your local network. Filtering decisions happen on-device, not in the cloud. We don’t collect or store your browsing data — your traffic stays inside your home."
     },
     {
         question: "Is it really plug-and-play, or do I need to configure my router?",
-        answer: "Steelgate is designed to be as close to plug-and-play as possible. In most setups, you just connect it to your network and it starts working automatically. Advanced users can fine-tune behavior, but the default experience is built for people who don’t want to deal with router configs or complex networking setups."
+        answer: "It’s designed to be as close to plug-and-play as possible. In most setups, you just connect it to your network and it starts working. Advanced users can fine-tune rules, but the default experience is built for people who don’t want to touch their router config."
     },
     {
-        question: "Can Steelgate be used to monitor employee activity at work?",
-        answer: "Yes, Steelgate gives business owners visibility into how the network is being used during work hours. You can see which types of websites and services are being accessed, identify distractions or risky behavior, and enforce basic usage policies — all without needing to constantly supervise employees. It’s designed to help maintain productivity and security, not to invade privacy, by focusing on network-level activity rather than personal data."
-    },
-    {
-        question: "What happens if something breaks or a site stops working?",
-        answer: "Because Steelgate actively filters traffic, there may be rare cases where something gets blocked incorrectly. When that happens, you can quickly whitelist a service or disable filtering for that specific case. The system is designed to give you control, not lock you out."
-    },
-    {
-        question: "Why would I pay for this instead of using free tools?",
-        answer: "Free tools typically solve a narrow part of the problem — like blocking known ad domains. Steelgate is built as a full network control and protection layer: real-time threat detection, better handling of modern apps, and a unified system across all devices. The subscription supports continuous updates, improved detection, and new features over time."
-    },
-    {
-        question: "Who is this actually for?",
-        answer: "Steelgate is for people who want more control over their network without becoming network engineers. That includes privacy-focused users, families who want safer internet access, and businesses that need better visibility and protection without deploying complex infrastructure."
+        question: "Who is Steelgate for?",
+        answer: "Steelgate is for households that want real control over screen time and digital habits — without fighting each device individually, setting up complicated software, or relying on restrictions that are easy to bypass. If you have kids, or you’re trying to break your own phone habits, this is built for you."
     }
 ];
 

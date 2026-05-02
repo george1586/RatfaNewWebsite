@@ -11,7 +11,7 @@ function Hero() {
                 </h1>
 
                 <h2 className="text-2xl sm:text-5xl mt-4 font-medium [font-family:var(--font-body)] text-[var(--text-landing)]">
-                    Easily control your network.
+                    The hardware your household plugs in to take its attention back.
                 </h2>
             </div>
 
@@ -33,7 +33,7 @@ function Hero() {
 
             <div className="text-center max-w-[800px] mb-10">
                 <p className="sm:text-xl mt-0 text-sm [font-family:var(--font-body)]">
-                    Steelgate is a portable easy to use tool for families and SME owners. It loves shielding from cyber threats, blocking ads, protecting your personal data and managing what your family or even your employees see on the network, allowing you to monitor their activity and block content such as pornography, social media, etc..
+                    Block distracting apps and sites across every device in your home — TikTok, Instagram, Reddit, news, adult content — on schedules you set. One device, every screen in the house.
                 </p>
 
                 <div className="mt-8 flex justify-center">

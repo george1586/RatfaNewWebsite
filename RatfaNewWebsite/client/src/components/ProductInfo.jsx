@@ -9,24 +9,23 @@ function ProductInfo() {
                 text-center
                 mb-16
                 lg:mb-20
-                [font-family:var(--font-alt)] 
+                [font-family:var(--font-alt)]
             ">
                 What is Steelgate?
             </h1>
+
 
             <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="w-full xl:pl-[20%] md:w-1/2 flex flex-col gap-12 text-base sm:text-xl [font-family:var(--font-alt)]">
 
                     <div className=''>
                         <h2 className="text-2xl sm:text-3xl font-bold lg:mb-8 mb-4 [font-family:var(--font-alt)]">
-                            Your cyber buddy
+                            Your household's attention layer
                         </h2>
 
                         <p className=" leading-relaxed">
-                            Steelgate is a compact and powerful network device designed
-                            to give you full control over all your digital devices.
-                            It interacts with your network in real time, protecting,
-                            filtering, and managing traffic seamlessly.
+                            Steelgate is a compact network device that sits between your router and your devices.
+                            It controls what every screen in your home can reach — and when.
                         </p>
                     </div>
 
@@ -39,10 +38,8 @@ function ProductInfo() {
 
                     <div>
                         <p className="leading-relaxed">
-                            The idea of Steelgate combines multiple security tools into one simple
-                            solution. From blocking ads and trackers to managing access
-                            and monitoring activity, it transforms your network into a
-                            safe and controlled environment, without complexity.
+                            It's not a parental control app your kids can uninstall. It's not a browser extension that only works on one device.
+                            It works at the network level — every phone, tablet, laptop, and smart TV in the house goes through it automatically.
                         </p>
                     </div>
 

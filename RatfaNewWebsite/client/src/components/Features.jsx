@@ -9,24 +9,12 @@ function Features() {
                 <div className="lg:sticky lg:top-24">
                     <div className="max-w-[500px] ml-auto">
                         <h1 className="text-4xl sm:text-5xl font-bold text-[var(--text-landing)]">
-                            Strengthen Your Digital Defense
+                            Give your household its attention back.
                         </h1>
 
                         <p className="mt-6 text-[var(--text-light)]">
-                            Stay ahead of cyber threats, ads, trackers and make the most out of your network without any technical knowledge
+                            One device that controls every screen in your home — without complicated setup or easy bypasses.
                         </p>
-
-                        <div className="mt-8 flex flex-wrap gap-4">
-                            <span className="px-4 py-2 border border-[var(--border-light)] rounded">
-                                500+ Breaches Stopped
-                            </span>
-                            <span className="px-4 py-2 border border-[var(--border-light)] rounded">
-                                1M+ Data Secured
-                            </span>
-                            <span className="px-4 py-2 border border-[var(--border-light)] rounded">
-                                3M+ Ads Blocked Stopped
-                            </span>
-                        </div>
                     </div>
                 </div>
 
@@ -46,16 +34,16 @@ function Features() {
                 mt-16 lg:mt-0
             ">
 
-                <Feature title="Real Time Protection" desc="A locally run AI processes websites to let you know if they are safe or not" />
-                <Feature title="Dopamine Detox" desc="Now you can disable reels and videos while keeping the messaging functionality of platforms" />
-                <Feature title="Ad And Tracker Blocker" desc="Permanent list of known ads and trackers is continuosly blocked before even loading on your screen" />
-                <Feature title="Improved internet speed" desc="Ads and trackers consist of 1/3 of the total traffic. Blocking them allows you to use more bandwith for the things that actually matter." />
-                <Feature title="Phishing Attack Defense" desc="Permanent list of known phishing websites and malware is continuosly blocked before even loading on your screen" />
-                <Feature title="Parental Control" desc="Control what your child/elders can see online, or if they can even browse online" />
-                <Feature title="Easy To Set Up" desc="Plug it up, make sure you connect the included ethernet cable into Steelgate and forget about it" />
-                <Feature title="Easy To Use And Manage" desc="Really intuitive local website will be enabled once the device boots up, also there is a build for mobile app" />
-                <Feature title="Real Data Protection" desc="With a own DNS, not even your ISP will be able to see what you are browsing for online" />
-                <Feature title="No Information Leaves Your Home" desc="We don't see your data and make sure it is private so no information leaves your home" />
+                <Feature title="App & Site Blocking" desc="Block TikTok, Instagram, Reddit, YouTube, or any site — on every device in the house, without touching each one individually." />
+                <Feature title="Custom Schedules" desc="Set different rules for weekdays, weekends, homework time, and bedtime. The schedule runs itself." />
+                <Feature title="Household-Wide Coverage" desc="Works on every device automatically — phones, tablets, laptops, smart TVs. No app to install on each device." />
+                <Feature title="Ad & Tracker Blocking" desc="Removes ads and tracking scripts before they load, across all devices and apps. Faster pages, less noise." />
+                <Feature title="Adult Content Filtering" desc="Block categories of content network-wide without configuring each device separately." />
+                <Feature title="Dopamine Detox Mode" desc="Disable short-form video feeds while keeping messaging and other functions of a platform intact." />
+                <Feature title="Real-Time Threat Blocking" desc="Known phishing domains, malware endpoints, and suspicious traffic are blocked before a device ever loads them." />
+                <Feature title="Privacy Protection" desc="Your traffic stays on your network. No data leaves your home and your ISP can't see what you're browsing." />
+                <Feature title="Easy To Set Up" desc="Connect it to your network. That's it. No router config, no IT knowledge needed." />
+                <Feature title="Easy To Manage" desc="A simple local dashboard lets you adjust rules, check activity, and whitelist anything that gets blocked incorrectly." />
 
             </div>
 

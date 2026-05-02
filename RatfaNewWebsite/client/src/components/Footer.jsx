@@ -12,7 +12,7 @@ function Footer() {
                             Steelgate
                         </h2>
                         <p className="mt-4 text-[var(--text-light)]">
-                            Strengthening your digital defense with modern cybersecurity tools and training.
+                            Giving every household control over its own attention.
                         </p>
                     </div>
 

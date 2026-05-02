@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { totalItems, setIsOpen: openCart } = useCart();
 
     return (
         <header className="fixed top-0 left-0 right-0 w-screen h-[64px] bg-[var(--bg-top)] backdrop-blur-[12px] z-[100] border-b border-[var(--border-light)]">
@@ -40,18 +38,6 @@ const Header = () => {
                 </nav>
 
                 <div className="flex items-center gap-4">
-
-                    <button
-                        onClick={() => openCart(true)}
-                        className="relative text-[var(--text-light)] hover:text-[var(--text-dark)]"
-                    >
-                        <ShoppingCart size={24} />
-                        {totalItems > 0 && (
-                            <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[var(--primary)] text-white text-[10px] font-bold flex items-center justify-center [font-family:var(--font-alt)]">
-                                {totalItems > 9 ? "9+" : totalItems}
-                            </span>
-                        )}
-                    </button>
 
                     <button
                         className="md:hidden text-[var(--text-light)]"

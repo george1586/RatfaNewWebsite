@@ -8,13 +8,13 @@ import { useState, useEffect, useRef } from "react";
 //media query pt tel la imagini height
 
 const features = [
-    { title: "Firewall", img: firewallImg },
-    { title: "Parental Control", img: parentalImg },
-    { title: "Safe search", img: parentalImg },
-    { title: "Ad Block" },
-    { title: "Intrusion Prevention" },
-    { title: "Dopamine Free" },
-    { title: "Bandwidth Usage"},
+    { title: "App & Site Blocking", img: firewallImg },
+    { title: "Custom Schedules", img: parentalImg },
+    { title: "Household-Wide Coverage", img: parentalImg },
+    { title: "Ad & Tracker Blocking" },
+    { title: "Adult Content Filtering" },
+    { title: "Privacy Protection" },
+    { title: "Firewall" },
 ];
 
 
