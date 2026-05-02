@@ -109,3 +109,27 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 24px;
 }
+
+/* ── Responsive section spacing ── */
+@media (max-width: 640px) {
+    :root {
+        --section-y: 72px;
+    }
+}
+
+/* ── Smooth image rendering ── */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ── Selection colour ── */
+::selection {
+    background: var(--ink);
+    color: #F8F7F5;
+}
+
+/* ── Scrollbar (Webkit) ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb { background: rgba(26,26,26,0.2); border-radius: 3px; }
