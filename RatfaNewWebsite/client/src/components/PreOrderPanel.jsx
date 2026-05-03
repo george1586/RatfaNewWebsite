@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { createPreorderSession } from "../lib/api";
+import { track } from "../lib/analytics";
 
 export default function PreOrderPanel() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const handlePreorder = async () => {
+        track('preorder_clicked', { location: 'product_page' });
         setLoading(true);
         setError(null);
         try {
             const { url } = await createPreorderSession();
+            track('checkout_started');
             window.location.href = url;
         } catch {
+            track('checkout_failed');
             setError("Could not start checkout. Please try again.");
             setLoading(false);
         }

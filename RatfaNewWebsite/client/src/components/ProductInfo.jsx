@@ -1,4 +1,4 @@
-import deviceImg from '../assets/images/productimage.png';
+import deviceImg from '../assets/images/newProductImage.png';
 
 export default function ProductInfo() {
     return (

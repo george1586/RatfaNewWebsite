@@ -1,4 +1,4 @@
-import heroImg from '../assets/images/newImgHero.png';
+import heroImg from '../assets/images/HeroImg.png';
 import Button from '../elements/Button';
 
 export default function Hero() {

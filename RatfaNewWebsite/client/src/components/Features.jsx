@@ -51,7 +51,7 @@ export default function Features() {
 
                 {/* Sticky left */}
                 <div className="w-full lg:w-[380px] shrink-0">
-                    <div className="lg:sticky lg:top-[calc(var(--header-h)+40px)]">
+                    <div className="lg:sticky lg:top-24">
                         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">
                             Features
                         </p>

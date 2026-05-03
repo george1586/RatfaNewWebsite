@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { track } from '../lib/analytics';
 
 const Button = () => {
     const navigate = useNavigate();
+    const handleClick = () => {
+        track('preorder_clicked', { location: 'landing_cta' });
+        navigate('/products');
+    };
     return (
         <StyledWrapper>
             <div className="btn-container">
                 <div className="btn-drawer transition-top">87 founding spots</div>
-                <div className="btn-drawer transition-bottom">€59/yr for life</div>
-                <button className="btn" onClick={() => navigate('/products')}>
-                    <span className="btn-text">PRE-ORDER — €10</span>
+                <div className="btn-drawer transition-bottom">€49/yr for life</div>
+                <button className="btn" onClick={handleClick}>
+                    <span className="btn-text">PRE-ORDER NOW</span>
                 </button>
                 {/* <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
                     <path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z" />
