@@ -15,7 +15,7 @@ export default function Header() {
                 </a>
 
                 <nav className="hidden md:flex items-center gap-10">
-                    {[['Products', '/products'], ['Our Story', '/story'], ['FAQ', '/faq']].map(([label, href]) => (
+                    {[['Products', '/products'], ['Our Story', '/story'], ['FAQ', '/faq'], ['Blog', '/blog']].map(([label, href]) => (
                         <a key={label} href={href}
                             className="text-[15px] font-medium text-[var(--ink-muted)] hover:text-[var(--ink)] transition-colors duration-150">
                             {label}
@@ -40,7 +40,7 @@ export default function Header() {
             {/* Mobile drawer */}
             <div className={`md:hidden absolute top-[var(--header-h)] left-0 right-0 bg-[var(--bg)] border-b border-[var(--border)] transition-all duration-200 origin-top ${isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-95 pointer-events-none'}`}>
                 <div className="flex flex-col px-6 py-6 gap-5">
-                    {[['Products', '/products'], ['Our Story', '/story'], ['FAQ', '/faq']].map(([label, href]) => (
+                    {[['Products', '/products'], ['Our Story', '/story'], ['FAQ', '/faq'], ['Blog', '/blog']].map(([label, href]) => (
                         <a key={label} href={href}
                             className="text-[17px] font-medium text-[var(--ink)] hover:text-[var(--ink-muted)] transition-colors"
                             onClick={() => setIsOpen(false)}>
