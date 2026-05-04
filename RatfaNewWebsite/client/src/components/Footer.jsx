@@ -1,9 +1,9 @@
 import { FaTiktok, FaYoutube, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const links = {
-    Product:  [['Features', '#'], ['Pre-Order', '/products'], ['FAQ', '#faq']],
-    Company:  [['About', '#'], ['Contact', '#']],
-    Legal:    [['Privacy', '#'], ['Terms', '#']],
+    Product:  [['Features', '/#features'], ['Pre-Order', '/products'], ['FAQ', '/faq']],
+    Company:  [['About', '/story'], ['Contact', 'mailto:hello@steelgate.io']],
+    Legal:    [['Privacy', '/privacy'], ['Terms', '/terms']],
 };
 
 export default function Footer() {

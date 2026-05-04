@@ -8,6 +8,8 @@ import StoryPage from "./pages/StoryPage";
 import FaqPage from "./pages/FaqPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import { track } from "./lib/analytics";
 
 function PageTracker() {
@@ -31,6 +33,8 @@ function App() {
                 <Route path="/faq" element={<FaqPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="/privacy" element={<PrivacyPage />} />
             </Routes>
         </Router>
     );

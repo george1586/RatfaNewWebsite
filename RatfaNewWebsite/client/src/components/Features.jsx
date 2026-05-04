@@ -46,7 +46,7 @@ function Feature({ title, desc }) {
 
 export default function Features() {
     return (
-        <section className="w-full px-6 py-[var(--section-y)] bg-[var(--bg)]">
+        <section id="features" className="w-full px-6 py-[var(--section-y)] bg-[var(--bg)]">
             <div className="max-w-[var(--content-w)] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
 
                 {/* Sticky left */}
