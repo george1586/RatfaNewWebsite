@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <rect width="280" height="280" fill="#F8F7F5"/>
+  <rect x="20" y="20" width="240" height="240" rx="20" fill="white" stroke="rgba(0,0,0,0.06)"/>
+
+  <text x="140" y="58" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="rgba(26,26,26,0.5)">PRIVACY</text>
+
+  <!-- House outline with shield inside -->
+  <g transform="translate(140 142)">
+    <!-- Shield -->
+    <path d="M 0 -50 L 38 -36 L 38 0 C 38 26 22 44 0 54 C -22 44 -38 26 -38 0 L -38 -36 Z"
+          fill="#1A1A1A"/>
+    <!-- Lock inside shield -->
+    <rect x="-12" y="-8" width="24" height="20" rx="3" fill="white"/>
+    <path d="M -7 -8 L -7 -16 C -7 -20 -3 -22 0 -22 C 3 -22 7 -20 7 -16 L 7 -8" stroke="white" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="2" r="2" fill="#1A1A1A"/>
+    <line x1="0" y1="2" x2="0" y2="7" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <text x="140" y="226" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#1A1A1A">Stays in your home</text>
+  <text x="140" y="246" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(26,26,26,0.52)">100% local · no cloud · no logs</text>
+</svg>

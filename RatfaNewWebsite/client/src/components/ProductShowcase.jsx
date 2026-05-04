@@ -3,36 +3,37 @@ import { Check, X, ChevronDown } from "lucide-react";
 import { track } from "../lib/analytics";
 import PreOrderPanel from "./PreOrderPanel";
 import WaitlistForm from "./WaitlistForm";
-import productImg  from "../assets/images/productimage.png";
+import productImg from "../assets/images/productimage.png";
 import steelgateImg from "../assets/images/steelgate.png";
-import heroImg     from "../assets/images/newImgHero.png";
-import ratfaImg    from "../assets/images/ratfa.png";
+import heroImg from "../assets/images/newImgHero.png";
+import ratfaImg from "../assets/images/ratfa.png";
+import orderProductImg from "../assets/images/productpage.png";
 
-const thumbnails = [productImg, steelgateImg, heroImg, ratfaImg];
+const thumbnails = [orderProductImg];
 
 const howItWorksSteps = [
-    { title: "Plug it into your router",    desc: "Connect Steelgate to your existing router with the included ethernet cable. No rewiring, no IT knowledge — takes under a minute." },
-    { title: "Download the app",            desc: "Get the Steelgate app on iOS or Android. Your device is detected automatically within seconds of plugging in." },
-    { title: "Set your rules",              desc: "Choose which apps and sites to block, for which devices, and on what schedule. TikTok off after 9pm, Reddit off during homework hours — you decide." },
-    { title: "Forget about it",             desc: "Your schedule runs automatically. You're in control without having to think about it every day." },
+    { title: "Plug it into your router", desc: "Connect Steelgate to your existing router with the included ethernet cable. No rewiring, no IT knowledge — takes under a minute." },
+    { title: "Download the app", desc: "Get the Steelgate app on iOS or Android. Your device is detected automatically within seconds of plugging in." },
+    { title: "Set your rules", desc: "Choose which apps and sites to block, for which devices, and on what schedule. TikTok off after 9pm, Reddit off during homework hours — you decide." },
+    { title: "Forget about it", desc: "Your schedule runs automatically. You're in control without having to think about it every day." },
 ];
 
 const appFeatures = [
-    { label: "Block & Unblock Devices",  desc: "Instantly cut or restore internet access for any device on your network from anywhere in the world." },
-    { label: "Customize Sites & Apps",   desc: "Build a blocklist tailored to your household. Block social media, adult content, gambling — or anything you choose." },
-    { label: "Schedule Blocking",        desc: "Set time-based rules so certain content is only available at certain hours. Perfect for kids' bedtimes or focus hours." },
-    { label: "View Network History",     desc: "See a full log of every domain visited across all devices, with timestamps and categories." },
-    { label: "Remote Access",            desc: "Manage your network from anywhere via the Steelgate app — no VPN or port forwarding required." },
-    { label: "Strict Mode",              desc: "Lock down the network completely with one tap. Great for study sessions or distraction-free time." },
+    { label: "Block & Unblock Devices", desc: "Instantly cut or restore internet access for any device on your network from anywhere in the world." },
+    { label: "Customize Sites & Apps", desc: "Build a blocklist tailored to your household. Block social media, adult content, gambling — or anything you choose." },
+    { label: "Schedule Blocking", desc: "Set time-based rules so certain content is only available at certain hours. Perfect for kids' bedtimes or focus hours." },
+    { label: "View Network History", desc: "See a full log of every domain visited across all devices, with timestamps and categories." },
+    { label: "Remote Access", desc: "Manage your network from anywhere via the Steelgate app — no VPN or port forwarding required." },
+    { label: "Strict Mode", desc: "Lock down the network completely with one tap. Great for study sessions or distraction-free time." },
 ];
 
 const comparisonRows = [
-    { label: "Works on every device automatically",       sg: true,  phone: false, dns: false },
-    { label: "Can't be bypassed or uninstalled by kids",  sg: true,  phone: false, dns: false },
-    { label: "Schedule-based blocking",                   sg: true,  phone: false, dns: false },
-    { label: "App & site-specific filtering",             sg: true,  phone: false, dns: false },
-    { label: "Ad & tracker blocking",                     sg: true,  phone: false, dns: true  },
-    { label: "No technical setup required",               sg: true,  phone: false, dns: true  },
+    { label: "Works on every device automatically", sg: true, phone: false, dns: false },
+    { label: "Can't be bypassed or uninstalled by kids", sg: true, phone: false, dns: false },
+    { label: "Schedule-based blocking", sg: true, phone: false, dns: false },
+    { label: "App & site-specific filtering", sg: true, phone: false, dns: false },
+    { label: "Ad & tracker blocking", sg: true, phone: false, dns: true },
+    { label: "No technical setup required", sg: true, phone: false, dns: true },
 ];
 
 function StepAccordion({ steps }) {
@@ -63,12 +64,12 @@ function StepAccordion({ steps }) {
 function Tick({ value }) {
     return value
         ? <Check size={16} className="mx-auto text-[var(--primary)]" strokeWidth={2.5} />
-        : <X     size={16} className="mx-auto text-[var(--border)] opacity-60" />;
+        : <X size={16} className="mx-auto text-[var(--border)] opacity-60" />;
 }
 
 export default function ProductShowcase() {
-    const [activeImg, setActiveImg]     = useState(0);
-    const [activeTab, setActiveTab]     = useState("blocked");
+    const [activeImg, setActiveImg] = useState(0);
+    const [activeTab, setActiveTab] = useState("blocked");
     const [openFeature, setOpenFeature] = useState(null);
 
     return (
@@ -115,47 +116,47 @@ export default function ProductShowcase() {
                         <div className="w-full aspect-[4/3] rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center overflow-hidden order-last lg:order-first p-6 sm:p-10">
                             <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                                 {/* Router body */}
-                                <rect x="58" y="132" width="150" height="90" rx="10" fill="#EFEEEB" stroke="rgba(0,0,0,0.08)" strokeWidth="1.5"/>
+                                <rect x="58" y="132" width="150" height="90" rx="10" fill="#EFEEEB" stroke="rgba(0,0,0,0.08)" strokeWidth="1.5" />
                                 {/* Antennas */}
-                                <rect x="85" y="108" width="5" height="26" rx="2.5" fill="#D5D4CF" transform="rotate(-7 87.5 121)"/>
-                                <rect x="130" y="103" width="5" height="31" rx="2.5" fill="#D5D4CF"/>
-                                <rect x="174" y="108" width="5" height="26" rx="2.5" fill="#D5D4CF" transform="rotate(7 176.5 121)"/>
+                                <rect x="85" y="108" width="5" height="26" rx="2.5" fill="#D5D4CF" transform="rotate(-7 87.5 121)" />
+                                <rect x="130" y="103" width="5" height="31" rx="2.5" fill="#D5D4CF" />
+                                <rect x="174" y="108" width="5" height="26" rx="2.5" fill="#D5D4CF" transform="rotate(7 176.5 121)" />
                                 {/* LEDs */}
-                                <circle cx="96" cy="183" r="4" fill="#2DB42D"/>
-                                <circle cx="116" cy="183" r="4" fill="rgba(26,26,26,0.1)"/>
-                                <circle cx="136" cy="183" r="4" fill="rgba(26,26,26,0.1)"/>
+                                <circle cx="96" cy="183" r="4" fill="#2DB42D" />
+                                <circle cx="116" cy="183" r="4" fill="rgba(26,26,26,0.1)" />
+                                <circle cx="136" cy="183" r="4" fill="rgba(26,26,26,0.1)" />
                                 <text x="133" y="207" fontSize="7.5" fill="rgba(26,26,26,0.25)" fontFamily="Inter, sans-serif" textAnchor="middle" letterSpacing="2">ROUTER</text>
                                 {/* Ethernet cable */}
-                                <rect x="206" y="173" width="7" height="10" rx="1.5" fill="rgba(26,26,26,0.15)"/>
-                                <line x1="213" y1="178" x2="254" y2="178" stroke="rgba(26,26,26,0.12)" strokeWidth="4" strokeLinecap="round"/>
-                                <rect x="254" y="173" width="7" height="10" rx="1.5" fill="rgba(26,26,26,0.15)"/>
+                                <rect x="206" y="173" width="7" height="10" rx="1.5" fill="rgba(26,26,26,0.15)" />
+                                <line x1="213" y1="178" x2="254" y2="178" stroke="rgba(26,26,26,0.12)" strokeWidth="4" strokeLinecap="round" />
+                                <rect x="254" y="173" width="7" height="10" rx="1.5" fill="rgba(26,26,26,0.15)" />
                                 {/* Steelgate device */}
-                                <rect x="261" y="152" width="122" height="68" rx="10" fill="#F8F7F5" stroke="rgba(0,0,0,0.1)" strokeWidth="1.5"/>
-                                <rect x="262" y="172" width="5" height="11" rx="1" fill="#DDDCD8"/>
-                                <rect x="262" y="186" width="5" height="11" rx="1" fill="#DDDCD8"/>
-                                <circle cx="292" cy="186" r="9" fill="#2DB42D" opacity="0.12"/>
-                                <circle cx="292" cy="186" r="4.5" fill="#2DB42D"/>
+                                <rect x="261" y="152" width="122" height="68" rx="10" fill="#F8F7F5" stroke="rgba(0,0,0,0.1)" strokeWidth="1.5" />
+                                <rect x="262" y="172" width="5" height="11" rx="1" fill="#DDDCD8" />
+                                <rect x="262" y="186" width="5" height="11" rx="1" fill="#DDDCD8" />
+                                <circle cx="292" cy="186" r="9" fill="#2DB42D" opacity="0.12" />
+                                <circle cx="292" cy="186" r="4.5" fill="#2DB42D" />
                                 <text x="338" y="191" fontSize="9" fill="rgba(26,26,26,0.3)" fontFamily="Inter, sans-serif" textAnchor="middle" letterSpacing="1" fontWeight="600">STEELGATE</text>
                                 {/* Phone – top right */}
-                                <rect x="404" y="88" width="38" height="64" rx="7" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5"/>
-                                <rect x="410" y="97" width="26" height="40" rx="2" fill="rgba(26,26,26,0.06)"/>
-                                <circle cx="423" cy="146" r="2.5" fill="rgba(26,26,26,0.1)"/>
+                                <rect x="404" y="88" width="38" height="64" rx="7" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5" />
+                                <rect x="410" y="97" width="26" height="40" rx="2" fill="rgba(26,26,26,0.06)" />
+                                <circle cx="423" cy="146" r="2.5" fill="rgba(26,26,26,0.1)" />
                                 {/* Laptop – bottom left */}
-                                <rect x="40" y="268" width="88" height="52" rx="5" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5"/>
-                                <rect x="47" y="276" width="74" height="37" rx="2" fill="rgba(26,26,26,0.06)"/>
-                                <rect x="28" y="320" width="112" height="5" rx="2.5" fill="#E0DFD9"/>
+                                <rect x="40" y="268" width="88" height="52" rx="5" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5" />
+                                <rect x="47" y="276" width="74" height="37" rx="2" fill="rgba(26,26,26,0.06)" />
+                                <rect x="28" y="320" width="112" height="5" rx="2.5" fill="#E0DFD9" />
                                 {/* Tablet – bottom centre */}
-                                <rect x="198" y="272" width="52" height="68" rx="7" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5"/>
-                                <rect x="205" y="280" width="38" height="50" rx="2" fill="rgba(26,26,26,0.06)"/>
+                                <rect x="198" y="272" width="52" height="68" rx="7" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5" />
+                                <rect x="205" y="280" width="38" height="50" rx="2" fill="rgba(26,26,26,0.06)" />
                                 {/* Smart TV – bottom right */}
-                                <rect x="310" y="274" width="94" height="58" rx="5" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5"/>
-                                <rect x="317" y="282" width="80" height="42" rx="2" fill="rgba(26,26,26,0.06)"/>
-                                <rect x="347" y="332" width="14" height="7" rx="2" fill="#E0DFD9"/>
+                                <rect x="310" y="274" width="94" height="58" rx="5" fill="#EFEEEB" stroke="rgba(0,0,0,0.07)" strokeWidth="1.5" />
+                                <rect x="317" y="282" width="80" height="42" rx="2" fill="rgba(26,26,26,0.06)" />
+                                <rect x="347" y="332" width="14" height="7" rx="2" fill="#E0DFD9" />
                                 {/* Dashed connection lines */}
-                                <path d="M 383 170 Q 415 170 415 152" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none"/>
-                                <path d="M 322 220 Q 357 248 357 274" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none"/>
-                                <path d="M 308 220 Q 280 248 224 272" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none"/>
-                                <path d="M 290 220 Q 240 246 136 268" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none"/>
+                                <path d="M 383 170 Q 415 170 415 152" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
+                                <path d="M 322 220 Q 357 248 357 274" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
+                                <path d="M 308 220 Q 280 248 224 272" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
+                                <path d="M 290 220 Q 240 246 136 268" stroke="rgba(26,26,26,0.07)" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
                             </svg>
                         </div>
                         <StepAccordion steps={howItWorksSteps} />
@@ -175,9 +176,9 @@ export default function ProductShowcase() {
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
                         {[
-                            { stat: "4.8h",     label: "Average daily screen time",    sub: "Per person in a household — adults included" },
-                            { stat: "67%",      label: "Kids bypass app limits",       sub: "Most software controls are easy to get around" },
-                            { stat: "1 device", label: "Controls your whole home",     sub: "Every phone, tablet, laptop, and smart TV" },
+                            { stat: "4.8h", label: "Average daily screen time", sub: "Per person in a household — adults included" },
+                            { stat: "67%", label: "Kids bypass app limits", sub: "Most software controls are easy to get around" },
+                            { stat: "1 device", label: "Controls your whole home", sub: "Every phone, tablet, laptop, and smart TV" },
                         ].map(({ stat, label, sub }) => (
                             <div key={label} className="bg-[var(--bg)] px-5 xs:px-8 py-8 xs:py-10 text-center">
                                 <p className="text-[clamp(1.75rem,8vw,3rem)] font-bold text-[var(--ink)] tracking-[-0.04em] leading-none mb-3">{stat}</p>
@@ -217,42 +218,42 @@ export default function ProductShowcase() {
                     <div className="w-full h-[260px] sm:h-[340px] rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center overflow-hidden mb-10">
                         <svg viewBox="0 0 240 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-[92%]">
                             {/* Phone frame */}
-                            <rect x="20" y="8" width="200" height="324" rx="24" fill="#1A1A1A"/>
-                            <rect x="24" y="12" width="192" height="316" rx="21" fill="#F8F7F5"/>
-                            <rect x="82" y="16" width="76" height="13" rx="6.5" fill="#1A1A1A"/>
+                            <rect x="20" y="8" width="200" height="324" rx="24" fill="#1A1A1A" />
+                            <rect x="24" y="12" width="192" height="316" rx="21" fill="#F8F7F5" />
+                            <rect x="82" y="16" width="76" height="13" rx="6.5" fill="#1A1A1A" />
                             {/* Header */}
                             <text x="120" y="50" fontSize="13" fontWeight="700" fill="#1A1A1A" fontFamily="Inter, sans-serif" textAnchor="middle">Steelgate</text>
                             {/* Tab bar */}
-                            <rect x="28" y="60" width="184" height="28" rx="10" fill="#EFEEEB"/>
+                            <rect x="28" y="60" width="184" height="28" rx="10" fill="#EFEEEB" />
                             {activeTab === "blocked"
-                                ? <rect x="31" y="63" width="85" height="22" rx="7" fill="#1A1A1A"/>
-                                : <rect x="126" y="63" width="83" height="22" rx="7" fill="#1A1A1A"/>
+                                ? <rect x="31" y="63" width="85" height="22" rx="7" fill="#1A1A1A" />
+                                : <rect x="126" y="63" width="83" height="22" rx="7" fill="#1A1A1A" />
                             }
                             <text x="73" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "blocked" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Blocked</text>
                             <text x="167" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "allowed" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Allowed</text>
                             {/* App list */}
                             {[
-                                { name: "TikTok",      cat: "Social Media" },
-                                { name: "Instagram",   cat: "Social Media" },
-                                { name: "YouTube",     cat: "Video" },
-                                { name: "Reddit",      cat: "Forums" },
+                                { name: "TikTok", cat: "Social Media" },
+                                { name: "Instagram", cat: "Social Media" },
+                                { name: "YouTube", cat: "Video" },
+                                { name: "Reddit", cat: "Forums" },
                                 { name: "Twitter / X", cat: "Social Media" },
                             ].map((app, i) => {
                                 const y = 104 + i * 40;
                                 const isOn = activeTab === "allowed";
                                 return (
                                     <g key={app.name}>
-                                        {i > 0 && <line x1="52" y1={y - 5} x2="216" y2={y - 5} stroke="rgba(0,0,0,0.06)" strokeWidth="1"/>}
-                                        <circle cx="48" cy={y + 11} r="10" fill="#EFEEEB"/>
+                                        {i > 0 && <line x1="52" y1={y - 5} x2="216" y2={y - 5} stroke="rgba(0,0,0,0.06)" strokeWidth="1" />}
+                                        <circle cx="48" cy={y + 11} r="10" fill="#EFEEEB" />
                                         <text x="68" y={y + 8} fontSize="10.5" fontWeight="500" fill="#1A1A1A" fontFamily="Inter, sans-serif">{app.name}</text>
                                         <text x="68" y={y + 22} fontSize="8.5" fill="rgba(26,26,26,0.4)" fontFamily="Inter, sans-serif">{app.cat}</text>
-                                        <rect x="183" y={y + 5} width="28" height="14" rx="7" fill={isOn ? "#2DB42D" : "rgba(26,26,26,0.12)"}/>
-                                        <circle cx={isOn ? 204 : 190} cy={y + 12} r="5.5" fill="white"/>
+                                        <rect x="183" y={y + 5} width="28" height="14" rx="7" fill={isOn ? "#2DB42D" : "rgba(26,26,26,0.12)"} />
+                                        <circle cx={isOn ? 204 : 190} cy={y + 12} r="5.5" fill="white" />
                                     </g>
                                 );
                             })}
                             {/* Home indicator */}
-                            <rect x="88" y="322" width="64" height="4" rx="2" fill="rgba(26,26,26,0.18)"/>
+                            <rect x="88" y="322" width="64" height="4" rx="2" fill="rgba(26,26,26,0.18)" />
                         </svg>
                     </div>
 

@@ -5,6 +5,7 @@ function ProductPage()
     return(
         <>
         <ProductShowcase></ProductShowcase>
+        <Footer></Footer>
         </>
     )
 }

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <rect width="280" height="280" fill="#F8F7F5"/>
+  <rect x="20" y="20" width="240" height="240" rx="20" fill="white" stroke="rgba(0,0,0,0.06)"/>
+
+  <text x="36" y="50" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="rgba(26,26,26,0.5)">DISTRACTIONS</text>
+  <text x="36" y="76" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="700" fill="#1A1A1A">3 apps blocked</text>
+
+  <!-- TikTok -->
+  <rect x="36" y="92" width="208" height="50" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="103" width="28" height="28" rx="7" fill="#1A1A1A"/>
+  <text x="62" y="123" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="900" fill="white">T</text>
+  <text x="86" y="113" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#1A1A1A">TikTok</text>
+  <text x="86" y="128" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked · all day</text>
+  <rect x="200" y="110" width="32" height="18" rx="9" fill="#1A1A1A"/>
+  <circle cx="223" cy="119" r="6" fill="white"/>
+
+  <!-- Instagram -->
+  <rect x="36" y="150" width="208" height="50" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="161" width="28" height="28" rx="7" fill="#E1306C"/>
+  <rect x="55" y="168" width="14" height="14" rx="3.5" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="62" cy="175" r="3" fill="none" stroke="white" stroke-width="1.6"/>
+  <text x="86" y="171" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#1A1A1A">Instagram</text>
+  <text x="86" y="186" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked · 9pm – 7am</text>
+  <rect x="200" y="168" width="32" height="18" rx="9" fill="#1A1A1A"/>
+  <circle cx="223" cy="177" r="6" fill="white"/>
+
+  <!-- Reddit -->
+  <rect x="36" y="208" width="208" height="50" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="219" width="28" height="28" rx="7" fill="#FF4500"/>
+  <text x="62" y="240" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="900" fill="white">r</text>
+  <text x="86" y="229" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#1A1A1A">Reddit</text>
+  <text x="86" y="244" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked · weekdays</text>
+  <rect x="200" y="226" width="32" height="18" rx="9" fill="#1A1A1A"/>
+  <circle cx="223" cy="235" r="6" fill="white"/>
+</svg>

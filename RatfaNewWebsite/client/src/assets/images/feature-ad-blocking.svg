@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <rect width="280" height="280" fill="#F8F7F5"/>
+  <rect x="20" y="20" width="240" height="240" rx="20" fill="white" stroke="rgba(0,0,0,0.06)"/>
+
+  <text x="36" y="50" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="rgba(26,26,26,0.5)">BLOCKED THIS WEEK</text>
+
+  <!-- Big number -->
+  <text x="36" y="116" font-family="Monomaniac One,Inter,system-ui,sans-serif" font-size="56" font-weight="800" fill="#1A1A1A" letter-spacing="-2">12,847</text>
+  <text x="36" y="138" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(26,26,26,0.52)">trackers · ads · beacons</text>
+
+  <!-- Bar chart -->
+  <g>
+    <rect x="36" y="160" width="208" height="64" rx="12" fill="#F8F7F5"/>
+    <text x="48" y="178" font-family="Inter,system-ui,sans-serif" font-size="9" font-weight="600" fill="rgba(26,26,26,0.6)">DAILY</text>
+
+    <g fill="#1A1A1A">
+      <rect x="50" y="200" width="14" height="16" rx="2"/>
+      <rect x="74" y="194" width="14" height="22" rx="2"/>
+      <rect x="98" y="190" width="14" height="26" rx="2"/>
+      <rect x="122" y="184" width="14" height="32" rx="2"/>
+      <rect x="146" y="196" width="14" height="20" rx="2"/>
+      <rect x="170" y="186" width="14" height="30" rx="2"/>
+      <rect x="194" y="180" width="14" height="36" rx="2"/>
+      <rect x="218" y="178" width="14" height="38" rx="2"/>
+    </g>
+  </g>
+
+  <!-- Bottom row - top blocked -->
+  <text x="36" y="248" font-family="Inter,system-ui,sans-serif" font-size="9" fill="rgba(26,26,26,0.52)">
+    <tspan font-weight="600" fill="#1A1A1A">google-analytics</tspan>
+    <tspan dx="6">·</tspan>
+    <tspan dx="6" font-weight="600" fill="#1A1A1A">doubleclick</tspan>
+    <tspan dx="6">·</tspan>
+    <tspan dx="6" font-weight="600" fill="#1A1A1A">facebook</tspan>
+  </text>
+</svg>

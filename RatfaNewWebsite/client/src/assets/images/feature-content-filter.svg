@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <rect width="280" height="280" fill="#F8F7F5"/>
+  <rect x="20" y="20" width="240" height="240" rx="20" fill="white" stroke="rgba(0,0,0,0.06)"/>
+
+  <text x="36" y="50" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="rgba(26,26,26,0.5)">CONTENT CATEGORIES</text>
+
+  <!-- Adult — blocked -->
+  <rect x="36" y="68" width="208" height="42" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="80" width="18" height="18" rx="9" fill="#1A1A1A"/>
+  <path d="M53 89 L57 93 L61 86" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="76" y="86" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A1A1A">Adult content</text>
+  <text x="76" y="101" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked household-wide</text>
+
+  <!-- Gambling — blocked -->
+  <rect x="36" y="118" width="208" height="42" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="130" width="18" height="18" rx="9" fill="#1A1A1A"/>
+  <path d="M53 139 L57 143 L61 136" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="76" y="136" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A1A1A">Gambling</text>
+  <text x="76" y="151" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked household-wide</text>
+
+  <!-- Violent — blocked -->
+  <rect x="36" y="168" width="208" height="42" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="180" width="18" height="18" rx="9" fill="#1A1A1A"/>
+  <path d="M53 189 L57 193 L61 186" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="76" y="186" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A1A1A">Violent content</text>
+  <text x="76" y="201" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Blocked household-wide</text>
+
+  <!-- News — allowed -->
+  <rect x="36" y="218" width="208" height="42" rx="12" fill="#F8F7F5"/>
+  <rect x="48" y="230" width="18" height="18" rx="9" fill="none" stroke="rgba(26,26,26,0.25)" stroke-width="1.5"/>
+  <text x="76" y="236" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#1A1A1A">News</text>
+  <text x="76" y="251" font-family="Inter,system-ui,sans-serif" font-size="10" fill="rgba(26,26,26,0.52)">Allowed</text>
+</svg>

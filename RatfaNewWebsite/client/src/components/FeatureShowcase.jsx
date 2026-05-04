@@ -1,15 +1,20 @@
-import firewallImg from "../assets/images/aishit.png";
-import parentalImg from "../assets/images/aishit.png";
+import appBlockingImg from "../assets/images/feature-app-blocking.svg";
+import schedulesImg from "../assets/images/feature-schedules.svg";
+import coverageImg from "../assets/images/feature-coverage.svg";
+import adBlockingImg from "../assets/images/feature-ad-blocking.svg";
+import contentFilterImg from "../assets/images/feature-content-filter.svg";
+import privacyImg from "../assets/images/feature-privacy.svg";
+import firewallImg from "../assets/images/feature-firewall.svg";
 import { useState, useEffect, useRef } from "react";
 
 const features = [
-    { title: "App & Site Blocking",      img: firewallImg },
-    { title: "Custom Schedules",         img: parentalImg },
-    { title: "Household-Wide Coverage",  img: parentalImg },
-    { title: "Ad & Tracker Blocking",    img: firewallImg },
-    { title: "Adult Content Filtering",  img: parentalImg },
-    { title: "Privacy Protection",       img: firewallImg },
-    { title: "Firewall",                 img: parentalImg },
+    { title: "App & Site Blocking",      img: appBlockingImg },
+    { title: "Custom Schedules",         img: schedulesImg },
+    { title: "Household-Wide Coverage",  img: coverageImg },
+    { title: "Ad & Tracker Blocking",    img: adBlockingImg },
+    { title: "Adult Content Filtering",  img: contentFilterImg },
+    { title: "Privacy Protection",       img: privacyImg },
+    { title: "Firewall",                 img: firewallImg },
 ];
 
 export default function FeaturesShowcase() {
@@ -57,11 +62,11 @@ export default function FeaturesShowcase() {
 
                     {/* Image */}
                     <div className="w-full md:w-1/2 flex justify-center">
-                        <div className="w-full max-w-[340px] aspect-square rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center overflow-hidden">
+                        <div className="w-full max-w-[360px] aspect-square rounded-2xl bg-[var(--bg)] border border-[var(--border)] overflow-hidden">
                             <img
                                 src={features[displayed].img}
                                 alt={features[displayed].title}
-                                className={`w-4/5 object-contain transition-all duration-200 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
+                                className={`w-full h-full object-cover transition-all duration-200 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
                             />
                         </div>
                     </div>

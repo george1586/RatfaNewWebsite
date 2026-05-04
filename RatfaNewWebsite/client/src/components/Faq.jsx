@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const faqData = [
-    { q: "When will Steelgate ship?", a: "We're targeting Q3 2027. Pre-ordering now locks in your founding price and reserves your spot. We'll keep you updated as production progresses — you'll hear from us before anyone else." },
+export const faqData = [
+    { q: "When will Steelgate ship?", a: "We're targeting Q1 2027. Pre-ordering now locks in your founding price and reserves your spot. We'll keep you updated as production progresses — you'll hear from us before anyone else." },
     { q: "What if I change my mind? Can I cancel my pre-order?", a: "Yes. Your €10 deposit is fully refundable before we ship. Just email us and we'll process the refund within a few days. No questions asked." },
     { q: "Why should I pre-order instead of waiting for the full launch?", a: "Founding customers get Steelgate at €49/year — for life. After launch, the regular price will be €89/year. Pre-ordering is the only way to lock in the founding rate permanently." },
     { q: "Why is the founding price lower? What's the catch?", a: "There's no catch. We're offering a lower lifetime price to the people who believe in Steelgate early — before we've shipped a single unit. That trust helps us validate demand and fund production. In return, you get a permanently lower rate and priority shipping." },

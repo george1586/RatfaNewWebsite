@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none">
+  <rect width="280" height="280" fill="#F8F7F5"/>
+  <rect x="20" y="20" width="240" height="240" rx="20" fill="white" stroke="rgba(0,0,0,0.06)"/>
+
+  <text x="140" y="50" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="rgba(26,26,26,0.5)">CONNECTED</text>
+  <text x="140" y="74" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="700" fill="#1A1A1A">8 devices</text>
+
+  <!-- Connecting lines -->
+  <g stroke="rgba(26,26,26,0.12)" stroke-width="1.2" stroke-dasharray="2 3">
+    <line x1="140" y1="160" x2="68" y2="120"/>
+    <line x1="140" y1="160" x2="212" y2="120"/>
+    <line x1="140" y1="160" x2="68" y2="200"/>
+    <line x1="140" y1="160" x2="212" y2="200"/>
+    <line x1="140" y1="160" x2="140" y2="100"/>
+    <line x1="140" y1="160" x2="140" y2="220"/>
+  </g>
+
+  <!-- Device: phone (top) -->
+  <rect x="124" y="86" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <rect x="131" y="92" width="18" height="20" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="140" cy="108" r="1" fill="#1A1A1A"/>
+
+  <!-- Laptop (top-left) -->
+  <rect x="52" y="106" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <rect x="58" y="115" width="20" height="13" rx="1.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="56" y1="130" x2="80" y2="130" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- TV (top-right) -->
+  <rect x="196" y="106" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <rect x="202" y="113" width="20" height="14" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="207" y1="131" x2="217" y2="131" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Tablet (bottom-left) -->
+  <rect x="52" y="186" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <rect x="60" y="192" width="16" height="20" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+
+  <!-- Game console (bottom-right) -->
+  <rect x="196" y="186" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <circle cx="206" cy="202" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="218" cy="202" r="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="206" y1="208" x2="218" y2="208" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Watch (bottom) -->
+  <rect x="124" y="206" width="32" height="32" rx="9" fill="white" stroke="rgba(0,0,0,0.1)"/>
+  <rect x="132" y="214" width="16" height="16" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+
+  <!-- Center hub (Steelgate) -->
+  <circle cx="140" cy="160" r="22" fill="#1A1A1A"/>
+  <text x="140" y="164" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="700" fill="white">SG</text>
+</svg>

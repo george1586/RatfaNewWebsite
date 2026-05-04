@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import LandingPage from "./pages/LandingPage";
 import ProductPage from "./pages/ProductPage";
 import PreOrderSuccess from "./pages/PreOrderSuccess";
+import StoryPage from "./pages/StoryPage";
+import FaqPage from "./pages/FaqPage";
 import { track } from "./lib/analytics";
 
 function PageTracker() {
@@ -23,6 +25,8 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/products" element={<ProductPage />} />
                 <Route path="/preorder/success" element={<PreOrderSuccess />} />
+                <Route path="/story" element={<StoryPage />} />
+                <Route path="/faq" element={<FaqPage />} />
             </Routes>
         </Router>
     );
