@@ -49,7 +49,7 @@ export default function TermsPage() {
                     <Section title="2. Pre-Order Terms">
                         <p>Steelgate is currently available to pre-order for a one-time payment of €65. Placing a pre-order does not constitute a final purchase contract. It reserves your place in the production queue and locks in your founding price.</p>
                         <p><strong>Founding price lock.</strong> Customers who pre-order before general availability lock in a subscription rate of €49/year for life. This rate is guaranteed as long as your subscription remains active and is not transferable. After general availability, the standard rate will be €89/year.</p>
-                        <p><strong>Target shipping.</strong> We are targeting Q1 2027 for first shipments. This date is an estimate, not a guarantee. We will notify all pre-order customers of any material changes to the timeline.</p>
+                        <p><strong>Target shipping.</strong> We are targeting Q4 2026 for first shipments. This date is an estimate, not a guarantee. We will notify all pre-order customers of any material changes to the timeline.</p>
                         <p><strong>Minimum pre-orders.</strong> If we do not reach the minimum number of pre-orders required to proceed to production, all payments will be refunded in full. We will notify you by email if this occurs.</p>
                     </Section>
 

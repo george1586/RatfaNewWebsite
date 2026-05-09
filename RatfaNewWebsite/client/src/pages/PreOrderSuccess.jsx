@@ -29,7 +29,7 @@ export default function PreOrderSuccess() {
                         {[
                             "Your €65 pre-order payment is confirmed",
                             "Your founding price is locked in for life",
-                            "You'll hear from us with updates as we build toward Q3 2027",
+                            "You'll hear from us with updates as we build toward Q4 2026",
                             "Founding customers ship first",
                         ].map(item => (
                             <li key={item} className="flex items-start gap-3 text-[15px] text-[var(--ink)]">

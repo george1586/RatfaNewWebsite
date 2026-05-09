@@ -34,7 +34,7 @@ function LandingPage() {
     return (
         <>
             <SectionView name="hero"><Hero /></SectionView>
-            <SectionView name="video"><Video /></SectionView>
+            {/* <SectionView name="video"><Video /></SectionView> */}
             <SectionView name="product_info"><ProductInfo /></SectionView>
             <SectionView name="feature_showcase"><FeaturesShowcase /></SectionView>
             <SectionView name="features"><Features /></SectionView>

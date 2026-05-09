@@ -12,7 +12,7 @@ export default function CheckoutSuccess() {
     }, []);
 
     return (
-        <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center gap-5">
+        <section className="min-h-screen flex flex-col items-center justify-center px-12 text-center gap-5">
             <CheckCircle size={64} className="text-[var(--primary)]" />
             <h1 className="text-4xl sm:text-5xl font-black text-[var(--text-dark)] [font-family:var(--font-alt)]">
                 Order Confirmed!

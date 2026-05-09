@@ -59,23 +59,65 @@ export default async function handler(req, res) {
 
         if (email && process.env.RESEND_API_KEY) {
             await resend.emails.send({
-                from: "Steelgate <noreply@steelgate.io>",
+                from: "Steelgate <hello@steelgate.io>",
                 to: email,
                 subject: "You're in — Steelgate founding spot confirmed",
                 html: `
-                    <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:40px 20px;">
-                        <h1 style="font-size:28px;font-weight:800;margin-bottom:8px;">You're in.</h1>
-                        <p style="color:#444;margin-bottom:24px;">Your Steelgate founding spot is confirmed. Here's what to expect:</p>
-                        <ul style="color:#222;padding-left:20px;line-height:2;">
-                            <li>Your €65 pre-order payment is confirmed</li>
-                            <li>Your founding price is locked in for life</li>
-                            <li>We'll send updates as we build toward Q3 2027</li>
-                            <li>Founding customers ship first</li>
-                        </ul>
-                        <p style="margin-top:24px;color:#666;font-size:14px;">
-                            Your payment is fully refundable before we ship — just reply to this email.
+                    <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;padding:48px 24px;color:#1a1a1a;">
+
+                        <!-- Header -->
+                        <p style="font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin:0 0 16px;">Steelgate — Founding Pre-Order</p>
+                        <h1 style="font-size:32px;font-weight:800;margin:0 0 12px;line-height:1.1;">You're in.</h1>
+                        <p style="font-size:16px;color:#444;margin:0 0 32px;line-height:1.6;">
+                            Welcome to the founding group. Your €65 payment is confirmed and your spot is locked in.
                         </p>
-                        <p style="margin-top:32px;font-size:14px;color:#aaa;">— The Steelgate Team</p>
+
+                        <hr style="border:none;border-top:1px solid #e5e5e5;margin:0 0 32px;" />
+
+                        <!-- What's confirmed -->
+                        <p style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin:0 0 14px;">What's confirmed</p>
+                        <table style="width:100%;border-collapse:collapse;margin-bottom:32px;">
+                            <tr>
+                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#444;">Payment</td>
+                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;font-weight:600;text-align:right;">€65 — one-time</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#444;">Founding price</td>
+                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;font-weight:600;text-align:right;">Locked in for life</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 0;font-size:15px;color:#444;">Target ship date</td>
+                                <td style="padding:10px 0;font-size:15px;font-weight:600;text-align:right;">Q4 2026 — you ship first</td>
+                            </tr>
+                        </table>
+
+                        <hr style="border:none;border-top:1px solid #e5e5e5;margin:0 0 32px;" />
+
+                        <!-- What to expect -->
+                        <p style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#888;margin:0 0 14px;">What happens next</p>
+                        <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 12px;">
+                            Over the coming months we'll send you behind-the-scenes updates as we move through production — hardware milestones, app previews, and a full how-to video before the device ships so you're ready to set it up from day one.
+                        </p>
+                        <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 32px;">
+                            All of that comes to this email address. To make sure you don't miss anything, please add <strong>hello@steelgate.io</strong> to your contacts now — it takes 5 seconds and ensures our updates don't end up in spam.
+                        </p>
+
+                        <!-- Spam tip callout -->
+                        <div style="background:#f7f7f5;border-left:3px solid #1a1a1a;padding:16px 20px;border-radius:4px;margin-bottom:32px;">
+                            <p style="font-size:14px;font-weight:700;margin:0 0 6px;">Keep our emails out of spam</p>
+                            <p style="font-size:14px;color:#555;margin:0;line-height:1.6;">
+                                Add <strong>hello@steelgate.io</strong> to your contacts or mark this email as "Not spam" if it landed there. Gmail and Outlook users: drag this email into your Primary inbox.
+                            </p>
+                        </div>
+
+                        <hr style="border:none;border-top:1px solid #e5e5e5;margin:0 0 32px;" />
+
+                        <!-- Refund note -->
+                        <p style="font-size:13px;color:#888;line-height:1.6;margin:0 0 32px;">
+                            Changed your mind? Your €65 is fully refundable at any point before we ship. Just reply to this email and we'll sort it within a few days — no questions asked.
+                        </p>
+
+                        <p style="font-size:14px;color:#aaa;margin:0;">— The Steelgate Team</p>
                     </div>
                 `,
             }).catch(() => {});
