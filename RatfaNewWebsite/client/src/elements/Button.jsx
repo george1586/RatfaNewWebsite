@@ -12,8 +12,8 @@ const Button = () => {
     return (
         <StyledWrapper>
             <div className="btn-container">
-                <div className="btn-drawer transition-top">87 founding spots</div>
-                <div className="btn-drawer transition-bottom">€49/yr for life</div>
+                <div className="btn-drawer transition-top">87 founding spots left</div>
+                <div className="btn-drawer transition-bottom">out of 100 spots</div>
                 <button className="btn" onClick={handleClick}>
                     <span className="btn-text">PRE-ORDER NOW</span>
                 </button>

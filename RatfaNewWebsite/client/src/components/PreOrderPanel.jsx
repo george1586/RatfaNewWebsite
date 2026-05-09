@@ -11,7 +11,7 @@ export default function PreOrderPanel() {
         fetch("/api/preorder-count")
             .then(r => r.json())
             .then(data => setSpots(data))
-            .catch(() => {});
+            .catch(() => { });
     }, []);
 
     const handlePreorder = async () => {
@@ -53,6 +53,7 @@ export default function PreOrderPanel() {
                 <p className="text-[13px] text-[var(--ink-muted)]">
                     VAT included · Fully refundable before ship date
                 </p>
+                <p className="text-[13px] text-[var(--ink-muted)]">All future features and updates included</p>
             </div>
 
             {/* Founding spot bar */}
@@ -81,7 +82,7 @@ export default function PreOrderPanel() {
                 disabled={loading}
                 className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-                {loading ? "Redirecting…" : "Pre-Order — €65"}
+                {loading ? "Redirecting…" : "Pre-Order NOW"}
             </button>
 
             <hr className="border-[var(--border)]" />

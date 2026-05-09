@@ -190,7 +190,7 @@ export default function ProductShowcase() {
                     <div className="mt-10">
                         <a href="#" onClick={e => { e.preventDefault(); track('preorder_clicked', { location: 'stats_section' }); document.querySelector('[data-preorder]')?.scrollIntoView({ behavior: 'smooth' }); }}
                             className="inline-flex items-center px-7 py-3.5 rounded-full bg-[var(--ink)] text-white text-[15px] font-semibold hover:bg-black transition-colors duration-150">
-                            Pre-Order — €65
+                            Pre-Order NOW
                         </a>
                     </div>
                 </div>
