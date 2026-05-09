@@ -27,8 +27,8 @@ export default function PreOrderSuccess() {
                     <p className="text-[13px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">What happens next</p>
                     <ul className="space-y-2.5">
                         {[
-                            "Your €10 deposit is confirmed",
-                            "Your annual rate is locked at €49/year for life",
+                            "Your €65 pre-order payment is confirmed",
+                            "Your founding price is locked in for life",
                             "You'll hear from us with updates as we build toward Q3 2027",
                             "Founding customers ship first",
                         ].map(item => (
@@ -41,7 +41,7 @@ export default function PreOrderSuccess() {
                 </div>
 
                 <p className="text-[13px] text-[var(--ink-muted)]">
-                    Deposit fully refundable before we ship — no questions asked.
+                    Fully refundable before we ship — no questions asked.
                 </p>
 
                 <Link to="/"

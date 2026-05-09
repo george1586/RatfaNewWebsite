@@ -67,13 +67,13 @@ export default async function handler(req, res) {
                         <h1 style="font-size:28px;font-weight:800;margin-bottom:8px;">You're in.</h1>
                         <p style="color:#444;margin-bottom:24px;">Your Steelgate founding spot is confirmed. Here's what to expect:</p>
                         <ul style="color:#222;padding-left:20px;line-height:2;">
-                            <li>Your €10 deposit is confirmed</li>
-                            <li>Your annual rate is locked at €49/year for life</li>
+                            <li>Your €65 pre-order payment is confirmed</li>
+                            <li>Your founding price is locked in for life</li>
                             <li>We'll send updates as we build toward Q3 2027</li>
                             <li>Founding customers ship first</li>
                         </ul>
                         <p style="margin-top:24px;color:#666;font-size:14px;">
-                            Your deposit is fully refundable before we ship — just reply to this email.
+                            Your payment is fully refundable before we ship — just reply to this email.
                         </p>
                         <p style="margin-top:32px;font-size:14px;color:#aaa;">— The Steelgate Team</p>
                     </div>

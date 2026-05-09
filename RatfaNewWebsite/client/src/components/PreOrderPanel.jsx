@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPreorderSession } from "../lib/api";
 import { track } from "../lib/analytics";
 
 export default function PreOrderPanel() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [spots, setSpots] = useState({ claimed: 13, total: 100 });
+
+    useEffect(() => {
+        fetch("/api/preorder-count")
+            .then(r => r.json())
+            .then(data => setSpots(data))
+            .catch(() => {});
+    }, []);
 
     const handlePreorder = async () => {
         track('preorder_clicked', { location: 'product_page' });
@@ -39,14 +47,11 @@ export default function PreOrderPanel() {
             {/* Pricing */}
             <div className="space-y-1.5">
                 <div className="flex items-baseline gap-2.5">
-                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€10</span>
-                    <span className="text-[15px] text-[var(--ink-muted)]">deposit now</span>
+                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€65</span>
+                    <span className="text-[15px] text-[var(--ink-muted)]">one-time payment vs 69€/year</span>
                 </div>
-                <p className="text-[15px] text-[var(--ink)]">
-                    then <strong>€49/year</strong> for life — vs €89/year regular price
-                </p>
                 <p className="text-[13px] text-[var(--ink-muted)]">
-                    VAT included · Fully refundable before ship date
+                    VAT included
                 </p>
             </div>
 
@@ -54,12 +59,19 @@ export default function PreOrderPanel() {
             <div className="space-y-2.5">
                 <div className="flex justify-between items-center">
                     <span className="text-[13px] font-medium text-[var(--ink)]">Founding spots</span>
-                    <span className="text-[13px] font-semibold text-[var(--ink)]">87 / 100</span>
+                    <span className="text-[13px] font-semibold text-[var(--ink)]">
+                        {spots.claimed} / {spots.total}
+                    </span>
                 </div>
                 <div className="w-full h-1.5 bg-[var(--bg-alt)] rounded-full overflow-hidden">
-                    <div className="h-full bg-[var(--primary)] rounded-full" style={{ width: '13%' }} />
+                    <div
+                        className="h-full bg-[var(--primary)] rounded-full transition-all duration-700 ease-out"
+                        style={{ width: `${(spots.claimed / spots.total) * 100}%` }}
+                    />
                 </div>
-                <p className="text-[12px] text-[var(--ink-muted)]">13 spots claimed — founding pricing ends at 100</p>
+                <p className="text-[12px] text-[var(--ink-muted)]">
+                    {spots.claimed} claimed · {spots.total - spots.claimed} remaining — founding pricing ends at {spots.total}
+                </p>
             </div>
 
             {/* CTA */}
@@ -69,14 +81,14 @@ export default function PreOrderPanel() {
                 disabled={loading}
                 className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-                {loading ? "Redirecting…" : "Pre-Order — €10 Deposit"}
+                {loading ? "Redirecting…" : "Pre-Order — €65"}
             </button>
 
             <hr className="border-[var(--border)]" />
 
             {/* Trust row */}
             <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-3 text-center">
-                {["Deposit refundable", "Founding price for life", "Ships Q1 2027"].map(t => (
+                {["One-time payment", "Founding price for life", "Ships Q3 2027"].map(t => (
                     <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
                 ))}
             </div>
@@ -87,7 +99,7 @@ export default function PreOrderPanel() {
             <div className="space-y-5">
                 {[
                     { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €49/year — permanently. After launch, regular pricing will be €89/year. Your €10 deposit reserves your founding spot and is fully refundable if you change your mind before we ship." },
+                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €65 — permanently lower than the launch price. Pre-ordering now reserves your founding spot and ensures you ship first." },
                     { title: "Timeline", body: "We're targeting Q3 2027 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
                 ].map(({ title, body }) => (
                     <div key={title}>
