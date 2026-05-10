@@ -69,7 +69,7 @@ export default async function handler(req, res) {
                         <p style="font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin:0 0 16px;">Steelgate — Founding Pre-Order</p>
                         <h1 style="font-size:32px;font-weight:800;margin:0 0 12px;line-height:1.1;">You're in.</h1>
                         <p style="font-size:16px;color:#444;margin:0 0 32px;line-height:1.6;">
-                            Welcome to the founding group. Your €65 payment is confirmed and your spot is locked in.
+                            Welcome to the founding group. Your €45 payment is confirmed and your spot is locked in.
                         </p>
 
                         <hr style="border:none;border-top:1px solid #e5e5e5;margin:0 0 32px;" />
@@ -79,7 +79,7 @@ export default async function handler(req, res) {
                         <table style="width:100%;border-collapse:collapse;margin-bottom:32px;">
                             <tr>
                                 <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#444;">Payment</td>
-                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;font-weight:600;text-align:right;">€65 — one-time</td>
+                                <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;font-weight:600;text-align:right;">€45 — one-time</td>
                             </tr>
                             <tr>
                                 <td style="padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;color:#444;">Founding price</td>
@@ -114,7 +114,7 @@ export default async function handler(req, res) {
 
                         <!-- Refund note -->
                         <p style="font-size:13px;color:#888;line-height:1.6;margin:0 0 32px;">
-                            Changed your mind? Your €65 is fully refundable at any point before we ship. Just reply to this email and we'll sort it within a few days — no questions asked.
+                            Changed your mind? Your €45 is fully refundable at any point before we ship. Just reply to this email and we'll sort it within a few days — no questions asked.
                         </p>
 
                         <p style="font-size:14px;color:#aaa;margin:0;">— The Steelgate Team</p>

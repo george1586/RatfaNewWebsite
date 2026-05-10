@@ -47,7 +47,7 @@ export default function PreOrderPanel() {
             {/* Pricing */}
             <div className="space-y-1.5">
                 <div className="flex items-baseline gap-2.5">
-                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€65</span>
+                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€45</span>
                     <span className="text-[15px] text-[var(--ink-muted)]">one-time payment vs 69€/year</span>
                 </div>
                 <p className="text-[13px] text-[var(--ink-muted)]">
@@ -100,7 +100,7 @@ export default function PreOrderPanel() {
             <div className="space-y-5">
                 {[
                     { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €65 — permanently lower than the launch price. Pre-ordering now reserves your founding spot and ensures you ship first." },
+                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €45 — permanently lower than the launch price. Pre-ordering now reserves your founding spot and ensures you ship first." },
                     { title: "Timeline", body: "We're targeting Q4 2026 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
                 ].map(({ title, body }) => (
                     <div key={title}>

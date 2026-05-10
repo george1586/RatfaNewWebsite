@@ -17,10 +17,10 @@ export default async function handler(req, res) {
                 {
                     price_data: {
                         currency: "eur",
-                        unit_amount: 6500,
+                        unit_amount: 4500,
                         product_data: {
                             name: "Steelgate — Founding Pre-Order",
-                            description: "One-time €65 founding pre-order. Ships Q4 2026. Founding customers ship first.",
+                            description: "One-time €45 founding pre-order. Ships Q4 2026. Founding customers ship first.",
                         },
                     },
                     quantity: 1,    
