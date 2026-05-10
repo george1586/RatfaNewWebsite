@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useSeo } from "../lib/useSeo";
 import Features from "../components/Features";
 import FeaturesShowcase from "../components/FeatureShowcase";
 import Hero from "../components/Hero";
@@ -31,6 +32,12 @@ function SectionView({ name, children }) {
 }
 
 function LandingPage() {
+    useSeo({
+        title: 'Steelgate — Take Your Household\'s Attention Back',
+        description: 'Steelgate is a plug-in hardware device that blocks distracting apps and sites across every device in your home — TikTok, Instagram, Reddit — on schedules you set. One device, every screen.',
+        canonical: 'https://steelgate.io/',
+    });
+
     return (
         <>
             <SectionView name="hero"><Hero /></SectionView>

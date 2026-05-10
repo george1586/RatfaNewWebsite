@@ -1,6 +1,13 @@
 import Footer from "../components/Footer";
+import { useSeo } from "../lib/useSeo";
 
 export default function StoryPage() {
+    useSeo({
+        title: 'Our Story — Steelgate',
+        description: 'Why we built Steelgate — the hardware device that puts households back in control of their attention, one network at a time.',
+        canonical: 'https://steelgate.io/story',
+    });
+
     return (
         <div className="bg-[var(--bg)] min-h-screen">
 

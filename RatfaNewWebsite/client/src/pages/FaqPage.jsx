@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqData } from "../components/Faq";
 import Footer from "../components/Footer";
+import { useSeo } from "../lib/useSeo";
 
 function FaqItem({ question, answer, isOpen, onToggle }) {
     return (
@@ -29,6 +30,12 @@ function FaqItem({ question, answer, isOpen, onToggle }) {
 }
 
 export default function FaqPage() {
+    useSeo({
+        title: 'FAQ — Steelgate',
+        description: 'Answers to common questions about Steelgate — how it works, pricing, shipping, refunds, and how it compares to parental control apps and Pi-hole.',
+        canonical: 'https://steelgate.io/faq',
+    });
+
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
