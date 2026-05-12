@@ -48,20 +48,37 @@ export default function PreOrderPanel() {
             <div className="space-y-1.5">
                 <div className="flex items-baseline gap-2.5">
                     <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€45</span>
-                    <span className="text-[15px] text-[var(--ink-muted)]">one-time payment vs 69€/year</span>
+                    <span className="text-[15px] text-[var(--ink-muted)]">one-time · standard price is €89/year</span>
                 </div>
                 <p className="text-[13px] text-[var(--ink-muted)]">
                     VAT included · Fully refundable before ship date
                 </p>
-                <p className="text-[13px] text-[var(--ink-muted)]">All future features and updates included</p>
+            </div>
+
+            {/* Founding supporter perks */}
+            <div className="space-y-2.5">
+                <p className="text-[13px] font-semibold text-[var(--ink)]">What founding supporters get</p>
+                <ul className="space-y-2">
+                    {[
+                        "Hardware at €45, one-time — standard price is €89/year",
+                        "First year of any future service updates, free",
+                        "Your name on our founding supporters page (opt-in)",
+                        "Direct line to the founders for product feedback",
+                    ].map(perk => (
+                        <li key={perk} className="flex items-start gap-2 text-[13px] text-[var(--ink-muted)] leading-snug">
+                            <span className="text-[var(--primary)] shrink-0 font-bold">✓</span>
+                            {perk}
+                        </li>
+                    ))}
+                </ul>
             </div>
 
             {/* Founding spot bar */}
             <div className="space-y-2.5">
                 <div className="flex justify-between items-center">
                     <span className="text-[13px] font-medium text-[var(--ink)]">Founding spots</span>
-                    <span className="text-[13px] font-semibold text-[var(--ink)]">
-                        {spots.claimed} / {spots.total}
+                    <span className="text-[13px] font-semibold text-[var(--primary)]">
+                        {spots.total - spots.claimed} of {spots.total} remaining
                     </span>
                 </div>
                 <div className="w-full h-1.5 bg-[var(--bg-alt)] rounded-full overflow-hidden">
@@ -71,7 +88,7 @@ export default function PreOrderPanel() {
                     />
                 </div>
                 <p className="text-[12px] text-[var(--ink-muted)]">
-                    {spots.claimed} claimed · {spots.total - spots.claimed} remaining — founding pricing ends at {spots.total}
+                    After 100 founding supporters, Steelgate moves to €89/year. The founding price is permanent for the first cohort — because they're helping us build.
                 </p>
             </div>
 
@@ -89,7 +106,7 @@ export default function PreOrderPanel() {
 
             {/* Trust row */}
             <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-3 text-center">
-                {["One-time payment", "Founding price for life", "Ships Q4 2026"].map(t => (
+                {["One-time, €45 for life", "All updates included", "Ships Q4 2026"].map(t => (
                     <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
                 ))}
             </div>
@@ -100,7 +117,7 @@ export default function PreOrderPanel() {
             <div className="space-y-5">
                 {[
                     { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why pre-order now?", body: "Founding customers get Steelgate at €45 — permanently lower than the launch price. Pre-ordering now reserves your founding spot and ensures you ship first." },
+                    { title: "Why pre-order now?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Pre-ordering now locks in your €45 price for life and ensures you ship first." },
                     { title: "Timeline", body: "We're targeting Q4 2026 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
                 ].map(({ title, body }) => (
                     <div key={title}>
