@@ -15,8 +15,11 @@ import { track } from "./lib/analytics";
 function PageTracker() {
     const location = useLocation();
     useEffect(() => {
-        track('$pageview', { $current_url: window.location.href });
-    }, [location.pathname]);
+        track('$pageview', {
+            $current_url: window.location.href,
+            route: location.pathname,
+        });
+    }, [location.pathname, location.search]);
     return null;
 }
 

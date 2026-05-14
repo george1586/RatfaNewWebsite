@@ -11,15 +11,26 @@ import Scenarios from "../components/Scenarios";
 import CTA from "../components/CTA";
 import { track } from "../lib/analytics";
 
+const LANDING_SECTIONS = ['hero', 'product_info', 'feature_showcase', 'features', 'scenarios', 'faq', 'cta'];
+
 function SectionView({ name, children }) {
     const ref = useRef(null);
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
+        const pageLoadedAt = performance.now();
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    track('section_viewed', { section: name });
+                    track('landing_section_viewed', {
+                        page: 'landing',
+                        section_name: name,
+                        section_index: LANDING_SECTIONS.indexOf(name),
+                        section_total: LANDING_SECTIONS.length,
+                        time_to_view_ms: Math.round(performance.now() - pageLoadedAt),
+                        scroll_y: Math.round(window.scrollY),
+                        intersection_ratio: Math.round(entry.intersectionRatio * 100) / 100,
+                    });
                     observer.disconnect();
                 }
             },

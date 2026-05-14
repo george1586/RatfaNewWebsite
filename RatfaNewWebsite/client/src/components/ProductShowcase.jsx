@@ -188,7 +188,17 @@ export default function ProductShowcase() {
                         ))}
                     </div>
                     <div className="mt-10">
-                        <a href="#" onClick={e => { e.preventDefault(); track('preorder_clicked', { location: 'stats_section' }); document.querySelector('[data-preorder]')?.scrollIntoView({ behavior: 'smooth' }); }}
+                        <a href="#" onClick={e => {
+                            e.preventDefault();
+                            track('preorder_clicked', {
+                                page: 'products',
+                                placement: 'stats_section',
+                                cta_text: 'Pre-Order NOW',
+                                cta_variant: 'inline_link',
+                                destination: 'scroll_to_preorder_panel',
+                            });
+                            document.querySelector('[data-preorder]')?.scrollIntoView({ behavior: 'smooth' });
+                        }}
                             className="inline-flex items-center px-7 py-3.5 rounded-full bg-[var(--ink)] text-white text-[15px] font-semibold hover:bg-black transition-colors duration-150">
                             Pre-Order NOW
                         </a>

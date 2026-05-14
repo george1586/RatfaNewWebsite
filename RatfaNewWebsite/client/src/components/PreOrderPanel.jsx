@@ -15,15 +15,38 @@ export default function PreOrderPanel() {
     }, []);
 
     const handlePreorder = async () => {
-        track('preorder_clicked', { location: 'product_page' });
+        const startedAt = performance.now();
+        const checkoutContext = {
+            price_eur: 45,
+            currency: 'EUR',
+            spots_claimed: spots.claimed,
+            spots_remaining: spots.total - spots.claimed,
+            spots_total: spots.total,
+        };
+        track('preorder_clicked', {
+            page: 'products',
+            placement: 'preorder_panel',
+            cta_text: 'Pre-Order NOW',
+            cta_variant: 'primary_button',
+            ...checkoutContext,
+        });
         setLoading(true);
         setError(null);
         try {
             const { url } = await createPreorderSession();
-            track('checkout_started');
+            track('checkout_started', {
+                ...checkoutContext,
+                provider: 'stripe',
+                session_latency_ms: Math.round(performance.now() - startedAt),
+            });
             window.location.href = url;
-        } catch {
-            track('checkout_failed');
+        } catch (err) {
+            track('checkout_failed', {
+                ...checkoutContext,
+                provider: 'stripe',
+                session_latency_ms: Math.round(performance.now() - startedAt),
+                error_message: err?.message || 'unknown',
+            });
             setError("Could not start checkout. Please try again.");
             setLoading(false);
         }

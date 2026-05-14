@@ -6,7 +6,13 @@ import { track } from '../lib/analytics';
 const Button = () => {
     const navigate = useNavigate();
     const handleClick = () => {
-        track('preorder_clicked', { location: 'landing_cta' });
+        track('preorder_clicked', {
+            page: 'landing',
+            placement: 'hero_cta',
+            cta_text: 'PRE-ORDER NOW',
+            cta_variant: 'animated_button',
+            destination: '/products',
+        });
         navigate('/products');
     };
     return (
