@@ -1,53 +1,92 @@
-import { useState, useEffect } from "react";
-import { createPreorderSession } from "../lib/api";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
+// import { createPreorderSession } from "../lib/api";
 import { track } from "../lib/analytics";
 
 export default function PreOrderPanel() {
+    const navigate = useNavigate();
+    const [form, setForm] = useState({ name: "", email: "", address: "" });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [spots, setSpots] = useState({ claimed: 13, total: 100 });
 
-    useEffect(() => {
-        fetch("/api/preorder-count")
-            .then(r => r.json())
-            .then(data => setSpots(data))
-            .catch(() => { });
-    }, []);
+    // --- Spots counter disabled for now ---------------------------------
+    // const [spots, setSpots] = useState({ claimed: 13, total: 100 });
+    // useEffect(() => {
+    //     fetch("/api/preorder-count")
+    //         .then(r => r.json())
+    //         .then(data => setSpots(data))
+    //         .catch(() => { });
+    // }, []);
 
-    const handlePreorder = async () => {
-        const startedAt = performance.now();
-        const checkoutContext = {
-            price_eur: 45,
-            currency: 'EUR',
-            spots_claimed: spots.claimed,
-            spots_remaining: spots.total - spots.claimed,
-            spots_total: spots.total,
-        };
+    // --- Stripe checkout (disabled — kept for when we re-enable payments) -
+    // const handlePreorder = async () => {
+    //     const startedAt = performance.now();
+    //     const checkoutContext = {
+    //         price_eur: 45,
+    //         currency: 'EUR',
+    //         spots_claimed: spots.claimed,
+    //         spots_remaining: spots.total - spots.claimed,
+    //         spots_total: spots.total,
+    //     };
+    //     track('preorder_clicked', {
+    //         page: 'products',
+    //         placement: 'preorder_panel',
+    //         cta_text: 'Pre-Order NOW',
+    //         cta_variant: 'primary_button',
+    //         ...checkoutContext,
+    //     });
+    //     setLoading(true);
+    //     setError(null);
+    //     try {
+    //         const { url } = await createPreorderSession();
+    //         track('checkout_started', {
+    //             ...checkoutContext,
+    //             provider: 'stripe',
+    //             session_latency_ms: Math.round(performance.now() - startedAt),
+    //         });
+    //         window.location.href = url;
+    //     } catch (err) {
+    //         track('checkout_failed', {
+    //             ...checkoutContext,
+    //             provider: 'stripe',
+    //             session_latency_ms: Math.round(performance.now() - startedAt),
+    //             error_message: err?.message || 'unknown',
+    //         });
+    //         setError("Could not start checkout. Please try again.");
+    //         setLoading(false);
+    //     }
+    // };
+    // --------------------------------------------------------------------
+
+    const handleChange = (e) => {
+        setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         track('preorder_clicked', {
             page: 'products',
             placement: 'preorder_panel',
-            cta_text: 'Pre-Order NOW',
+            cta_text: 'Finish Checkout',
             cta_variant: 'primary_button',
-            ...checkoutContext,
         });
         setLoading(true);
         setError(null);
         try {
-            const { url } = await createPreorderSession();
-            track('checkout_started', {
-                ...checkoutContext,
-                provider: 'stripe',
-                session_latency_ms: Math.round(performance.now() - startedAt),
+            const res = await fetch("/api/preorder-interest", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
             });
-            window.location.href = url;
+            if (!res.ok) {
+                const err = await res.json().catch(() => ({}));
+                throw new Error(err.error || "Something went wrong");
+            }
+            track('preorder_interest_submitted', { page: 'products' });
+            navigate("/preorder/unavailable");
         } catch (err) {
-            track('checkout_failed', {
-                ...checkoutContext,
-                provider: 'stripe',
-                session_latency_ms: Math.round(performance.now() - startedAt),
-                error_message: err?.message || 'unknown',
-            });
-            setError("Could not start checkout. Please try again.");
+            setError(err.message || "Could not submit. Please try again.");
             setLoading(false);
         }
     };
@@ -96,7 +135,8 @@ export default function PreOrderPanel() {
                 </ul>
             </div>
 
-            {/* Founding spot bar */}
+            {/* Founding spot bar — disabled for now */}
+            {/*
             <div className="space-y-2.5">
                 <div className="flex justify-between items-center">
                     <span className="text-[13px] font-medium text-[var(--ink)]">Founding spots</span>
@@ -114,16 +154,59 @@ export default function PreOrderPanel() {
                     After 100 founding supporters, Steelgate moves to €89/year. The founding price is permanent for the first cohort — because they're helping us build.
                 </p>
             </div>
+            */}
 
-            {/* CTA */}
-            {error && <p className="text-[14px] text-red-600">{error}</p>}
-            <button
-                onClick={handlePreorder}
-                disabled={loading}
-                className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-                {loading ? "Redirecting…" : "Pre-Order NOW"}
-            </button>
+            {/* Checkout form */}
+            <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="space-y-1.5">
+                    <label htmlFor="po-name" className="text-[13px] font-medium text-[var(--ink)]">Full name</label>
+                    <input
+                        id="po-name"
+                        name="name"
+                        type="text"
+                        required
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Jane Doe"
+                        className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
+                    />
+                </div>
+                <div className="space-y-1.5">
+                    <label htmlFor="po-email" className="text-[13px] font-medium text-[var(--ink)]">Email</label>
+                    <input
+                        id="po-email"
+                        name="email"
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
+                    />
+                </div>
+                <div className="space-y-1.5">
+                    <label htmlFor="po-address" className="text-[13px] font-medium text-[var(--ink)]">Shipping address</label>
+                    <textarea
+                        id="po-address"
+                        name="address"
+                        rows={3}
+                        value={form.address}
+                        onChange={handleChange}
+                        placeholder="Street, city, postal code, country"
+                        className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150 resize-none"
+                    />
+                </div>
+
+                {error && <p className="text-[14px] text-red-600">{error}</p>}
+
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {loading ? "Submitting…" : "Finish Checkout"}
+                </button>
+            </form>
 
             <hr className="border-[var(--border)]" />
 
