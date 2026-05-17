@@ -15,7 +15,7 @@ export default function CheckoutPage() {
     useSeo({ title: "Checkout — Steelgate Founding Pre-Order" });
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
-    const [form, setForm] = useState({ name: "", email: "", address: "" });
+    const [form, setForm] = useState({ name: "", email: "", address: "", company: "" });
     const [status, setStatus] = useState("idle"); // idle | submitting | done
     const [error, setError] = useState(null);
 
@@ -25,6 +25,22 @@ export default function CheckoutPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (status === "submitting") return;
+
+        const name = form.name.trim();
+        const email = form.email.trim();
+        const address = form.address.trim();
+
+        // Client-side validation (the API re-validates regardless).
+        if (!name) {
+            setError("Please enter your name.");
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setError("Please enter a valid email address.");
+            return;
+        }
+
         track('preorder_clicked', {
             page: 'checkout',
             placement: 'checkout_form',
@@ -33,21 +49,45 @@ export default function CheckoutPage() {
         });
         setStatus("submitting");
         setError(null);
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
+
         try {
             const res = await fetch("/api/preorder-interest", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ name, email, address, company: form.company }),
+                signal: controller.signal,
             });
+
+            const data = await res.json().catch(() => ({}));
+
             if (!res.ok) {
-                const err = await res.json().catch(() => ({}));
-                throw new Error(err.error || "Something went wrong");
+                throw new Error(
+                    data.error ||
+                    (res.status >= 500
+                        ? "Our server had a problem. Please try again in a moment."
+                        : "Please check your details and try again.")
+                );
             }
-            track('preorder_interest_submitted', { page: 'checkout' });
+
+            track('preorder_interest_submitted', {
+                page: 'checkout',
+                duplicate: !!data.duplicate,
+            });
             setStatus("done");
         } catch (err) {
-            setError(err.message || "Could not submit. Please try again.");
+            const message =
+                err.name === "AbortError"
+                    ? "The request timed out. Please check your connection and try again."
+                    : err instanceof TypeError
+                        ? "Couldn't reach the server. Please check your connection and try again."
+                        : err.message || "Could not submit. Please try again.";
+            setError(message);
             setStatus("idle");
+        } finally {
+            clearTimeout(timeout);
         }
     };
 
@@ -101,7 +141,7 @@ export default function CheckoutPage() {
                         /* ---- Part 1: information + order summary ---- */
                         <>
                             <div className="mb-8">
-                                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--primary)] mb-2">
+                                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-2">
                                     Checkout
                                 </p>
                                 <h1 className="font-display text-[clamp(1.8rem,5vw,2.6rem)] text-[var(--ink)] leading-tight">
@@ -158,6 +198,20 @@ export default function CheckoutPage() {
                                             onChange={handleChange}
                                             placeholder="Street, city, postal code, country"
                                             className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150 resize-none"
+                                        />
+                                    </div>
+
+                                    {/* Honeypot — hidden from real users, catches bots */}
+                                    <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                                        <label htmlFor="co-company">Company</label>
+                                        <input
+                                            id="co-company"
+                                            name="company"
+                                            type="text"
+                                            tabIndex={-1}
+                                            autoComplete="off"
+                                            value={form.company}
+                                            onChange={handleChange}
                                         />
                                     </div>
 

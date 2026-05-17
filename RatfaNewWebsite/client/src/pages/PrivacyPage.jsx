@@ -14,7 +14,7 @@ function Section({ title, children }) {
 
 function Table({ rows }) {
     return (
-        <div className="overflow-x-auto rounded-xl border border-[var(--border)] my-2">
+        <div className="overflow-x-auto rounded-2xl border border-[var(--border)] my-2">
             <table className="w-full text-[14px]">
                 <thead>
                     <tr style={{ background: 'var(--bg-alt)' }}>

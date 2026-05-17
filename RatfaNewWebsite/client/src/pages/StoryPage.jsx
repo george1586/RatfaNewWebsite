@@ -117,36 +117,28 @@ export default function StoryPage() {
             </section>
 
             {/* ── Timeline — 2025 only ── */}
-            <section className="px-6 mb-24">
+            <section className="px-6 mb-20">
                 <div className="max-w-[var(--prose-w)] mx-auto">
                     <h2 className="text-[1.75rem] font-bold tracking-tight mb-12">
                         Where we are now
                     </h2>
-                    <div className="flex gap-8">
-                        <div className="flex flex-col items-center">
-                            <div
-                                className="w-3 h-3 rounded-full mt-1 shrink-0"
-                                style={{ background: 'var(--primary)' }}
-                            />
-                        </div>
-                        <div>
-                            <p className="text-[12px] font-bold tracking-[0.15em] uppercase text-[var(--primary)] mb-1">
-                                2025
-                            </p>
-                            <p className="text-[17px] font-semibold text-[var(--ink)] mb-2">
-                                Pre-order launches
-                            </p>
-                            <p className="text-[16px] text-[var(--ink-muted)] leading-relaxed">
-                                We opened pre-orders to bring Steelgate to the first households.
-                                Every pre-order helps us refine the product before general availability.
-                            </p>
-                        </div>
+                    <div className="border-l-2 border-[var(--primary)] pl-6">
+                        <p className="text-[12px] font-bold tracking-[0.15em] uppercase text-[var(--primary)] mb-1">
+                            2025
+                        </p>
+                        <p className="text-[17px] font-semibold text-[var(--ink)] mb-2">
+                            Pre-order launches
+                        </p>
+                        <p className="text-[16px] text-[var(--ink-muted)] leading-relaxed">
+                            We opened pre-orders to bring Steelgate to the first households.
+                            Every pre-order helps us refine the product before general availability.
+                        </p>
                     </div>
                 </div>
             </section>
 
             {/* ── Founder sign-off ── */}
-            <section className="px-6 mb-24">
+            <section className="px-6 mb-20">
                 <div className="max-w-[var(--prose-w)] mx-auto">
                     <div
                         className="rounded-2xl p-8 md:p-12 border"
@@ -169,12 +161,9 @@ export default function StoryPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="px-6 mb-24">
+            <section className="px-6 mb-20">
                 <div className="max-w-[var(--prose-w)] mx-auto text-center">
-                    <h2
-                        className="text-[clamp(1.8rem,4vw,2.8rem)] font-display tracking-tight text-[var(--ink)] mb-5"
-                        style={{ fontFamily: 'var(--font-display)' }}
-                    >
+                    <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold text-[var(--ink)] tracking-[-0.03em] leading-[1.1] mb-5">
                         Tech's best features are the ones you choose.
                     </h2>
                     <p className="text-[17px] text-[var(--ink-muted)] mb-8">

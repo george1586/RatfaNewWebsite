@@ -35,7 +35,7 @@ function ContentBlock({ block }) {
             );
         case 'callout':
             return (
-                <div className="my-2 px-6 py-5 rounded-xl border-l-4 border-[var(--ink)]" style={{ background: 'var(--bg-alt)' }}>
+                <div className="my-2 px-6 py-5 rounded-2xl border-l-4 border-[var(--ink)]" style={{ background: 'var(--bg-alt)' }}>
                     <p className="text-[16px] font-medium text-[var(--ink)] leading-[1.7] italic">{block.text}</p>
                 </div>
             );
@@ -85,7 +85,7 @@ export default function BlogPostPage() {
                         <span className="text-[var(--ink-muted)]">·</span>
                         <span className="text-[13px] text-[var(--ink-muted)]">{formatDate(post.date)}</span>
                     </div>
-                    <h1 className="text-[clamp(1.9rem,4.5vw,3rem)] font-bold text-[var(--ink)] leading-[1.15] tracking-tight">
+                    <h1 className="font-display text-[clamp(1.9rem,4.5vw,3rem)] text-[var(--ink)] leading-[1.15] tracking-tight">
                         {post.title}
                     </h1>
                 </div>

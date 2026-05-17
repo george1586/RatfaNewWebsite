@@ -42,7 +42,7 @@ const Button = () => {
 
 const StyledWrapper = styled.div`
   .btn-container {
-    --btn-color: #1faa20;
+    --btn-color: var(--primary);
     --corner-color: #0002;
     --corner-dist: 24px;
     --corner-multiplier: 1.5;
@@ -88,10 +88,9 @@ const StyledWrapper = styled.div`
     font-size: 0.8em;
     font-weight: 600;
     font-family: "Inter", sans-serif;
-    color: #0009;
+    color: #fff;
 
-    background: linear-gradient(#fff2, #0001), var(--btn-color);
-    background-color: #fbff13;
+    background: var(--ink);
     opacity: 0;
 
     transition:
@@ -197,16 +196,12 @@ const StyledWrapper = styled.div`
       transform: translateY(-24px) rotateZ(4deg);
       filter: blur(0px);
       -webkit-filter: blur(0px);
-      animation: hue-anim 3s infinite linear;
-      -webkit-animation: hue-anim 3s infinite linear;
       opacity: 1;
     }
     .transition-bottom {
       transform: translateY(24px) rotateZ(4deg);
       filter: blur(0px);
       -webkit-filter: blur(0px);
-      animation: hue-anim 3s infinite linear;
-      -webkit-animation: hue-anim 3s infinite linear;
       opacity: 1;
     }
     .btn-text {
@@ -343,25 +338,6 @@ const StyledWrapper = styled.div`
     }
   }
 
-  @keyframes hue-anim {
-    0%,
-    100% {
-      filter: hue-rotate(0deg);
-      -webkit-filter: hue-rotate(0deg);
-    }
-    50% {
-      filter: hue-rotate(-70deg);
-      -webkit-filter: hue-rotate(-70deg);
-    }
-  }
-  @-webkit-keyframes hue-anim {
-    0%,
-    100% {
-      -webkit-filter: hue-rotate(0deg);
-    }
-    50% {
-      -webkit-filter: hue-rotate(-70deg);
-    }
-  }`;
+`;
 
 export default Button;

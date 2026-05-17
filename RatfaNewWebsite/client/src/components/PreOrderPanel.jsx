@@ -72,15 +72,13 @@ export default function PreOrderPanel() {
 
             {/* Title */}
             <div>
-                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--primary)] mb-2">
+                <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-2">
                     Founding Pre-Order
                 </p>
                 <h1 className="font-display text-[clamp(1.6rem,4vw,2.2rem)] text-[var(--ink)] leading-tight">
                     Steelgate
                 </h1>
             </div>
-
-            <hr className="border-[var(--border)]" />
 
             {/* Pricing */}
             <div className="space-y-1.5">
@@ -148,8 +146,6 @@ export default function PreOrderPanel() {
                     <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
                 ))}
             </div>
-
-            <hr className="border-[var(--border)]" />
 
             {/* Info sections */}
             <div className="space-y-5">

@@ -14,10 +14,10 @@
 
     /* Text */
     --ink:        #1A1A1A;
-    --ink-muted:  rgba(26, 26, 26, 0.52);
+    --ink-muted:  rgba(26, 26, 26, 0.66);
 
     /* Border */
-    --border: rgba(0, 0, 0, 0.08);
+    --border: rgba(0, 0, 0, 0.12);
 
     /* Typography */
     --font-display: 'Monomaniac One', sans-serif;
@@ -91,7 +91,6 @@ h1, h2, h3, h4, h5, h6 {
 :focus-visible {
     outline: 2px solid var(--ink);
     outline-offset: 3px;
-    border-radius: 3px;
 }
 
 /* Utility: constrain content width */

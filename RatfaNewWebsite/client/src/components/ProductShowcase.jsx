@@ -64,7 +64,7 @@ function StepAccordion({ steps }) {
 function Tick({ value }) {
     return value
         ? <Check size={16} className="mx-auto text-[var(--primary)]" strokeWidth={2.5} />
-        : <X size={16} className="mx-auto text-[var(--border)] opacity-60" />;
+        : <X size={16} className="mx-auto text-[var(--ink-muted)]" />;
 }
 
 export default function ProductShowcase() {
@@ -84,7 +84,7 @@ export default function ProductShowcase() {
                         <div className="w-full aspect-square rounded-2xl bg-[var(--bg-alt)] border border-[var(--border)] flex items-center justify-center overflow-hidden">
                             <img src={thumbnails[activeImg]} alt="Steelgate" className="w-4/5 h-4/5 object-contain" />
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className={`flex-wrap gap-2 ${thumbnails.length > 1 ? 'flex' : 'hidden'}`}>
                             {thumbnails.map((img, i) => (
                                 <button key={i} onClick={() => setActiveImg(i)}
                                     className={`w-14 h-14 sm:w-16 sm:h-16 rounded-lg border-2 bg-[var(--bg-alt)] flex items-center justify-center overflow-hidden transition-all duration-150 ${activeImg === i ? 'border-[var(--ink)]' : 'border-[var(--border)] hover:border-[var(--ink-muted)]'}`}>

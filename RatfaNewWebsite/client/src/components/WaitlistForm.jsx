@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function WaitlistForm() {
     const [email, setEmail] = useState("");
+    const [company, setCompany] = useState(""); // honeypot
     const [status, setStatus] = useState("idle");
     const [error, setError] = useState(null);
 
@@ -14,7 +15,7 @@ export default function WaitlistForm() {
             const res = await fetch("/api/waitlist", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email }),
+                body: JSON.stringify({ email, company }),
             });
             if (!res.ok) {
                 const err = await res.json().catch(() => ({}));
@@ -29,7 +30,7 @@ export default function WaitlistForm() {
 
     if (status === "done") {
         return (
-            <div className="border border-[var(--border)] rounded-2xl px-6 py-5 text-center space-y-1">
+            <div className="border border-[var(--border)] rounded-2xl px-6 py-5 text-center space-y-1 bg-[var(--bg-alt)]">
                 <p className="text-[15px] font-semibold text-[var(--ink)]">You're on the list.</p>
                 <p className="text-[13px] text-[var(--ink-muted)]">We'll let you know when Steelgate launches.</p>
             </div>
@@ -43,6 +44,18 @@ export default function WaitlistForm() {
                 Join the waitlist and we'll notify you when Steelgate launches.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col xs:flex-row gap-2">
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                    <label htmlFor="wl-company">Company</label>
+                    <input
+                        id="wl-company"
+                        name="company"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={company}
+                        onChange={e => setCompany(e.target.value)}
+                    />
+                </div>
                 <input
                     type="email"
                     required

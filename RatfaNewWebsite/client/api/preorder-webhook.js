@@ -36,7 +36,8 @@ export default async function handler(req, res) {
             process.env.STRIPE_WEBHOOK_SECRET
         );
     } catch (err) {
-        return res.status(400).json({ error: `Webhook error: ${err.message}` });
+        console.error("preorder-webhook signature verification failed:", err?.message || err);
+        return res.status(400).json({ error: "Invalid signature" });
     }
 
     if (event.type === "checkout.session.completed") {
@@ -48,16 +49,34 @@ export default async function handler(req, res) {
 
         const email = session.customer_details?.email ?? null;
 
-        await supabase.from("pre_orders").insert({
-            stripe_session_id: session.id,
-            amount_total: session.amount_total,
-            currency: session.currency,
-            customer_email: email,
-            status: "confirmed",
-            created_at: new Date().toISOString(),
-        });
+        // Idempotent: Stripe may redeliver this event. Unique constraint on
+        // stripe_session_id + ignoreDuplicates keeps the pre-order count
+        // accurate and stops a duplicate confirmation email.
+        const { data: upserted, error: upsertError } = await supabase
+            .from("pre_orders")
+            .upsert(
+                {
+                    stripe_session_id: session.id,
+                    amount_total: session.amount_total,
+                    currency: session.currency,
+                    customer_email: email,
+                    status: "confirmed",
+                    created_at: new Date().toISOString(),
+                },
+                { onConflict: "stripe_session_id", ignoreDuplicates: true }
+            )
+            .select();
 
-        if (email && process.env.RESEND_API_KEY) {
+        if (upsertError) {
+            console.error("preorder-webhook upsert failed:", upsertError.message);
+            return res.status(500).json({ error: "Could not record pre-order" });
+        }
+
+        // upserted is empty when the row already existed (duplicate event) —
+        // skip the email so we don't send the confirmation twice.
+        const isNew = Array.isArray(upserted) && upserted.length > 0;
+
+        if (isNew && email && process.env.RESEND_API_KEY) {
             await resend.emails.send({
                 from: "Steelgate <hello@steelgate.io>",
                 to: email,

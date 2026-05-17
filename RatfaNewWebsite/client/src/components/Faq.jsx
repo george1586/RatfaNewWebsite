@@ -20,7 +20,7 @@ function FaqItem({ number, question, answer, isOpen, onToggle }) {
                 onClick={onToggle}
                 className="w-full flex items-start gap-6 py-6 text-left group"
             >
-                <span className="text-[12px] font-semibold text-[var(--ink-muted)] tabular-nums mt-1 shrink-0 group-hover:text-[var(--ink)] transition-colors duration-150">
+                <span className="text-[12px] font-semibold text-[var(--ink-muted)] tabular-nums mt-1 shrink-0 w-6 group-hover:text-[var(--ink)] transition-colors duration-150">
                     {String(number).padStart(2, '0')}
                 </span>
                 <span className="flex-1 text-[17px] sm:text-[18px] font-medium text-[var(--ink)] leading-snug tracking-[-0.01em]">

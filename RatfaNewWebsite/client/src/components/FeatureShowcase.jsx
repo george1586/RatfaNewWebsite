@@ -66,7 +66,7 @@ export default function FeaturesShowcase() {
                             <img
                                 src={features[displayed].img}
                                 alt={features[displayed].title}
-                                className={`w-full h-full object-cover transition-all duration-200 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
+                                className={`w-full h-full object-contain p-10 transition-all duration-200 ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
                             />
                         </div>
                     </div>
@@ -77,7 +77,7 @@ export default function FeaturesShowcase() {
                             <button
                                 key={i}
                                 onClick={() => { setActive(i); setUserInteracted(true); }}
-                                className={`flex items-center gap-4 px-4 py-4 rounded-xl text-left transition-all duration-200 ${active === i ? 'bg-[var(--bg)] shadow-sm' : 'hover:bg-[var(--bg)]/60'}`}
+                                className={`flex items-center gap-4 px-4 py-4 rounded-xl text-left border transition-all duration-200 ${active === i ? 'bg-[var(--bg)] border-[var(--border)]' : 'border-transparent hover:bg-[var(--bg)]/60'}`}
                             >
                                 <div className={`w-1.5 h-6 rounded-full flex-shrink-0 transition-all duration-200 ${active === i ? 'bg-[var(--ink)]' : 'bg-[var(--border)] scale-y-75'}`} />
                                 <span className={`text-[17px] font-medium transition-colors duration-200 ${active === i ? 'text-[var(--ink)]' : 'text-[var(--ink-muted)]'}`}>

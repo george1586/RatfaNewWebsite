@@ -19,8 +19,8 @@ export default function ProductInfo() {
                         </div>
 
                         {/* Mobile image */}
-                        <div className="md:hidden w-full overflow-hidden rounded-xl bg-[var(--bg-alt)] flex items-center justify-center p-6">
-                            <img src={deviceImg} alt="Steelgate device" className="w-full max-w-[300px] object-contain" />
+                        <div className="md:hidden w-full flex items-center justify-center">
+                            <img src={deviceImg} alt="Steelgate device" className="w-full max-w-[360px] object-contain" />
                         </div>
 
                         <div className="space-y-5 max-w-prose">

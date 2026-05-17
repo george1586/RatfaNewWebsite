@@ -10,7 +10,7 @@ function FaqItem({ question, answer, isOpen, onToggle }) {
                 onClick={onToggle}
                 className="w-full flex items-start justify-between gap-8 py-7 text-left group"
             >
-                <span className="text-[18px] font-semibold text-[var(--ink)] leading-snug tracking-[-0.01em] group-hover:text-[var(--ink-muted)] transition-colors duration-150">
+                <span className="text-[18px] font-semibold text-[var(--ink)] leading-snug tracking-[-0.01em]">
                     {question}
                 </span>
                 <span
