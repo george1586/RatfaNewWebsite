@@ -9,7 +9,7 @@ const supabase = createClient(
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Resend requires a verified sender domain. Override with RESEND_FROM in env.
-const FROM = process.env.RESEND_FROM || "Steelgate <onboarding@resend.dev>";
+const FROM = process.env.RESEND_FROM || "George<ichim.george@steelgate.tech>";
 
 export default async function handler(req, res) {
     if (req.method !== "POST") {

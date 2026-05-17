@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import LandingPage from "./pages/LandingPage";
 import ProductPage from "./pages/ProductPage";
 import PreOrderSuccess from "./pages/PreOrderSuccess";
-import PreOrderUnavailable from "./pages/PreOrderUnavailable";
+import CheckoutPage from "./pages/CheckoutPage";
 import StoryPage from "./pages/StoryPage";
 import FaqPage from "./pages/FaqPage";
 import BlogPage from "./pages/BlogPage";
@@ -33,7 +33,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/products" element={<ProductPage />} />
                 <Route path="/preorder/success" element={<PreOrderSuccess />} />
-                <Route path="/preorder/unavailable" element={<PreOrderUnavailable />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/story" element={<StoryPage />} />
                 <Route path="/faq" element={<FaqPage />} />
                 <Route path="/blog" element={<BlogPage />} />
