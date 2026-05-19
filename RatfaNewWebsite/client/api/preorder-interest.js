@@ -103,7 +103,7 @@ export default async function handler(req, res) {
             const { error: emailError } = await resend.emails.send({
                 from: FROM,
                 to: cleanEmail,
-                subject: "We received your Steelgate pre-order request",
+                subject: "We received your Steelgate Orderrequest",
                 html: `
                     <div style="font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;line-height:1.6;max-width:480px;margin:0 auto;">
                         <h2 style="margin:0 0 16px;">Thanks, ${escapeHtml(cleanName)}.</h2>

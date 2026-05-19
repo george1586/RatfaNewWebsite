@@ -27,7 +27,7 @@ export default function PreOrderSuccess() {
                     <p className="text-[13px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">What happens next</p>
                     <ul className="space-y-2.5">
                         {[
-                            "Your €45 pre-order payment is confirmed",
+                            "Your €45 Orderpayment is confirmed",
                             "Your founding price is locked in for life",
                             "You'll hear from us with updates as we build toward Q4 2026",
                             "Founding customers ship first",

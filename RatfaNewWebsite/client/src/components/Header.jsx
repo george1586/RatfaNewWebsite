@@ -50,7 +50,7 @@ export default function Header() {
                     <a href="/products"
                         className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--ink)] text-white text-[15px] font-semibold hover:bg-black transition-colors duration-150 mt-2"
                         onClick={() => setIsOpen(false)}>
-                        Pre-Order 
+                        Order
                     </a>
                 </div>
             </div>

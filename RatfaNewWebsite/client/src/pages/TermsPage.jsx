@@ -39,27 +39,27 @@ export default function TermsPage() {
                 <div className="max-w-[var(--prose-w)] mx-auto">
 
                     <p className="text-[16px] text-[var(--ink)] leading-[1.75] mb-10">
-                        These Terms and Conditions govern your use of steelgate.io and any purchase or pre-order you make through it. By accessing the site or placing a pre-order you agree to these terms. If you do not agree, please do not use the site or place an order.
+                        These Terms and Conditions govern your use of steelgate.io and any purchase or Orderyou make through it. By accessing the site or placing a Orderyou agree to these terms. If you do not agree, please do not use the site or place an order.
                     </p>
 
                     <Section title="1. About Steelgate">
                         <p>Steelgate is operated by Steelgate SRL, a company incorporated under the laws of Romania. References to "we", "us", or "our" mean Steelgate SRL. You can reach us at <a href="mailto:hello@steelgate.io" className="underline underline-offset-2 hover:opacity-60 transition-opacity">hello@steelgate.io</a>.</p>
                     </Section>
 
-                    <Section title="2. Pre-Order Terms">
-                        <p>Steelgate is currently available to pre-order for a one-time payment of €45. Placing a pre-order does not constitute a final purchase contract. It reserves your place in the production queue and locks in your founding price.</p>
-                        <p><strong>Founding price lock.</strong> Customers who pre-order before general availability lock in a subscription rate of 45 euro for life. This rate is guaranteed as long as your subscription remains active and is not transferable. After general availability, the standard rate will be €89/year.</p>
-                        <p><strong>Target shipping.</strong> We are targeting Q4 2026 for first shipments. This date is an estimate, not a guarantee. We will notify all pre-order customers of any material changes to the timeline.</p>
+                    <Section title="2. OrderTerms">
+                        <p>Steelgate is currently available to Orderfor a one-time payment of €45. Placing a Orderdoes not constitute a final purchase contract. It reserves your place in the production queue and locks in your founding price.</p>
+                        <p><strong>Founding price lock.</strong> Customers who Orderbefore general availability lock in a subscription rate of 45 euro for life. This rate is guaranteed as long as your subscription remains active and is not transferable. After general availability, the standard rate will be €89/year.</p>
+                        <p><strong>Target shipping.</strong> We are targeting Q4 2026 for first shipments. This date is an estimate, not a guarantee. We will notify all Ordercustomers of any material changes to the timeline.</p>
                         <p><strong>Minimum pre-orders.</strong> If we do not reach the minimum number of pre-orders required to proceed to production, all payments will be refunded in full. We will notify you by email if this occurs.</p>
                     </Section>
 
                     <Section title="3. Refunds and Cancellations">
-                        <p>Your €45 pre-order payment is fully refundable at any point before we ship your unit. To request a refund, email <a href="mailto:hello@steelgate.io" className="underline underline-offset-2 hover:opacity-60 transition-opacity">hello@steelgate.io</a> from the email address you used to pre-order. Refunds are processed within 5–10 business days.</p>
+                        <p>Your €45 Orderpayment is fully refundable at any point before we ship your unit. To request a refund, email <a href="mailto:hello@steelgate.io" className="underline underline-offset-2 hover:opacity-60 transition-opacity">hello@steelgate.io</a> from the email address you used to pre-order. Refunds are processed within 5–10 business days.</p>
                         <p>Once a unit has been shipped, our standard return policy applies: you have 30 days from delivery to return the device in its original condition for a full refund.</p>
                     </Section>
 
                     <Section title="4. Subscription">
-                        <p>Full use of Steelgate requires an active annual subscription. Pre-order customers pay €45 (founding rate). New customers after general availability pay €89/year.</p>
+                        <p>Full use of Steelgate requires an active annual subscription. Ordercustomers pay €45 (founding rate). New customers after general availability pay €89/year.</p>
                         <p>Subscriptions renew automatically each year. You may cancel at any time from your account. If you cancel, your subscription remains active until the end of the paid period; no partial refunds are issued for unused subscription time.</p>
                         <p>We reserve the right to change subscription pricing with 60 days' written notice. Founding rate customers are exempt from price increases for as long as their subscription remains uninterrupted.</p>
                     </Section>

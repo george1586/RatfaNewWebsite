@@ -99,7 +99,7 @@ export default function PrivacyPage() {
                             {[
                                 'Stripe — payment processing. Stripe is PCI DSS compliant. Your payment details go directly to Stripe and are never stored on our servers.',
                                 'PostHog (EU region) — product analytics. All data is stored on PostHog\'s EU infrastructure. We have configured PostHog to anonymise IP addresses.',
-                                'Supabase — secure database for pre-order records. Data stored in EU data centres.',
+                                'Supabase — secure database for Orderrecords. Data stored in EU data centres.',
                                 'Vercel — website hosting. EU Edge Network used where possible.',
                             ].map((item, i) => (
                                 <li key={i} className="flex gap-3">
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
                         <p>We retain your data only as long as necessary:</p>
                         <ul className="space-y-2 pl-1">
                             {[
-                                'Pre-order data: retained for the duration of your pre-order and for 5 years thereafter for legal and accounting purposes.',
+                                'Orderdata: retained for the duration of your Orderand for 5 years thereafter for legal and accounting purposes.',
                                 'Analytics data: aggregated and anonymised data retained indefinitely; raw session data deleted after 12 months.',
                                 'Email communications: retained for 2 years after the last correspondence.',
                                 'Newsletter subscribers: retained until you unsubscribe, plus 30 days.',

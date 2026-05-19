@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         const email = session.customer_details?.email ?? null;
 
         // Idempotent: Stripe may redeliver this event. Unique constraint on
-        // stripe_session_id + ignoreDuplicates keeps the pre-order count
+        // stripe_session_id + ignoreDuplicates keeps the Ordercount
         // accurate and stops a duplicate confirmation email.
         const { data: upserted, error: upsertError } = await supabase
             .from("pre_orders")
@@ -139,7 +139,7 @@ export default async function handler(req, res) {
                         <p style="font-size:14px;color:#aaa;margin:0;">— The Steelgate Team</p>
                     </div>
                 `,
-            }).catch(() => {});
+            }).catch(() => { });
         }
     }
 

@@ -30,7 +30,7 @@ export default function PreOrderPanel() {
     //     track('preorder_clicked', {
     //         page: 'products',
     //         placement: 'preorder_panel',
-    //         cta_text: 'Pre-Order NOW',
+    //         cta_text: 'Order NOW',
     //         cta_variant: 'primary_button',
     //         ...checkoutContext,
     //     });
@@ -61,7 +61,7 @@ export default function PreOrderPanel() {
         track('preorder_clicked', {
             page: 'products',
             placement: 'preorder_panel',
-            cta_text: 'Pre-Order NOW',
+            cta_text: 'Order NOW',
             cta_variant: 'primary_button',
         });
         navigate("/checkout");
@@ -135,7 +135,7 @@ export default function PreOrderPanel() {
                 onClick={handlePreorder}
                 className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150"
             >
-                Pre-Order NOW
+                Order NOW
             </button>
 
             <hr className="border-[var(--border)]" />
@@ -151,7 +151,7 @@ export default function PreOrderPanel() {
             <div className="space-y-5">
                 {[
                     { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why pre-order now?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Pre-ordering now locks in your €45 price for life and ensures you ship first." },
+                    { title: "Why Order NOW?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Pre-ordering now locks in your €45 price for life and ensures you ship first." },
                     { title: "Timeline", body: "We're targeting Q4 2026 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
                 ].map(({ title, body }) => (
                     <div key={title}>

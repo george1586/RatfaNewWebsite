@@ -193,14 +193,14 @@ export default function ProductShowcase() {
                             track('preorder_clicked', {
                                 page: 'products',
                                 placement: 'stats_section',
-                                cta_text: 'Pre-Order NOW',
+                                cta_text: 'Order NOW',
                                 cta_variant: 'inline_link',
                                 destination: 'scroll_to_preorder_panel',
                             });
                             document.querySelector('[data-preorder]')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                             className="inline-flex items-center px-7 py-3.5 rounded-full bg-[var(--ink)] text-white text-[15px] font-semibold hover:bg-black transition-colors duration-150">
-                            Pre-Order NOW
+                            Order NOW
                         </a>
                     </div>
                 </div>

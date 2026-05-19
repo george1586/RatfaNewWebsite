@@ -127,11 +127,11 @@ export default function StoryPage() {
                             2025
                         </p>
                         <p className="text-[17px] font-semibold text-[var(--ink)] mb-2">
-                            Pre-order launches
+                            Orderlaunches
                         </p>
                         <p className="text-[16px] text-[var(--ink-muted)] leading-relaxed">
                             We opened pre-orders to bring Steelgate to the first households.
-                            Every pre-order helps us refine the product before general availability.
+                            Every Orderhelps us refine the product before general availability.
                         </p>
                     </div>
                 </div>
@@ -167,7 +167,7 @@ export default function StoryPage() {
                         Tech's best features are the ones you choose.
                     </h2>
                     <p className="text-[17px] text-[var(--ink-muted)] mb-8">
-                        Pre-order Steelgate and take back control of every screen in your home.
+                        OrderSteelgate and take back control of every screen in your home.
                     </p>
                     <a
                         href="/products"
@@ -176,7 +176,7 @@ export default function StoryPage() {
                         onMouseEnter={e => e.currentTarget.style.background = '#000'}
                         onMouseLeave={e => e.currentTarget.style.background = 'var(--ink)'}
                     >
-                        Pre-Order Steelgate
+                        OrderSteelgate
                     </a>
                 </div>
             </section>

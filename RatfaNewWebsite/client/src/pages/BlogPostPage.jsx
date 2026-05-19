@@ -115,7 +115,7 @@ export default function BlogPostPage() {
                             href="/products"
                             className="inline-flex items-center px-6 py-3 rounded-full bg-white text-[var(--ink)] text-[14px] font-semibold hover:opacity-90 transition-opacity duration-150"
                         >
-                            Pre-Order Steelgate
+                            OrderSteelgate
                         </a>
                     </div>
                 </div>

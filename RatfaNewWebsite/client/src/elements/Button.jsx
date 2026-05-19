@@ -4,26 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import { track } from '../lib/analytics';
 
 const Button = () => {
-    const navigate = useNavigate();
-    const handleClick = () => {
-        track('preorder_clicked', {
-            page: 'landing',
-            placement: 'hero_cta',
-            cta_text: 'PRE-ORDER NOW',
-            cta_variant: 'animated_button',
-            destination: '/products',
-        });
-        navigate('/products');
-    };
-    return (
-        <StyledWrapper>
-            <div className="btn-container">
-                <div className="btn-drawer transition-top">87 founding spots left</div>
-                <div className="btn-drawer transition-bottom">out of 100 spots</div>
-                <button className="btn" onClick={handleClick}>
-                    <span className="btn-text">PRE-ORDER NOW</span>
-                </button>
-                {/* <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
+  const navigate = useNavigate();
+  const handleClick = () => {
+    track('preorder_clicked', {
+      page: 'landing',
+      placement: 'hero_cta',
+      cta_text: 'Order NOW',
+      cta_variant: 'animated_button',
+      destination: '/products',
+    });
+    navigate('/products');
+  };
+  return (
+    <StyledWrapper>
+      <div className="btn-container">
+        <div className="btn-drawer transition-top">87 founding spots left</div>
+        <div className="btn-drawer transition-bottom">out of 100 spots</div>
+        <button className="btn" onClick={handleClick}>
+          <span className="btn-text">Order NOW</span>
+        </button>
+        {/* <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
                     <path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z" />
                 </svg>
                 <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
@@ -35,9 +35,9 @@ const Button = () => {
                 <svg className="btn-corner" xmlns="http://www.w3.org/2000/svg" viewBox="-1 1 32 32">
                     <path d="M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z" />
                 </svg> */}
-            </div>
-        </StyledWrapper>
-    );
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`

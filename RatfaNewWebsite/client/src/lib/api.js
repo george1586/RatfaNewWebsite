@@ -6,7 +6,7 @@ export async function createPreorderSession() {
 
     if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        throw new Error(err.error || "Failed to create pre-order session");
+        throw new Error(err.error || "Failed to create Ordersession");
     }
 
     return res.json();
