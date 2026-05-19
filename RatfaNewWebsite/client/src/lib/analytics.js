@@ -5,6 +5,9 @@ posthog.init('phc_qXLkPzb68QAAvD9UCtWPsuUdeLFB9krx8uLTqAD5dZvn', {
     capture_pageview: false,
     capture_pageleave: true,
     persistence: 'localStorage',
+    // No PostHog-rendered UI: the survey/feedback widget would otherwise
+    // float over the page (past the footer) on the deployed site.
+    disable_surveys: true,
 });
 
 const pageContext = () => {
