@@ -12,7 +12,7 @@ const PERKS = [
 ];
 
 export default function CheckoutPage() {
-    useSeo({ title: "Checkout — Steelgate Founding Pre-Order" });
+    useSeo({ title: "Checkout — Steelgate Founding Order" });
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
     const [form, setForm] = useState({ name: "", email: "", address: "", company: "" });
@@ -237,7 +237,7 @@ export default function CheckoutPage() {
                                     </p>
 
                                     <div className="flex justify-between items-baseline">
-                                        <span className="text-[15px] text-[var(--ink)]">Steelgate — Founding Pre-Order</span>
+                                        <span className="text-[15px] text-[var(--ink)]">Steelgate — Founding Order</span>
                                         <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€45</span>
                                     </div>
                                     <p className="text-[13px] text-[var(--ink-muted)]">

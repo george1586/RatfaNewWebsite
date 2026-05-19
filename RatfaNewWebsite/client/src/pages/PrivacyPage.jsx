@@ -75,7 +75,7 @@ export default function PrivacyPage() {
                     <Section title="2. What Data We Collect and Why">
                         <Table rows={[
                             ['Category', 'Data collected', 'Purpose', 'Legal basis'],
-                            ['Pre-order', 'Email address, payment details (processed by Stripe — we never store card numbers)', 'Process your pre-order, send order confirmation and shipping updates', 'Contract performance (Art. 6(1)(b) GDPR)'],
+                            ['Order', 'Email address, payment details (processed by Stripe — we never store card numbers)', 'Process your order, send order confirmation and shipping updates', 'Contract performance (Art. 6(1)(b) GDPR)'],
                             ['Analytics', 'Pages visited, clicks, session duration, approximate location (country), device type — all anonymised and aggregated via PostHog', 'Understand how people use the site so we can improve it', 'Legitimate interests (Art. 6(1)(f) GDPR)'],
                             ['Communications', 'Email address if you contact us directly', 'Respond to your enquiry', 'Legitimate interests (Art. 6(1)(f) GDPR)'],
                             ['Waitlist / newsletter', 'Email address if you sign up', 'Send product updates and launch news', 'Consent (Art. 6(1)(a) GDPR)'],

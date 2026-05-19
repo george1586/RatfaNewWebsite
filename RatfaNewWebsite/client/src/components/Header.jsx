@@ -26,7 +26,7 @@ export default function Header() {
                 <div className="flex items-center">
                     <a href="/products"
                         className="hidden md:inline-flex items-center px-5 py-2 rounded-full bg-[var(--ink)] text-white text-[14px] font-semibold hover:bg-black transition-colors duration-150">
-                        Pre-Order
+                        Order
                     </a>
                     <button
                         className="md:hidden text-[var(--ink)] p-1"

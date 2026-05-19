@@ -69,7 +69,7 @@ export default async function handler(req, res) {
 
         if (upsertError) {
             console.error("preorder-webhook upsert failed:", upsertError.message);
-            return res.status(500).json({ error: "Could not record pre-order" });
+            return res.status(500).json({ error: "Could not record order" });
         }
 
         // upserted is empty when the row already existed (duplicate event) —
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
                     <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;padding:48px 24px;color:#1a1a1a;">
 
                         <!-- Header -->
-                        <p style="font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin:0 0 16px;">Steelgate — Founding Pre-Order</p>
+                        <p style="font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin:0 0 16px;">Steelgate — Founding Order</p>
                         <h1 style="font-size:32px;font-weight:800;margin:0 0 12px;line-height:1.1;">You're in.</h1>
                         <p style="font-size:16px;color:#444;margin:0 0 32px;line-height:1.6;">
                             Welcome to the founding group. Your €45 payment is confirmed and your spot is locked in.

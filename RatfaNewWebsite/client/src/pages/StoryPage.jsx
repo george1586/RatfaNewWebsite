@@ -130,7 +130,7 @@ export default function StoryPage() {
                             Orderlaunches
                         </p>
                         <p className="text-[16px] text-[var(--ink-muted)] leading-relaxed">
-                            We opened pre-orders to bring Steelgate to the first households.
+                            We opened orders to bring Steelgate to the first households.
                             Every Orderhelps us refine the product before general availability.
                         </p>
                     </div>

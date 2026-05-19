@@ -39,7 +39,7 @@ export default function WaitlistForm() {
 
     return (
         <div className="border border-[var(--border)] rounded-2xl px-6 py-5 space-y-3 bg-[var(--bg-alt)]">
-            <p className="text-[14px] font-semibold text-[var(--ink)]">Not ready to pre-order?</p>
+            <p className="text-[14px] font-semibold text-[var(--ink)]">Not ready to order?</p>
             <p className="text-[13px] text-[var(--ink-muted)]">
                 Join the waitlist and we'll notify you when Steelgate launches.
             </p>

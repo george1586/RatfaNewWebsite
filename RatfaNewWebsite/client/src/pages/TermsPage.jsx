@@ -15,7 +15,7 @@ function Section({ title, children }) {
 export default function TermsPage() {
     useSeo({
         title: 'Terms & Conditions — Steelgate',
-        description: 'Terms and conditions for the Steelgate pre-order, subscription, and use of steelgate.io.',
+        description: 'Terms and conditions for the Steelgate order, subscription, and use of steelgate.io.',
         canonical: 'https://steelgate.io/terms',
     });
 
@@ -50,11 +50,11 @@ export default function TermsPage() {
                         <p>Steelgate is currently available to Orderfor a one-time payment of €45. Placing a Orderdoes not constitute a final purchase contract. It reserves your place in the production queue and locks in your founding price.</p>
                         <p><strong>Founding price lock.</strong> Customers who Orderbefore general availability lock in a subscription rate of 45 euro for life. This rate is guaranteed as long as your subscription remains active and is not transferable. After general availability, the standard rate will be €89/year.</p>
                         <p><strong>Target shipping.</strong> We are targeting Q4 2026 for first shipments. This date is an estimate, not a guarantee. We will notify all Ordercustomers of any material changes to the timeline.</p>
-                        <p><strong>Minimum pre-orders.</strong> If we do not reach the minimum number of pre-orders required to proceed to production, all payments will be refunded in full. We will notify you by email if this occurs.</p>
+                        <p><strong>Minimum orders.</strong> If we do not reach the minimum number of orders required to proceed to production, all payments will be refunded in full. We will notify you by email if this occurs.</p>
                     </Section>
 
                     <Section title="3. Refunds and Cancellations">
-                        <p>Your €45 Orderpayment is fully refundable at any point before we ship your unit. To request a refund, email <a href="mailto:hello@steelgate.io" className="underline underline-offset-2 hover:opacity-60 transition-opacity">hello@steelgate.io</a> from the email address you used to pre-order. Refunds are processed within 5–10 business days.</p>
+                        <p>Your €45 Orderpayment is fully refundable at any point before we ship your unit. To request a refund, email <a href="mailto:hello@steelgate.io" className="underline underline-offset-2 hover:opacity-60 transition-opacity">hello@steelgate.io</a> from the email address you used to order. Refunds are processed within 5–10 business days.</p>
                         <p>Once a unit has been shipped, our standard return policy applies: you have 30 days from delivery to return the device in its original condition for a full refund.</p>
                     </Section>
 

@@ -1,7 +1,7 @@
 const links = {
-    Product:  [['Features', '/#features'], ['Pre-Order', '/products'], ['FAQ', '/faq']],
-    Company:  [['About', '/story'], ['Contact', 'mailto:hello@steelgate.io']],
-    Legal:    [['Privacy', '/privacy'], ['Terms', '/terms']],
+    Product: [['Features', '/#features'], ['Order', '/products'], ['FAQ', '/faq']],
+    Company: [['About', '/story'], ['Contact', 'mailto:hello@steelgate.io']],
+    Legal: [['Privacy', '/privacy'], ['Terms', '/terms']],
 };
 
 export default function Footer() {

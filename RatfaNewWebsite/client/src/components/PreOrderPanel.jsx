@@ -73,7 +73,7 @@ export default function PreOrderPanel() {
             {/* Title */}
             <div>
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-2">
-                    Founding Pre-Order
+                    Founding Order
                 </p>
                 <h1 className="font-display text-[clamp(1.6rem,4vw,2.2rem)] text-[var(--ink)] leading-tight">
                     Steelgate
@@ -150,8 +150,8 @@ export default function PreOrderPanel() {
             {/* Info sections */}
             <div className="space-y-5">
                 {[
-                    { title: "What you're pre-ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why Order NOW?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Pre-ordering now locks in your €45 price for life and ensures you ship first." },
+                    { title: "What you're ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
+                    { title: "Why Order NOW?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Ordering now locks in your €45 price for life and ensures you ship first." },
                     { title: "Timeline", body: "We're targeting Q4 2026 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
                 ].map(({ title, body }) => (
                     <div key={title}>
