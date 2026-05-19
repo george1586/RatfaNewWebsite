@@ -8,6 +8,9 @@ const CATEGORY_COLORS = {
     'Parenting': 'bg-[var(--primary)] text-white',
     'Privacy': 'bg-[#1A1A1A] text-white',
     'Digital Wellness': 'bg-[var(--bg-alt)] text-[var(--ink)]',
+    'Research': 'bg-[var(--primary)] text-white',
+    'Mental Health': 'bg-[#1A1A1A] text-white',
+    'Focus': 'bg-[var(--bg-alt)] text-[var(--ink)]',
 };
 
 export default function BlogPage() {
