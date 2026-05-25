@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import { rateLimit } from "./_rateLimit.js";
+import { lookupPromo } from "./_promoCodes.js";
 
 const supabase = createClient(
     process.env.VITE_SUPABASE_URL,
@@ -15,7 +16,11 @@ const FROM = process.env.RESEND_FROM || "George<ichim.george@steelgate.tech>";
 const MAX_NAME = 100;
 const MAX_EMAIL = 254;
 const MAX_ADDRESS = 500;
+const MAX_PHONE = 32;
+const MAX_PROMO = 64;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_RE = /^[+\d][\d\s\-().]{5,}$/;
+const PROMO_RE = /^[A-Z0-9_-]{1,64}$/;
 
 // Prevent HTML/script injection when interpolating user input into the email.
 function escapeHtml(s) {
@@ -36,7 +41,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { name, email, address, company } = req.body || {};
+        const { name, email, phone, address, promoCode, company } = req.body || {};
 
         // Honeypot: real users never fill the hidden "company" field.
         // Pretend success so bots don't probe for the check.
@@ -54,10 +59,30 @@ export default async function handler(req, res) {
         if (address != null && typeof address !== "string") {
             return res.status(400).json({ error: "Invalid address" });
         }
+        if (phone != null && typeof phone !== "string") {
+            return res.status(400).json({ error: "Invalid phone" });
+        }
+        if (promoCode != null && typeof promoCode !== "string") {
+            return res.status(400).json({ error: "Invalid promo code" });
+        }
 
         const cleanName = name.trim().slice(0, MAX_NAME);
         const cleanEmail = email.trim().toLowerCase().slice(0, MAX_EMAIL);
         const cleanAddress = (address || "").trim().slice(0, MAX_ADDRESS);
+        const cleanPhone = (phone || "").trim().slice(0, MAX_PHONE);
+        const cleanPromoRaw = (promoCode || "").trim().toUpperCase().slice(0, MAX_PROMO);
+
+        if (cleanPhone && !PHONE_RE.test(cleanPhone)) {
+            return res.status(400).json({ error: "A valid phone number is required" });
+        }
+        if (cleanPromoRaw && !PROMO_RE.test(cleanPromoRaw)) {
+            return res.status(400).json({ error: "Invalid promo code format" });
+        }
+
+        // Re-validate the promo server-side. Invalid codes are silently
+        // dropped so a stale/typo'd code doesn't block the submission.
+        const promoMatch = cleanPromoRaw ? lookupPromo(cleanPromoRaw) : null;
+        const cleanPromo = promoMatch ? promoMatch.code : null;
 
         // --- Dedupe: if this email already requested, succeed silently and
         // do NOT send another email (prevents repeat-submit email spam). ---
@@ -83,7 +108,9 @@ export default async function handler(req, res) {
             .insert({
                 name: cleanName,
                 email: cleanEmail,
+                phone: cleanPhone || null,
                 address: cleanAddress,
+                promo_code: cleanPromo,
                 created_at: new Date().toISOString(),
             });
 
@@ -103,12 +130,12 @@ export default async function handler(req, res) {
             const { error: emailError } = await resend.emails.send({
                 from: FROM,
                 to: cleanEmail,
-                subject: "We received your Steelgate Orderrequest",
+                subject: "Your Steelgate reservation is confirmed",
                 html: `
                     <div style="font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;line-height:1.6;max-width:480px;margin:0 auto;">
-                        <h2 style="margin:0 0 16px;">Thanks, ${escapeHtml(cleanName)}.</h2>
-                        <p>We've received your request to reserve a founding Steelgate unit.</p>
-                        <p><strong>We're currently out of stock</strong>, but founding spots are being processed in order. We'll reach out to you as soon as a spot opens up — no payment is needed right now.</p>
+                        <h2 style="margin:0 0 16px;">Thank you, ${escapeHtml(cleanName)}.</h2>
+                        <p>Thank you for your support — <strong>your reservation has been made</strong>.</p>
+                        <p>We'll get back to you shortly with the next steps. No payment is needed right now.</p>
                         <p style="margin-top:24px;color:#666;font-size:13px;">If you didn't request this, you can safely ignore this email.</p>
                         <p style="color:#666;font-size:13px;">— The Steelgate team</p>
                     </div>

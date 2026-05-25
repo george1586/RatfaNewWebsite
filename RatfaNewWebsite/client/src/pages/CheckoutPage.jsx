@@ -11,16 +11,78 @@ const PERKS = [
     "Direct line to the founders for product feedback",
 ];
 
+const BASE_PRICE = 45;
+
 export default function CheckoutPage() {
     useSeo({ title: "Checkout — Steelgate Founding Order" });
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
-    const [form, setForm] = useState({ name: "", email: "", address: "", company: "" });
+    const [form, setForm] = useState({ name: "", email: "", phone: "", address: "", promoCode: "", company: "" });
     const [status, setStatus] = useState("idle"); // idle | submitting | done
     const [error, setError] = useState(null);
+    const [promo, setPromo] = useState({ state: "idle", code: null, discountPct: 0, message: null });
+    // state: idle | checking | valid | invalid
+
+    const discountedPrice = promo.state === "valid"
+        ? Math.max(0, Math.round(BASE_PRICE * (1 - promo.discountPct / 100)))
+        : BASE_PRICE;
 
     const handleChange = (e) => {
-        setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+        const { name, value } = e.target;
+        setForm(f => ({ ...f, [name]: value }));
+        // Reset any previously-applied promo when the code is edited.
+        if (name === "promoCode" && promo.state !== "idle") {
+            setPromo({ state: "idle", code: null, discountPct: 0, message: null });
+        }
+    };
+
+    const handleCheckPromo = async () => {
+        if (promo.state === "checking") return;
+        const code = form.promoCode.trim().toUpperCase();
+        if (!code) {
+            setPromo({ state: "invalid", code: null, discountPct: 0, message: "Enter a code first." });
+            return;
+        }
+
+        setPromo({ state: "checking", code, discountPct: 0, message: null });
+
+        try {
+            const res = await fetch("/api/validate-promo", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ code }),
+            });
+            const data = await res.json().catch(() => ({}));
+
+            if (!res.ok) {
+                setPromo({
+                    state: "invalid",
+                    code,
+                    discountPct: 0,
+                    message: data.error || "Couldn't check the code. Please try again.",
+                });
+                return;
+            }
+
+            if (!data.valid) {
+                setPromo({ state: "invalid", code, discountPct: 0, message: "That code isn't valid." });
+                return;
+            }
+
+            setPromo({
+                state: "valid",
+                code: data.code,
+                discountPct: data.discountPct,
+                message: data.label || "Promo applied",
+            });
+        } catch {
+            setPromo({
+                state: "invalid",
+                code,
+                discountPct: 0,
+                message: "Couldn't reach the server. Please try again.",
+            });
+        }
     };
 
     const handleSubmit = async (e) => {
@@ -29,7 +91,9 @@ export default function CheckoutPage() {
 
         const name = form.name.trim();
         const email = form.email.trim();
+        const phone = form.phone.trim();
         const address = form.address.trim();
+        const promoCode = form.promoCode.trim();
 
         // Client-side validation (the API re-validates regardless).
         if (!name) {
@@ -38,6 +102,14 @@ export default function CheckoutPage() {
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             setError("Please enter a valid email address.");
+            return;
+        }
+        if (!phone) {
+            setError("Please enter your phone number.");
+            return;
+        }
+        if (!/^[+\d][\d\s\-().]{5,}$/.test(phone)) {
+            setError("Please enter a valid phone number.");
             return;
         }
 
@@ -57,7 +129,7 @@ export default function CheckoutPage() {
             const res = await fetch("/api/preorder-interest", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, address, company: form.company }),
+                body: JSON.stringify({ name, email, phone, address, promoCode, company: form.company }),
                 signal: controller.signal,
             });
 
@@ -97,33 +169,31 @@ export default function CheckoutPage() {
                 <div className="max-w-[1040px] mx-auto">
 
                     {status === "done" ? (
-                        /* ---- Part 2: out-of-stock confirmation ---- */
+                        /* ---- Part 2: reservation confirmation ---- */
                         <div className="max-w-[480px] mx-auto text-center space-y-7 py-10">
                             <div className="w-14 h-14 rounded-full bg-[var(--bg-alt)] border border-[var(--border)] flex items-center justify-center mx-auto">
                                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                     <circle cx="12" cy="12" r="9" />
-                                    <line x1="12" y1="8" x2="12" y2="13" />
-                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                    <polyline points="8 12.5 11 15.5 16.5 10" />
                                 </svg>
                             </div>
                             <div>
                                 <h1 className="font-display text-[clamp(2rem,6vw,3rem)] text-[var(--ink)] tracking-[-0.02em] leading-tight mb-3">
-                                    Sorry — we're out of stock.
+                                    Reservation confirmed.
                                 </h1>
                                 <p className="text-[16px] text-[var(--ink-muted)] leading-[1.65]">
-                                    We've run out of founding units right now, but we've saved your
-                                    details and will get back to you as soon as possible — no payment
-                                    was taken.
+                                    Thank you for your support — your reservation has been made.
+                                    We'll get back to you shortly with the next steps.
                                 </p>
                             </div>
                             <div className="border border-[var(--border)] rounded-2xl bg-[var(--bg-alt)] px-6 py-5 text-left space-y-3">
                                 <p className="text-[13px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">What happens next</p>
                                 <ul className="space-y-2.5">
                                     {[
-                                        "We've emailed you a confirmation of your request",
-                                        "You're in the queue for the next founding batch",
-                                        "We'll reach out the moment a spot opens up",
-                                        "No charge until a unit is reserved for you",
+                                        "We've emailed you a confirmation of your reservation",
+                                        "Your founding spot is locked in at the price shown",
+                                        "We'll reach out shortly with shipping and next steps",
+                                        "No payment is needed right now",
                                     ].map(item => (
                                         <li key={item} className="flex items-start gap-3 text-[15px] text-[var(--ink)]">
                                             <span className="text-[var(--primary)] mt-0.5">✓</span>
@@ -189,6 +259,21 @@ export default function CheckoutPage() {
                                     </div>
 
                                     <div className="space-y-1.5">
+                                        <label htmlFor="co-phone" className="text-[13px] font-medium text-[var(--ink)]">Phone</label>
+                                        <input
+                                            id="co-phone"
+                                            name="phone"
+                                            type="tel"
+                                            required
+                                            autoComplete="tel"
+                                            value={form.phone}
+                                            onChange={handleChange}
+                                            placeholder="+40 712 345 678"
+                                            className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
+                                        />
+                                    </div>
+
+                                    <div className="space-y-1.5">
                                         <label htmlFor="co-address" className="text-[13px] font-medium text-[var(--ink)]">Shipping address</label>
                                         <textarea
                                             id="co-address"
@@ -199,6 +284,37 @@ export default function CheckoutPage() {
                                             placeholder="Street, city, postal code, country"
                                             className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150 resize-none"
                                         />
+                                    </div>
+
+                                    <div className="space-y-1.5">
+                                        <label htmlFor="co-promo" className="text-[13px] font-medium text-[var(--ink)]">
+                                            Promo code <span className="text-[var(--ink-muted)] font-normal">(optional)</span>
+                                        </label>
+                                        <div className="flex gap-2">
+                                            <input
+                                                id="co-promo"
+                                                name="promoCode"
+                                                type="text"
+                                                autoComplete="off"
+                                                value={form.promoCode}
+                                                onChange={handleChange}
+                                                placeholder="FOUNDER10"
+                                                className="flex-1 min-w-0 px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150 uppercase"
+                                            />
+                                            <button
+                                                type="button"
+                                                onClick={handleCheckPromo}
+                                                disabled={promo.state === "checking"}
+                                                className="shrink-0 px-5 rounded-xl border border-[var(--ink)] text-[14px] font-semibold text-[var(--ink)] hover:bg-[var(--ink)] hover:text-white transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            >
+                                                {promo.state === "checking" ? "Checking…" : "Check"}
+                                            </button>
+                                        </div>
+                                        {promo.message && (
+                                            <p className={`text-[13px] ${promo.state === "valid" ? "text-[var(--primary)]" : "text-red-600"}`}>
+                                                {promo.message}
+                                            </p>
+                                        )}
                                     </div>
 
                                     {/* Honeypot — hidden from real users, catches bots */}
@@ -236,9 +352,18 @@ export default function CheckoutPage() {
                                         Order summary
                                     </p>
 
-                                    <div className="flex justify-between items-baseline">
+                                    <div className="flex justify-between items-baseline gap-3">
                                         <span className="text-[15px] text-[var(--ink)]">Steelgate — Founding Order</span>
-                                        <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€45</span>
+                                        {promo.state === "valid" ? (
+                                            <span className="flex items-baseline gap-2">
+                                                <span className="text-[1.1rem] font-medium text-[var(--ink-muted)] line-through">€{BASE_PRICE}</span>
+                                                <span className="text-[2rem] font-bold text-[var(--primary)] tracking-[-0.03em] leading-none">
+                                                    {discountedPrice === 0 ? "Free" : `€${discountedPrice}`}
+                                                </span>
+                                            </span>
+                                        ) : (
+                                            <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€{BASE_PRICE}</span>
+                                        )}
                                     </div>
                                     <p className="text-[13px] text-[var(--ink-muted)]">
                                         One-time · VAT included · Fully refundable before ship date · Ships Q4 2026
