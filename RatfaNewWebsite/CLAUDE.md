@@ -29,8 +29,8 @@ There are no tests.
 
 **Vercel serverless functions** live in `client/api/` (not `server/`). Each file is a Next.js-style handler:
 - `create-preorder-session.js` — creates a Stripe Checkout session for the €10 deposit
-- `preorder-count.js` — reads confirmed pre-order count from Supabase (adds a fake base of 13)
-- `preorder-webhook.js` — Stripe webhook that writes confirmed pre-orders to Supabase
+- `preorder-count.js` — reads confirmed Ordercount from Supabase (adds a fake base of 13)
+- `preorder-webhook.js` — Stripe webhook that writes confirmed orders to Supabase
 - `waitlist.js` — inserts emails into a Supabase `waitlist` table
 - `webhook.js` — generic Stripe webhook handler
 

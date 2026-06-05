@@ -13,11 +13,44 @@ const PERKS = [
 
 const BASE_PRICE = 45;
 
+// Per-field validators. Return "" when the value is acceptable, otherwise the
+// message shown next to the field. The API re-validates regardless.
+const VALIDATORS = {
+    name: (v) => (v.trim() ? "" : "Please enter your name."),
+    email: (v) =>
+        !v.trim()
+            ? "Please enter your email."
+            : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+                ? ""
+                : "Please enter a valid email address.",
+    phone: (v) =>
+        !v.trim()
+            ? "Please enter your phone number."
+            : /^[+\d][\d\s\-().]{5,}$/.test(v.trim())
+                ? ""
+                : "Please enter a valid phone number.",
+};
+
+// Small green tick shown on a correctly-filled field.
+function CheckMark() {
+    return (
+        <svg
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-[var(--primary)]"
+            width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            aria-hidden="true"
+        >
+            <polyline points="20 6 9 17 4 12" />
+        </svg>
+    );
+}
+
 export default function CheckoutPage() {
     useSeo({ title: "Checkout — Steelgate Founding Order" });
     useEffect(() => { window.scrollTo(0, 0); }, []);
 
     const [form, setForm] = useState({ name: "", email: "", phone: "", address: "", promoCode: "", company: "" });
+    const [touched, setTouched] = useState({}); // which validated fields have been blurred
     const [status, setStatus] = useState("idle"); // idle | submitting | done
     const [error, setError] = useState(null);
     const [promo, setPromo] = useState({ state: "idle", code: null, discountPct: 0, message: null });
@@ -26,6 +59,22 @@ export default function CheckoutPage() {
     const discountedPrice = promo.state === "valid"
         ? Math.max(0, Math.round(BASE_PRICE * (1 - promo.discountPct / 100)))
         : BASE_PRICE;
+
+    // Once a field has been blurred, errors/ticks update live as the user types.
+    const fieldError = (name) => (touched[name] ? VALIDATORS[name](form[name]) : "");
+    const fieldValid = (name) => touched[name] && !VALIDATORS[name](form[name]);
+
+    const inputBorder = (name) =>
+        fieldError(name)
+            ? "border-red-400 focus:border-red-500"
+            : fieldValid(name)
+                ? "border-[var(--primary)] focus:border-[var(--primary)]"
+                : "border-[var(--border)] focus:border-[var(--ink)]";
+
+    const handleBlur = (e) => {
+        const { name } = e.target;
+        if (VALIDATORS[name]) setTouched(t => ({ ...t, [name]: true }));
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -95,21 +144,13 @@ export default function CheckoutPage() {
         const address = form.address.trim();
         const promoCode = form.promoCode.trim();
 
-        // Client-side validation (the API re-validates regardless).
-        if (!name) {
-            setError("Please enter your name.");
-            return;
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            setError("Please enter a valid email address.");
-            return;
-        }
-        if (!phone) {
-            setError("Please enter your phone number.");
-            return;
-        }
-        if (!/^[+\d][\d\s\-().]{5,}$/.test(phone)) {
-            setError("Please enter a valid phone number.");
+        // Client-side validation (the API re-validates regardless). Reveal any
+        // per-field errors by marking the validated fields as touched.
+        const firstInvalid = Object.keys(VALIDATORS).find(key => VALIDATORS[key](form[key]));
+        if (firstInvalid) {
+            setTouched({ name: true, email: true, phone: true });
+            setError(null);
+            document.getElementById(`co-${firstInvalid}`)?.focus();
             return;
         }
 
@@ -232,45 +273,63 @@ export default function CheckoutPage() {
 
                                     <div className="space-y-1.5">
                                         <label htmlFor="co-name" className="text-[13px] font-medium text-[var(--ink)]">Full name</label>
-                                        <input
-                                            id="co-name"
-                                            name="name"
-                                            type="text"
-                                            required
-                                            value={form.name}
-                                            onChange={handleChange}
-                                            placeholder="Jane Doe"
-                                            className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
-                                        />
+                                        <div className="relative">
+                                            <input
+                                                id="co-name"
+                                                name="name"
+                                                type="text"
+                                                required
+                                                value={form.name}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                aria-invalid={!!fieldError("name")}
+                                                placeholder="Jane Doe"
+                                                className={`w-full px-4 py-3 pr-10 border rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none transition-colors duration-150 ${inputBorder("name")}`}
+                                            />
+                                            {fieldValid("name") && <CheckMark />}
+                                        </div>
+                                        {fieldError("name") && <p className="text-[13px] text-red-600">{fieldError("name")}</p>}
                                     </div>
 
                                     <div className="space-y-1.5">
                                         <label htmlFor="co-email" className="text-[13px] font-medium text-[var(--ink)]">Email</label>
-                                        <input
-                                            id="co-email"
-                                            name="email"
-                                            type="email"
-                                            required
-                                            value={form.email}
-                                            onChange={handleChange}
-                                            placeholder="your@email.com"
-                                            className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
-                                        />
+                                        <div className="relative">
+                                            <input
+                                                id="co-email"
+                                                name="email"
+                                                type="email"
+                                                required
+                                                value={form.email}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                aria-invalid={!!fieldError("email")}
+                                                placeholder="your@email.com"
+                                                className={`w-full px-4 py-3 pr-10 border rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none transition-colors duration-150 ${inputBorder("email")}`}
+                                            />
+                                            {fieldValid("email") && <CheckMark />}
+                                        </div>
+                                        {fieldError("email") && <p className="text-[13px] text-red-600">{fieldError("email")}</p>}
                                     </div>
 
                                     <div className="space-y-1.5">
                                         <label htmlFor="co-phone" className="text-[13px] font-medium text-[var(--ink)]">Phone</label>
-                                        <input
-                                            id="co-phone"
-                                            name="phone"
-                                            type="tel"
-                                            required
-                                            autoComplete="tel"
-                                            value={form.phone}
-                                            onChange={handleChange}
-                                            placeholder="+40 712 345 678"
-                                            className="w-full px-4 py-3 border border-[var(--border)] rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none focus:border-[var(--ink)] transition-colors duration-150"
-                                        />
+                                        <div className="relative">
+                                            <input
+                                                id="co-phone"
+                                                name="phone"
+                                                type="tel"
+                                                required
+                                                autoComplete="tel"
+                                                value={form.phone}
+                                                onChange={handleChange}
+                                                onBlur={handleBlur}
+                                                aria-invalid={!!fieldError("phone")}
+                                                placeholder="+40 712 345 678"
+                                                className={`w-full px-4 py-3 pr-10 border rounded-xl text-[14px] text-[var(--ink)] bg-[var(--bg)] placeholder:text-[var(--ink-muted)] outline-none transition-colors duration-150 ${inputBorder("phone")}`}
+                                            />
+                                            {fieldValid("phone") && <CheckMark />}
+                                        </div>
+                                        {fieldError("phone") && <p className="text-[13px] text-red-600">{fieldError("phone")}</p>}
                                     </div>
 
                                     <div className="space-y-1.5">
