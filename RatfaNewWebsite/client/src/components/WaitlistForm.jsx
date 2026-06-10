@@ -31,17 +31,17 @@ export default function WaitlistForm() {
     if (status === "done") {
         return (
             <div className="border border-[var(--border)] rounded-2xl px-6 py-5 text-center space-y-1 bg-[var(--bg-alt)]">
-                <p className="text-[15px] font-semibold text-[var(--ink)]">You're on the list.</p>
-                <p className="text-[13px] text-[var(--ink-muted)]">We'll let you know when Steelgate launches.</p>
+                <p className="text-[15px] font-semibold text-[var(--ink)]">Ești pe listă.</p>
+                <p className="text-[13px] text-[var(--ink-muted)]">Te anunțăm când Steelgate lansează.</p>
             </div>
         );
     }
 
     return (
         <div className="border border-[var(--border)] rounded-2xl px-6 py-5 space-y-3 bg-[var(--bg-alt)]">
-            <p className="text-[14px] font-semibold text-[var(--ink)]">Not ready to order?</p>
+            <p className="text-[14px] font-semibold text-[var(--ink)]">Nu ești pregătit să comanzi?</p>
             <p className="text-[13px] text-[var(--ink-muted)]">
-                Join the waitlist and we'll notify you when Steelgate launches.
+                Înscrie-te pe lista de așteptare și te notificăm la lansare.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col xs:flex-row gap-2">
                 <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
@@ -69,7 +69,7 @@ export default function WaitlistForm() {
                     disabled={status === "loading"}
                     className="w-full xs:w-auto px-5 py-2.5 bg-[var(--ink)] hover:bg-black text-white rounded-full text-[14px] font-semibold transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                 >
-                    {status === "loading" ? "…" : "Join waitlist"}
+                    {status === "loading" ? "…" : "Înscrie-te"}
                 </button>
             </form>
             {error && <p className="text-[13px] text-red-600">{error}</p>}

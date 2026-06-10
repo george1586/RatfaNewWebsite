@@ -12,28 +12,28 @@ import orderProductImg from "../assets/images/productpage.png";
 const thumbnails = [orderProductImg];
 
 const howItWorksSteps = [
-    { title: "Plug it into your router", desc: "Connect Steelgate to your existing router with the included ethernet cable. No rewiring, no IT knowledge — takes under a minute." },
-    { title: "Download the app", desc: "Get the Steelgate app on iOS or Android. Your device is detected automatically within seconds of plugging in." },
-    { title: "Set your rules", desc: "Choose which apps and sites to block, for which devices, and on what schedule. TikTok off after 9pm, Reddit off during homework hours — you decide." },
-    { title: "Forget about it", desc: "Your schedule runs automatically. You're in control without having to think about it every day." },
+    { title: "Conectează-l la router", desc: "Conectează Steelgate la routerul tău existent cu cablul ethernet inclus. Nicio reconfigurare, nicio cunoștință IT — durează sub un minut." },
+    { title: "Descarcă aplicația", desc: "Descarcă aplicația Steelgate pe iOS sau Android. Dispozitivul tău este detectat automat în câteva secunde de la conectare." },
+    { title: "Setează regulile tale", desc: "Alege ce aplicații și site-uri să blochezi, pentru ce dispozitive și pe ce programare. TikTok oprit după ora 21, Reddit oprit în orele de studiu — tu decizi." },
+    { title: "Uită de el", desc: "Programul rulează automat. Ești în control fără să te mai gândești la asta în fiecare zi." },
 ];
 
 const appFeatures = [
-    { label: "Block & Unblock Devices", desc: "Instantly cut or restore internet access for any device on your network from anywhere in the world." },
-    { label: "Customize Sites & Apps", desc: "Build a blocklist tailored to your household. Block social media, adult content, gambling — or anything you choose." },
-    { label: "Schedule Blocking", desc: "Set time-based rules so certain content is only available at certain hours. Perfect for kids' bedtimes or focus hours." },
-    { label: "View Network History", desc: "See a full log of every domain visited across all devices, with timestamps and categories." },
-    { label: "Remote Access", desc: "Manage your network from anywhere via the Steelgate app — no VPN or port forwarding required." },
-    { label: "Strict Mode", desc: "Lock down the network completely with one tap. Great for study sessions or distraction-free time." },
+    { label: "Blochează și deblochează dispozitive", desc: "Taie sau restabilește accesul la internet pentru orice dispozitiv din rețeaua ta de oriunde din lume, instant." },
+    { label: "Personalizează site-urile și aplicațiile", desc: "Construiește o listă de blocare adaptată casei tale. Blochează social media, conținut adult, gambling — sau orice altceva alegi." },
+    { label: "Programare blocare", desc: "Setează reguli bazate pe timp, astfel încât anumit conținut să fie disponibil doar la anumite ore. Perfect pentru serile copiilor sau orele de concentrare." },
+    { label: "Vezi istoricul rețelei", desc: "Consultă un jurnal complet al fiecărui domeniu accesat pe toate dispozitivele, cu marcaje temporale și categorii." },
+    { label: "Acces de la distanță", desc: "Administrează rețeaua de oriunde prin aplicația Steelgate — fără VPN sau port forwarding." },
+    { label: "Modul Strict", desc: "Blochează complet rețeaua cu o singură atingere. Ideal pentru sesiuni de studiu sau timp fără distracții." },
 ];
 
 const comparisonRows = [
-    { label: "Works on every device automatically", sg: true, phone: false, dns: false },
-    { label: "Can't be bypassed or uninstalled by kids", sg: true, phone: false, dns: false },
-    { label: "Schedule-based blocking", sg: true, phone: false, dns: false },
-    { label: "App & site-specific filtering", sg: true, phone: false, dns: false },
-    { label: "Ad & tracker blocking", sg: true, phone: false, dns: true },
-    { label: "No technical setup required", sg: true, phone: false, dns: true },
+    { label: "Funcționează pe fiecare dispozitiv automat", sg: true, phone: false, dns: false },
+    { label: "Nu poate fi ocolit sau dezinstalat", sg: true, phone: false, dns: false },
+    { label: "Blocare pe bază de programare", sg: true, phone: false, dns: false },
+    { label: "Filtrare per aplicație și site", sg: true, phone: false, dns: false },
+    { label: "Blocare reclame și trackere", sg: true, phone: false, dns: true },
+    { label: "Fără configurare tehnică", sg: true, phone: false, dns: true },
 ];
 
 function StepAccordion({ steps }) {
@@ -107,9 +107,9 @@ export default function ProductShowcase() {
             <section className="w-full px-4 sm:px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto">
                     <div className="mb-12">
-                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Setup</p>
+                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Configurare</p>
                         <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em]">
-                            Up and running in under a minute.
+                            Gata în mai puțin de un minut.
                         </h2>
                     </div>
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -167,18 +167,18 @@ export default function ProductShowcase() {
             {/* ── 3. Stats ── */}
             <section className="w-full px-4 sm:px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto text-center">
-                    <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">The numbers</p>
+                    <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Cifrele</p>
                     <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em] mb-4">
-                        The numbers behind household screen time.
+                        Ce spun datele despre timp petrecut pe ecrane.
                     </h2>
                     <p className="text-[16px] text-[var(--ink-muted)] mb-14 max-w-prose mx-auto">
-                        Why families are choosing a hardware-level solution.
+                        De ce tot mai mulți aleg o soluție la nivel hardware.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--border)] border border-[var(--border)] rounded-2xl overflow-hidden">
                         {[
-                            { stat: "4.8h", label: "Average daily screen time", sub: "Per person in a household — adults included" },
-                            { stat: "67%", label: "Kids bypass app limits", sub: "Most software controls are easy to get around" },
-                            { stat: "1 device", label: "Controls your whole home", sub: "Every phone, tablet, laptop, and smart TV" },
+                            { stat: "4.8h", label: "Timp mediu zilnic pe ecrane", sub: "Per persoană — inclusiv adulți" },
+                            { stat: "67%", label: "Ocolesc limitele app-urilor", sub: "Majoritatea soluțiilor software se contournează ușor" },
+                            { stat: "1 dispozitiv", label: "Controlează toată casa", sub: "Fiecare telefon, tabletă, laptop și televizor smart" },
                         ].map(({ stat, label, sub }) => (
                             <div key={label} className="bg-[var(--bg)] px-5 xs:px-8 py-8 xs:py-10 text-center">
                                 <p className="text-[clamp(1.75rem,8vw,3rem)] font-bold text-[var(--ink)] tracking-[-0.04em] leading-none mb-3">{stat}</p>
@@ -193,14 +193,14 @@ export default function ProductShowcase() {
                             track('preorder_clicked', {
                                 page: 'products',
                                 placement: 'stats_section',
-                                cta_text: 'Order NOW',
+                                cta_text: 'Comandă acum',
                                 cta_variant: 'inline_link',
                                 destination: 'scroll_to_preorder_panel',
                             });
                             document.querySelector('[data-preorder]')?.scrollIntoView({ behavior: 'smooth' });
                         }}
                             className="inline-flex items-center px-7 py-3.5 rounded-full bg-[var(--ink)] text-white text-[15px] font-semibold hover:bg-black transition-colors duration-150">
-                            Order NOW
+                            Comandă acum
                         </a>
                     </div>
                 </div>
@@ -210,17 +210,17 @@ export default function ProductShowcase() {
             <section className="w-full px-4 sm:px-6 bg-[var(--bg-alt)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[var(--content-w)] mx-auto">
                     <div className="mb-12 text-center">
-                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">The app</p>
+                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Aplicația</p>
                         <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em]">
-                            Your household's control panel.
+                            Panoul de control al casei tale.
                         </h2>
                     </div>
 
                     <div className="flex justify-center gap-2 mb-10">
-                        {["blocked", "allowed"].map(tab => (
+                        {[["blocked", "Blocate"], ["allowed", "Permise"]].map(([tab, label]) => (
                             <button key={tab} onClick={() => setActiveTab(tab)}
                                 className={`px-5 py-2 rounded-full text-[14px] font-semibold transition-all duration-150 ${activeTab === tab ? 'bg-[var(--ink)] text-white' : 'bg-[var(--bg)] text-[var(--ink-muted)] hover:text-[var(--ink)]'}`}>
-                                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                                {label}
                             </button>
                         ))}
                     </div>
@@ -239,8 +239,8 @@ export default function ProductShowcase() {
                                 ? <rect x="31" y="63" width="85" height="22" rx="7" fill="#1A1A1A" />
                                 : <rect x="126" y="63" width="83" height="22" rx="7" fill="#1A1A1A" />
                             }
-                            <text x="73" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "blocked" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Blocked</text>
-                            <text x="167" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "allowed" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Allowed</text>
+                            <text x="73" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "blocked" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Blocate</text>
+                            <text x="167" y="79" fontSize="9.5" fontWeight="600" fill={activeTab === "allowed" ? "white" : "rgba(26,26,26,0.45)"} fontFamily="Inter, sans-serif" textAnchor="middle">Permise</text>
                             {/* App list */}
                             {[
                                 { name: "TikTok", cat: "Social Media" },
@@ -288,9 +288,9 @@ export default function ProductShowcase() {
             <section className="w-full px-4 sm:px-6 bg-[var(--bg)]" style={{ paddingTop: 'var(--section-y)', paddingBottom: 'var(--section-y)' }}>
                 <div className="max-w-[680px] mx-auto w-full">
                     <div className="mb-12 text-center">
-                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">vs the alternatives</p>
+                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">Față de alternative</p>
                         <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em]">
-                            What sets Steelgate apart.
+                            Ce face Steelgate diferit.
                         </h2>
                     </div>
                     <div className="border border-[var(--border)] rounded-2xl overflow-hidden">
@@ -303,10 +303,10 @@ export default function ProductShowcase() {
                                             <p className="text-[10px] sm:text-[11px] font-bold text-[var(--primary)] tracking-widest uppercase">Steelgate</p>
                                         </th>
                                         <th className="py-4 px-3 sm:px-4 text-center">
-                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">Phone Controls</p>
+                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">Controale telefon</p>
                                         </th>
                                         <th className="py-4 px-3 sm:px-4 text-center">
-                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">DNS Tool</p>
+                                            <p className="text-[10px] sm:text-[11px] font-semibold text-[var(--ink-muted)] uppercase tracking-widest">Unealtă DNS</p>
                                         </th>
                                     </tr>
                                 </thead>

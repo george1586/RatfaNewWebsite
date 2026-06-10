@@ -3,8 +3,8 @@ import { useSeo } from "../lib/useSeo";
 
 export default function StoryPage() {
     useSeo({
-        title: 'Our Story — Steelgate',
-        description: 'Why we built Steelgate — the hardware device that puts households back in control of their attention, one network at a time.',
+        title: 'Povestea noastră — Steelgate',
+        description: 'De ce am construit Steelgate — dispozitivul hardware care redă gospodăriilor controlul asupra propriei atenții.',
         canonical: 'https://steelgate.io/story',
     });
 
@@ -15,18 +15,17 @@ export default function StoryPage() {
             <section className="pt-[calc(var(--header-h)+80px)] pb-20 px-6">
                 <div className="max-w-[var(--prose-w)] mx-auto">
                     <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-6">
-                        Our Story
+                        Povestea noastră
                     </p>
                     <h1
                         className="text-[clamp(2.6rem,6vw,4.5rem)] font-display leading-[1.05] tracking-tight text-[var(--ink)] mb-8"
                         style={{ fontFamily: 'var(--font-display)' }}
                     >
-                        We built the switch the algorithm hoped you'd never find.
+                        Am construit întrerupătorul pe care algoritmul spera că nu-l vei găsi.
                     </h1>
                     <p className="text-[1.2rem] text-[var(--ink-muted)] leading-relaxed">
-                        Steelgate started as a personal problem. We couldn't put our phones down —
-                        and neither could anyone else in our households. So we built something that
-                        makes that choice for you.
+                        Steelgate a pornit dintr-o problemă personală. Nu mai puteam lăsa telefonul jos —
+                        și nici ceilalți din jurul nostru. Așa că am construit ceva care face alegerea asta în locul tău.
                     </p>
                 </div>
             </section>
@@ -36,31 +35,30 @@ export default function StoryPage() {
                 <div className="max-w-[var(--prose-w)] mx-auto space-y-8 text-[17px] text-[var(--ink)] leading-[1.75]">
 
                     <h2 className="text-[1.75rem] font-bold tracking-tight mb-2">
-                        It's not a willpower problem
+                        Nu e o problemă de voință
                     </h2>
 
                     <p>
-                        Every app fighting for your attention is built by teams of engineers
-                        whose entire job is to keep you scrolling. The autoplay, the infinite
-                        feed, the notification at exactly the right moment — none of that is
-                        accidental. It's the product. And it works. The average person now
-                        spends over four hours a day on their phone, most of it on platforms
-                        designed to be impossible to leave.
+                        Fiecare aplicație care îți luptă atenția e construită de echipe de ingineri
+                        al căror unic scop este să te țină cu ochii în ecran. Redarea automată,
+                        feed-ul infinit, notificarea venită exact la momentul potrivit — nimic din
+                        astea nu e întâmplător. E produsul. Și funcționează. Omul obișnuit petrece
+                        acum peste patru ore pe zi pe telefon, din care marea majoritate pe platforme
+                        proiectate să fie imposibil de lăsat.
                     </p>
 
                     <p>
-                        We saw it at dinner tables where everyone was on a screen. We saw it in
-                        kids who couldn't sit with homework for fifteen minutes without reaching
-                        for a phone. We saw it in ourselves — opening Instagram, closing it,
-                        opening it again thirty seconds later without even realising. This isn't
-                        a character flaw. You can't outrun an algorithm with determination alone.
+                        L-am văzut la mesele unde toată lumea era cu ochii în ecran. L-am văzut în
+                        noi înșine — deschizând Instagram, închizând, redeschizând treizeci de secunde
+                        mai târziu fără să ne dăm seama. Nu e un defect de caracter. Nu poți bate un
+                        algoritm cu simpla determinare.
                     </p>
 
                     <p>
-                        The obvious solutions didn't work. Parental control apps got uninstalled.
-                        Browser extensions only covered one device. Screen time settings were
-                        trivial to bypass. Every software solution had the same problem: it lived
-                        on the device that the distraction also lived on.
+                        Soluțiile evidente nu au funcționat. Aplicațiile de control parental se dezinstalau.
+                        Extensiile de browser acopereau un singur dispozitiv. Setările de screen time
+                        se ocoleau trivial. Fiecare soluție software avea aceeași problemă: trăia pe
+                        același dispozitiv ca distracția.
                     </p>
                 </div>
             </section>
@@ -73,11 +71,11 @@ export default function StoryPage() {
                         style={{ background: 'var(--ink)' }}
                     >
                         <blockquote className="text-[clamp(1.35rem,3vw,2rem)] font-semibold leading-[1.4] text-white tracking-tight max-w-[680px]">
-                            "You shouldn't have to fight your own home for your attention.
-                            The rules should work whether you remember to enforce them or not."
+                            „Nu ar trebui să te lupți cu propria casă pentru atenția ta.
+                            Regulile trebuie să funcționeze indiferent dacă îți amintești să le aplici sau nu."
                         </blockquote>
                         <p className="mt-6 text-white/50 text-[14px] tracking-wide uppercase font-medium">
-                            — The Steelgate team
+                            — Echipa Steelgate
                         </p>
                     </div>
                 </div>
@@ -88,30 +86,28 @@ export default function StoryPage() {
                 <div className="max-w-[var(--prose-w)] mx-auto space-y-8 text-[17px] text-[var(--ink)] leading-[1.75]">
 
                     <h2 className="text-[1.75rem] font-bold tracking-tight mb-2">
-                        Hardware, because the device can't fix itself
+                        Hardware, pentru că dispozitivul nu se poate repara singur
                     </h2>
 
                     <p>
-                        The answer had to sit upstream of the devices — not on them. A small box
-                        between your router and the rest of your home, one that every phone,
-                        tablet, laptop, and smart TV in the house passes through automatically.
-                        No app to install. No setting to turn off. No way around it from a device
-                        that's already been blocked.
+                        Soluția trebuia să stea deasupra dispozitivelor — nu pe ele. O cutie mică
+                        între routerul tău și restul casei, prin care trec automat orice telefon,
+                        tabletă, laptop și televizor smart. Nicio aplicație de instalat. Nicio setare
+                        de dezactivat. Niciun bypass de pe un dispozitiv care a fost deja blocat.
                     </p>
 
                     <p>
-                        That's Steelgate. You set the rules once — block TikTok after 9pm,
-                        cut Instagram during school hours, kill short-form video feeds entirely
-                        on weekdays — and it runs itself. The schedule doesn't require your
-                        willpower to enforce it. It just works.
+                        Asta e Steelgate. Setezi regulile o dată — blochezi TikTok după ora 21,
+                        tai Instagram în orele de studiu, elimini feed-urile video scurte complet în
+                        zilele lucrătoare — și se ocupă singur. Programul nu are nevoie de voința ta
+                        ca să funcționeze. Pur și simplu funcționează.
                     </p>
 
                     <p>
-                        We also built in ad and tracker blocking at the network level. Every
-                        website you visit quietly reports your behaviour to dozens of data brokers.
-                        Every app phones home with more than it should. Steelgate cuts those
-                        connections before they leave your home — faster pages, less noise, and
-                        your data stays yours.
+                        Am construit și blocare de reclame și trackere la nivel de rețea. Fiecare
+                        site pe care îl vizitezi raportează în liniște comportamentul tău la zeci de
+                        brokeri de date. Steelgate taie aceste conexiuni înainte să iasă din casă —
+                        pagini mai rapide, mai puțin zgomot, datele tale rămân ale tale.
                     </p>
                 </div>
             </section>
@@ -120,18 +116,18 @@ export default function StoryPage() {
             <section className="px-6 mb-20">
                 <div className="max-w-[var(--prose-w)] mx-auto">
                     <h2 className="text-[1.75rem] font-bold tracking-tight mb-12">
-                        Where we are now
+                        Unde suntem acum
                     </h2>
                     <div className="border-l-2 border-[var(--primary)] pl-6">
                         <p className="text-[12px] font-bold tracking-[0.15em] uppercase text-[var(--primary)] mb-1">
                             2025
                         </p>
                         <p className="text-[17px] font-semibold text-[var(--ink)] mb-2">
-                            Orderlaunches
+                            Lansăm comenzile
                         </p>
                         <p className="text-[16px] text-[var(--ink-muted)] leading-relaxed">
-                            We opened orders to bring Steelgate to the first households.
-                            Every Orderhelps us refine the product before general availability.
+                            Am deschis comenzile pentru a aduce Steelgate în primele gospodării.
+                            Fiecare comandă ne ajută să îmbunătățim produsul înainte de disponibilitatea generală.
                         </p>
                     </div>
                 </div>
@@ -145,11 +141,11 @@ export default function StoryPage() {
                         style={{ borderColor: 'var(--border)', background: 'var(--bg-alt)' }}
                     >
                         <p className="text-[17px] text-[var(--ink)] leading-[1.75] mb-6">
-                            We're still a small team. We answer our own emails. If you have
-                            questions about what Steelgate does, how it works, or why we made a
-                            certain design decision, reach out — we'd genuinely love to hear from you.
+                            Suntem în continuare o echipă mică. Ne răspundem singuri la emailuri. Dacă ai
+                            întrebări despre ce face Steelgate, cum funcționează sau de ce am luat anumite
+                            decizii de design, scrie-ne — ne-ar face plăcere să auzim de la tine.
                         </p>
-                        <p className="text-[14px] text-[var(--ink-muted)] mb-1">The Steelgate founders</p>
+                        <p className="text-[14px] text-[var(--ink-muted)] mb-1">Fondatorii Steelgate</p>
                         <a
                             href="mailto:hello@steelgate.io"
                             className="text-[14px] text-[var(--ink)] underline underline-offset-2 hover:opacity-60 transition-opacity"
@@ -164,10 +160,10 @@ export default function StoryPage() {
             <section className="px-6 mb-20">
                 <div className="max-w-[var(--prose-w)] mx-auto text-center">
                     <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold text-[var(--ink)] tracking-[-0.03em] leading-[1.1] mb-5">
-                        Tech's best features are the ones you choose.
+                        Rezervă-ți locul. Lansare în România.
                     </h2>
                     <p className="text-[17px] text-[var(--ink-muted)] mb-8">
-                        OrderSteelgate and take back control of every screen in your home.
+                        Comandă Steelgate și recâștigă controlul asupra fiecărui ecran din casă.
                     </p>
                     <a
                         href="/products"
@@ -176,7 +172,7 @@ export default function StoryPage() {
                         onMouseEnter={e => e.currentTarget.style.background = '#000'}
                         onMouseLeave={e => e.currentTarget.style.background = 'var(--ink)'}
                     >
-                        OrderSteelgate
+                        Comandă Steelgate
                     </a>
                 </div>
             </section>

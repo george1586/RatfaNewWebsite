@@ -61,7 +61,7 @@ export default function PreOrderPanel() {
         track('preorder_clicked', {
             page: 'products',
             placement: 'preorder_panel',
-            cta_text: 'Order NOW',
+            cta_text: 'Comandă acum',
             cta_variant: 'primary_button',
         });
         navigate("/checkout");
@@ -73,7 +73,7 @@ export default function PreOrderPanel() {
             {/* Title */}
             <div>
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-2">
-                    Founding Order
+                    Comandă de fondator
                 </p>
                 <h1 className="font-display text-[clamp(1.6rem,4vw,2.2rem)] text-[var(--ink)] leading-tight">
                     Steelgate
@@ -83,23 +83,23 @@ export default function PreOrderPanel() {
             {/* Pricing */}
             <div className="space-y-1.5">
                 <div className="flex items-baseline gap-2.5">
-                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€45</span>
-                    <span className="text-[15px] text-[var(--ink-muted)]">one-time · standard price is €89/year</span>
+                    <span className="text-[2rem] font-bold text-[var(--ink)] tracking-[-0.03em] leading-none">€70</span>
+                    <span className="text-[15px] text-[var(--ink-muted)]">o singură plată · fără abonament</span>
                 </div>
                 <p className="text-[13px] text-[var(--ink-muted)]">
-                    VAT included · Fully refundable before ship date
+                    TVA inclus · Integral rambursabil înainte de livrare
                 </p>
             </div>
 
             {/* Founding supporter perks */}
             <div className="space-y-2.5">
-                <p className="text-[13px] font-semibold text-[var(--ink)]">What founding supporters get</p>
+                <p className="text-[13px] font-semibold text-[var(--ink)]">Ce primesc susținătorii fondatori</p>
                 <ul className="space-y-2">
                     {[
-                        "Hardware at €45, one-time — standard price is €89/year",
-                        "First year of any future service updates, free",
-                        "Your name on our founding supporters page (opt-in)",
-                        "Direct line to the founders for product feedback",
+                        "Hardware la €70, o singură plată — fără abonament, pe viață",
+                        "Primul an de actualizări viitoare, gratuit",
+                        "Numele tău pe pagina noastră de fondatori (opțional)",
+                        "Linie directă cu fondatorii pentru feedback despre produs",
                     ].map(perk => (
                         <li key={perk} className="flex items-start gap-2 text-[13px] text-[var(--ink-muted)] leading-snug">
                             <span className="text-[var(--primary)] shrink-0 font-bold">✓</span>
@@ -135,14 +135,14 @@ export default function PreOrderPanel() {
                 onClick={handlePreorder}
                 className="w-full py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-white text-[16px] font-semibold transition-colors duration-150"
             >
-                Order NOW
+                Comandă acum
             </button>
 
             <hr className="border-[var(--border)]" />
 
             {/* Trust row */}
             <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-3 text-center">
-                {["One-time, €45 for life", "All updates included", "Ships Q4 2026"].map(t => (
+                {["O singură plată, €70", "Toate actualizările incluse", "Livrare Q4 2026"].map(t => (
                     <p key={t} className="text-[12px] text-[var(--ink-muted)] leading-snug">{t}</p>
                 ))}
             </div>
@@ -150,9 +150,9 @@ export default function PreOrderPanel() {
             {/* Info sections */}
             <div className="space-y-5">
                 {[
-                    { title: "What you're ordering", body: "A compact network device that plugs into your router and controls what every device in your home can reach — and when. Block apps and sites on a schedule, household-wide, without touching each device individually." },
-                    { title: "Why Order NOW?", body: "Founding supporter spots are capped at 100. Once they're gone, Steelgate moves to €89/year. Ordering now locks in your €45 price for life and ensures you ship first." },
-                    { title: "Timeline", body: "We're targeting Q4 2026 for shipment. You'll receive progress updates along the way. Founding customers ship first." },
+                    { title: "Ce comanzi", body: "Un dispozitiv compact de rețea care se conectează la routerul tău și controlează ce poate accesa fiecare dispozitiv din casă — și când. Blochează aplicații și site-uri pe un program, la nivelul întregii case, fără să atingi fiecare dispozitiv individual." },
+                    { title: "De ce să comanzi acum?", body: "Locurile de fondator sunt limitate. Comanda acum îți blochează prețul de €70 pe viață și îți asigură livrarea din primul lot." },
+                    { title: "Timeline", body: "Targetăm Q4 2026 pentru livrare. Vei primi actualizări pe parcurs. Clienții fondatori primesc primii." },
                 ].map(({ title, body }) => (
                     <div key={title}>
                         <p className="text-[14px] font-semibold text-[var(--ink)] mb-1.5">{title}</p>

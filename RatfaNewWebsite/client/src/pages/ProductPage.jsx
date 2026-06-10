@@ -4,8 +4,8 @@ import { useSeo } from "../lib/useSeo";
 
 function ProductPage() {
     useSeo({
-        title: 'OrderSteelgate — €45 Founding Price',
-        description: 'OrderSteelgate for €45 and lock in founding pricing for life. A plug-in device that blocks distracting apps and sites across every device in your home. Ships Q4 2026.',
+        title: 'Comandă Steelgate — Preț de Fondator €70',
+        description: 'Comandă Steelgate pentru €70 și blochează rețelele sociale pe toate dispozitivele din casă. O singură plată, fără abonament. Livrare Q4 2026.',
         canonical: 'https://steelgate.io/products',
     });
 
