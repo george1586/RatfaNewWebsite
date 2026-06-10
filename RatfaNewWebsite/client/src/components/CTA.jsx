@@ -5,10 +5,10 @@ export default function CTA() {
         <section className="w-full px-6 py-[var(--section-y)] bg-[var(--bg)] text-center">
             <div className="max-w-[var(--prose-w)] mx-auto flex flex-col items-center gap-6">
                 <h2 className="text-[clamp(2rem,6vw,4rem)] font-bold text-[var(--ink)] tracking-[-0.03em] leading-[1.1]">
-                    Tech’s best features are the ones you choose.
+                    Rezervă-ți locul. Lansare în România.
                 </h2>
                 <p className="text-[16px] sm:text-[18px] text-[var(--ink-muted)] leading-[1.65] max-w-[480px]">
-                    OrderSteelgate today and take back control of every screen in your home.
+                    Acces anticipat la prețul de fondator — €70, o singură plată, fără abonament. Prețul crește la lansare.
                 </p>
                 <div className="mt-2">
                     <Button />

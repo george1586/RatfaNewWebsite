@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 
 const features = [
-    { title: "App & Site Blocking",      desc: "Block TikTok, Instagram, Reddit, YouTube, or any site — on every device in the house, without touching each one individually." },
-    { title: "Custom Schedules",         desc: "Set different rules for weekdays, weekends, homework time, and bedtime. The schedule runs itself." },
-    { title: "Household-Wide Coverage",  desc: "Works on every device automatically — phones, tablets, laptops, smart TVs. No app to install on each device." },
-    { title: "Ad & Tracker Blocking",    desc: "Removes ads and tracking scripts before they load, across all devices and apps. Faster pages, less noise." },
-    { title: "Adult Content Filtering",  desc: "Block categories of content network-wide without configuring each device separately." },
-    { title: "Dopamine Detox Mode",      desc: "Disable short-form video feeds while keeping messaging and other functions of a platform intact." },
-    { title: "Real-Time Threat Blocking",desc: "Known phishing domains, malware endpoints, and suspicious traffic are blocked before a device ever loads them." },
-    { title: "Privacy Protection",       desc: "Your traffic stays on your network. No data leaves your home and your ISP can't see what you're browsing." },
-    { title: "Easy To Set Up",           desc: "Connect it to your network. That's it. No router config, no IT knowledge needed." },
-    { title: "Easy To Manage",           desc: "A simple local dashboard lets you adjust rules, check activity, and whitelist anything that gets blocked incorrectly." },
+    { title: "Blocare aplicații și site-uri",  desc: "Blochează TikTok, Instagram, Reddit, YouTube sau orice alt site — pe fiecare dispozitiv din casă, fără să le atingi individual." },
+    { title: "Programări personalizate",       desc: "Setează reguli diferite pentru zile lucrătoare, weekend sau seară. Programul rulează singur, fără să te mai gândești la el." },
+    { title: "Protecție pentru toată casa",    desc: "Funcționează pe fiecare dispozitiv automat — telefoane, tablete, laptopuri, televizoare smart. Nicio aplicație de instalat separat." },
+    { title: "Blocare reclame și trackere",    desc: "Elimină reclamele și scripturile de tracking înainte să se încarce, pe toate dispozitivele și aplicațiile. Pagini mai rapide, mai puțin zgomot." },
+    { title: "Filtrare conținut adult",        desc: "Blochează categorii de conținut la nivel de rețea, fără să configurezi fiecare dispozitiv separat." },
+    { title: "Modul Detox",                    desc: "Dezactivează feed-urile video scurte păstrând funcțiile de mesagerie intacte. Poți folosi aplicația, nu poți pierde ore în ea." },
+    { title: "Blocare amenințări în timp real",desc: "Domeniile de phishing, endpoint-urile malware și traficul suspect sunt blocate înainte ca un dispozitiv să le încarce." },
+    { title: "Confidențialitate",              desc: "Traficul tău rămâne în rețeaua ta. Nicio dată nu iese din casă și ISP-ul tău nu poate vedea ce navighezi." },
+    { title: "Configurare simplă",             desc: "Îl conectezi la rețea și începe să funcționeze. Nicio configurație de router, nicio cunoștință IT necesară." },
+    { title: "Ușor de administrat",            desc: "Un panou local simplu îți permite să ajustezi regulile, să verifici activitatea și să adaugi excepții pentru ce e blocat greșit." },
 ];
 
 function Feature({ title, desc }) {
@@ -53,13 +53,13 @@ export default function Features() {
                 <div className="w-full lg:w-[380px] shrink-0">
                     <div className="lg:sticky lg:top-24">
                         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">
-                            Features
+                            Funcționalități
                         </p>
                         <h2 className="text-[clamp(2rem,4.5vw,3rem)] font-bold text-[var(--ink)] leading-[1.1] tracking-[-0.03em] mb-6">
-                            Give your household its attention back.
+                            Redă-ți atenția înapoi.
                         </h2>
                         <p className="text-[16px] text-[var(--ink-muted)] leading-[1.65]">
-                            One device that controls every screen in your home — without complicated setup or easy bypasses.
+                            Un singur dispozitiv care controlează fiecare ecran din casă — fără configurare complicată, fără bypass-uri ușoare.
                         </p>
                     </div>
                 </div>

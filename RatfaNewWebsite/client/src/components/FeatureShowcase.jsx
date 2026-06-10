@@ -8,13 +8,13 @@ import firewallImg from "../assets/images/feature-firewall.svg";
 import { useState, useEffect, useRef } from "react";
 
 const features = [
-    { title: "App & Site Blocking",      img: appBlockingImg },
-    { title: "Custom Schedules",         img: schedulesImg },
-    { title: "Household-Wide Coverage",  img: coverageImg },
-    { title: "Ad & Tracker Blocking",    img: adBlockingImg },
-    { title: "Adult Content Filtering",  img: contentFilterImg },
-    { title: "Privacy Protection",       img: privacyImg },
-    { title: "Firewall",                 img: firewallImg },
+    { title: "Blocare aplicații și site-uri", img: appBlockingImg },
+    { title: "Programări personalizate",      img: schedulesImg },
+    { title: "Protecție pentru toată casa",   img: coverageImg },
+    { title: "Blocare reclame și trackere",   img: adBlockingImg },
+    { title: "Filtrare conținut adult",       img: contentFilterImg },
+    { title: "Confidențialitate",             img: privacyImg },
+    { title: "Firewall",                      img: firewallImg },
 ];
 
 export default function FeaturesShowcase() {
@@ -52,10 +52,10 @@ export default function FeaturesShowcase() {
             <div className="max-w-[var(--content-w)] mx-auto">
 
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4 text-center">
-                    What it does
+                    Ce face
                 </p>
                 <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-[var(--ink)] tracking-[-0.03em] text-center mb-14">
-                    Everything, network-wide.
+                    Totul, la nivel de rețea.
                 </h2>
 
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">

@@ -9,7 +9,7 @@ export default function Hero() {
             {/* Text block */}
             <div className="text-center w-full max-w-[var(--content-w)]">
                 <h1 className="font-display text-[clamp(2.0rem,5vw,4rem)] text-[var(--ink)] leading-[1.05] tracking-[-0.02em] max-w-[20ch] mx-auto">
-                    The hardware your household plugs in to take its attention back.
+                    Ai zis de zece ori că reduci telefonul. De data asta, mediul tău face treaba.
                 </h1>
             </div>
 
@@ -25,9 +25,9 @@ export default function Hero() {
             {/* Body + CTA */}
             <div className="text-center max-w-prose mx-auto space-y-8">
                 <p className="text-[17px] sm:text-[18px] text-[var(--ink-muted)] leading-[1.65]">
-                    Block distracting apps and sites across every device in your home —
-                    TikTok, Instagram, Reddit, news, adult content — on schedules you set.
-                    One device, every screen in the house.
+                    Steelgate este un dispozitiv hardware care se conectează la routerul tău
+                    și blochează progresiv rețelele sociale, reclamele și notificările —
+                    pe toate dispozitivele din casă. Nu ai nevoie de voință. Ai nevoie de un mediu diferit.
                 </p>
                 <div className="flex justify-center">
                     <Button />

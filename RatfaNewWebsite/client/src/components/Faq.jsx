@@ -1,16 +1,50 @@
 import { useState } from "react";
 
 export const faqData = [
-    { q: "When will Steelgate ship?", a: "We're targeting Q4 2026. Ordering now locks in your founding price and reserves your spot. We'll keep you updated as production progresses — you'll hear from us before anyone else." },
-    { q: "What if I change my mind? Can I cancel my order?", a: "Yes. Your €45 Orderpayment is fully refundable before we ship. Just email us and we'll process the refund within a few days. No questions asked." },
-    { q: "Why should I Orderinstead of waiting for the full launch?", a: "Founding customers get Steelgate at €45 — permanently lower than the launch price. Ordering is the only way to lock in the founding rate." },
-    { q: "Why is the founding price lower? What's the catch?", a: "There's no catch. We're offering a lower price to the people who believe in Steelgate early — before we've shipped a single unit. That trust helps us validate demand and fund production. In return, you get a permanently lower rate and priority shipping." },
-    { q: "What happens if you don't reach 100 orders?", a: "If we don't hit the minimum needed to move to production, every Orderwill be fully refunded. You won't lose anything." },
-    { q: "How is Steelgate different from a parental control app or Pi-hole?", a: "Parental control apps only work on the device they're installed on — and your kids can delete them. Pi-hole blocks ads at the DNS level but requires technical setup and doesn't handle scheduling or app-specific blocking. Steelgate sits between your router and your devices, which means it works on every screen in the house automatically — including phones, tablets, laptops, and smart TVs — with no app to install on each device." },
-    { q: "Will this slow down my internet or affect streaming and gaming?", a: "No. Steelgate processes traffic locally and is built to add minimal latency. In practice, pages often load faster because ads and tracking scripts are removed before they reach your devices. If something gets blocked that shouldn't be, you can whitelist it instantly." },
-    { q: "How does Steelgate protect my privacy? Do you see my traffic?", a: "Steelgate runs entirely on your local network. Filtering decisions happen on-device, not in the cloud. We don't collect or store your browsing data — your traffic stays inside your home." },
-    { q: "Is it really plug-and-play, or do I need to configure my router?", a: "It's designed to be as close to plug-and-play as possible. In most setups, you just connect it to your network and it starts working. Advanced users can fine-tune rules, but the default experience is built for people who don't want to touch their router config." },
-    { q: "Who is Steelgate for?", a: "Steelgate is for households that want real control over screen time and digital habits — without fighting each device individually, setting up complicated software, or relying on restrictions that are easy to bypass. If you have kids, or you're trying to break your own phone habits, this is built for you." },
+    {
+        q: "Funcționează și pe date mobile, nu doar pe WiFi de acasă?",
+        a: "Nu — Steelgate funcționează doar pe WiFi-ul de acasă. Dar asta e intenționat. Dacă te uiți sincer la obiceiurile tale, marea majoritate a scrollului neproductiv se întâmplă acasă: în pat dimineața, pe canapea seara, la birou. Acasă petreci cel mai mult timp. Și mai important: tu îl cumperi pentru că vrei să te schimbi, nu pentru că cineva te obligă. Dacă ai vrea să eviți blocarea, ai ieși din casă — ceea ce înseamnă că te-ai ridicat de pe canapea. Nici asta nu e rău.",
+    },
+    {
+        q: "Cu ce routere este compatibil?",
+        a: "Steelgate funcționează cu marea majoritate a routerelor de acasă — inclusiv modelele standard de la Digi, Orange, Vodafone și alți provideri. Nu trebuie să-ți schimbi routerul sau să ai unul special. Dacă ai un setup mai neobișnuit (mesh, router enterprise), scrie-ne și verificăm împreună.",
+    },
+    {
+        q: "Ce platforme blochează?",
+        a: "Tu setezi regulile — nu există o listă fixă. Poți bloca TikTok, Instagram, Facebook, YouTube, Reddit, Twitter/X, site-uri de știri, conținut adult sau orice altceva. Blocarea se face la nivel de DNS, deci funcționează pe orice aplicație sau browser, indiferent de dispozitiv.",
+    },
+    {
+        q: "Este greu de configurat?",
+        a: "Nu. Îl conectezi la rețea și începe să funcționeze. Nu trebuie să intri în setările routerului, nu ai nevoie de cunoștințe tehnice. Configurarea avansată există pentru cine o vrea, dar experiența implicită e construită pentru oameni care nu vor să se complice.",
+    },
+    {
+        q: "Când se livrează?",
+        a: "Targetăm Q4 2026. Cine comandă acum își rezervă locul la prețul de fondator și primele unități livrate. Te vom ține la curent pe măsură ce producția avansează — vei afla înainte de oricine altcineva.",
+    },
+    {
+        q: "Pot anula comanda dacă mă răzgândesc?",
+        a: "Da. Plata de €70 este integral rambursabilă înainte de livrare. Scrie-ne un email și procesăm rambursarea în câteva zile, fără întrebări.",
+    },
+    {
+        q: "De ce prețul de fondator este mai mic? Care e prinderea?",
+        a: "Nu e nicio prindere. Oferim un preț mai mic oamenilor care cred în Steelgate înainte să fi livrat o singură unitate. Această încredere ne ajută să validăm cererea și să finanțăm producția. În schimb, primești un preț permanent mai bun și livrare prioritară.",
+    },
+    {
+        q: "Ce se întâmplă dacă nu atingeți numărul minim de comenzi?",
+        a: "Dacă nu atingem minimul necesar pentru a trece la producție, fiecare comandă va fi integral rambursată. Nu pierzi nimic.",
+    },
+    {
+        q: "Cu ce e diferit față de o aplicație de control parental sau Pi-hole?",
+        a: "Aplicațiile de control parental funcționează doar pe dispozitivul pe care sunt instalate — și pot fi dezinstalate. Pi-hole blochează reclame la nivel DNS, dar necesită configurare tehnică și nu gestionează programări sau blocarea per-aplicație. Steelgate se află între routerul tău și dispozitive, deci funcționează pe fiecare ecran din casă automat — telefoane, tablete, laptopuri, televizoare smart — fără nicio aplicație de instalat pe fiecare.",
+    },
+    {
+        q: "Îmi va încetini internetul sau va afecta streamingul și gaming-ul?",
+        a: "Nu. Steelgate procesează traficul local și e construit să adauge latență minimă. În practică, paginile se încarcă adesea mai rapid pentru că reclamele și scripturile de tracking sunt eliminate înainte să ajungă la dispozitivele tale. Dacă ceva e blocat greșit, îl poți debloca instant.",
+    },
+    {
+        q: "Cum îmi protejează confidențialitatea? Vedeți traficul meu?",
+        a: "Steelgate rulează în întregime pe rețeaua ta locală. Deciziile de filtrare se iau pe dispozitiv, nu în cloud. Nu colectăm și nu stocăm datele tale de navigare — traficul tău rămâne în casă.",
+    },
 ];
 
 function FaqItem({ number, question, answer, isOpen, onToggle }) {
@@ -48,10 +82,10 @@ export default function FAQ() {
 
                 <div className="max-w-[640px] mb-14">
                     <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4">
-                        FAQ
+                        Întrebări frecvente
                     </p>
                     <h2 className="text-[clamp(2rem,4.5vw,3rem)] font-bold text-[var(--ink)] leading-[1.1] tracking-[-0.03em]">
-                        Questions worth asking.
+                        Întrebările care contează.
                     </h2>
                 </div>
 

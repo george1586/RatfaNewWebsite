@@ -62,10 +62,10 @@ export default function Scenarios() {
             <div className="max-w-[var(--content-w)] mx-auto">
 
                 <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[var(--ink-muted)] mb-4 text-center">
-                    In practice
+                    În practică
                 </p>
                 <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[var(--ink)] tracking-[-0.03em] leading-[1.1] text-center mb-14 max-w-[680px] mx-auto">
-                    Unlike anything you've tried before.
+                    Diferit de orice ai încercat până acum.
                 </h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">

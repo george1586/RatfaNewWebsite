@@ -1,7 +1,7 @@
 const links = {
-    Product: [['Features', '/#features'], ['Order', '/products'], ['FAQ', '/faq']],
-    Company: [['About', '/story'], ['Contact', 'mailto:hello@steelgate.io']],
-    Legal: [['Privacy', '/privacy'], ['Terms', '/terms']],
+    Produs:   [['Funcționalități', '/#features'], ['Comandă', '/products'], ['Întrebări', '/faq']],
+    Companie: [['Despre noi', '/story'], ['Contact', 'mailto:hello@steelgate.io']],
+    Legal:    [['Confidențialitate', '/privacy'], ['Termeni', '/terms']],
 };
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
                     <div className="max-w-[260px]">
                         <p className="font-display text-[1.25rem] text-white mb-3">STEELGATE</p>
                         <p className="text-[14px] text-white/60 leading-relaxed">
-                            Giving every household control over its own attention.
+                            Dăm fiecărei gospodării controlul asupra propriei atenții.
                         </p>
                     </div>
 
@@ -41,7 +41,7 @@ export default function Footer() {
 
                 <div className="mt-14 pt-6 border-t border-white/10">
                     <p className="text-[13px] text-white/55">
-                        © {new Date().getFullYear()} Steelgate. All rights reserved.
+                        © {new Date().getFullYear()} Steelgate. Toate drepturile rezervate.
                     </p>
                 </div>
 

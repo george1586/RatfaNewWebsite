@@ -44,8 +44,8 @@ function SectionView({ name, children }) {
 
 function LandingPage() {
     useSeo({
-        title: 'Steelgate — Take Your Household\'s Attention Back',
-        description: 'Steelgate is a plug-in hardware device that blocks distracting apps and sites across every device in your home — TikTok, Instagram, Reddit — on schedules you set. One device, every screen.',
+        title: 'Steelgate — Redă-ți Atenția Înapoi',
+        description: 'Steelgate este un dispozitiv hardware care blochează progresiv rețelele sociale, reclamele și notificările pe toate dispozitivele din casă. €70, o singură plată.',
         canonical: 'https://steelgate.io/',
     });
 
